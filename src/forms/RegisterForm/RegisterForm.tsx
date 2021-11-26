@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button, Container, Form, Header } from "semantic-ui-react";
 import { Form as FinalForm } from "react-final-form";
 import FieldTextInput from "../../components/FieldTextInput/FieldTextInput";
@@ -25,23 +25,22 @@ type SubmitProps = {
 };
 
 export default function RegisterForm() {
-  const [error, setError] = useState<string>("");
-
   const { userStore } = useStore();
 
   return (
     <Container textAlign="center" className="register-form">
       <div className="register-form__form">
         <FinalForm
-          onSubmit={(values: SubmitProps) =>
-            userStore
-              .register(values)
-              .then(() =>
-                values.role === "consultant"
-                  ? history.push("/categories")
-                  : history.push("/profile")
-              )
-              .catch((e) => setError(e.toString()))
+          onSubmit={
+            (values: SubmitProps) =>
+              userStore
+                .register(values)
+                .then(() =>
+                  values.role === "consultant"
+                    ? history.push("/categories")
+                    : history.push("/profile")
+                )
+            // .catch((e) => setError(e.toString()))
           }
           render={({ handleSubmit, valid, submitting }) => (
             <Form onSubmit={handleSubmit}>
@@ -106,12 +105,11 @@ export default function RegisterForm() {
               <Button
                 disabled={!valid}
                 loading={submitting}
-                positive
+                primary
                 content="Register"
                 type="submit"
                 fluid
               />
-              <div className="register-form__form__error">{error}</div>
             </Form>
           )}
         />

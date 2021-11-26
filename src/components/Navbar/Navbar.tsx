@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { history } from "../../";
 import {
   Menu,
+  MenuItem,
   Sidebar,
   Icon,
   Segment,
@@ -62,50 +63,40 @@ export default observer(function Navbar() {
 
   const tabs = (
     <React.Fragment>
-      <Menu.Item as={NavLink} to="/" exact>
+      <MenuItem as={NavLink} to="/" exact position="left">
         Home
-      </Menu.Item>
-      {!isLoggedIn ? (
-        <Menu.Item header as={NavLink} to="/authentication" exact>
-          ConsultingMatch
-        </Menu.Item>
-      ) : null}
+      </MenuItem>
+      {isLoggedIn ? (
+        <Menu.Menu>
+          <MenuItem
+            onClick={() => {
+              logout();
+              history.replace("/");
+            }}
+            position="right"
+          >
+            Logout
+          </MenuItem>
+        </Menu.Menu>
+      ) : (
+        <Menu.Menu position="right">
+          <MenuItem header as={NavLink} to="/login" exact>
+            Login
+          </MenuItem>
+          <MenuItem header as={NavLink} to="/register" exact>
+            Register
+          </MenuItem>
+        </Menu.Menu>
+      )}
       {isAdmin && (
-        <Menu.Item as={NavLink} to="/manage">
+        <MenuItem as={NavLink} to="/manage">
           Admin panel
-        </Menu.Item>
+        </MenuItem>
       )}
-      {/* <Menu.Item name="Feed" as={NavLink} to="/feed" /> */}
       {isLoggedIn && (
-        <Menu.Item as={NavLink} to="/profile" exact>
+        <MenuItem as={NavLink} to="/profile" exact>
           Profile
-        </Menu.Item>
-      )}
-      {/* <Menu.Item style={{ width: "45em" }}>
-        <Grid>
-          <Grid.Column width={8}>
-            <Search
-              fluid
-              input={{ fluid: true }}
-              style={{ width: "600px" }}
-              loading={isLoading}
-              onSearchChange={handleSearchChange}
-              results={consultantStore.filteredConsultants}
-              value={searchedName}
-            />
-          </Grid.Column>
-        </Grid>
-      </Menu.Item> */}
-      {isLoggedIn && (
-        <Menu.Item
-          onClick={() => {
-            logout();
-            history.replace("/");
-          }}
-          position="right"
-        >
-          Logout
-        </Menu.Item>
+        </MenuItem>
       )}
     </React.Fragment>
   );

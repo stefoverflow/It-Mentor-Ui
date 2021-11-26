@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar/Navbar";
 import ConsultantDashboard from "./components/ConsultantDashboard/ConsultantDashboard";
 import { observer } from "mobx-react-lite";
 import { Route, Switch } from "react-router-dom";
-import HomePage from "./containers/HomePage/HomePage";
 import LandingPage from "./containers/LandingPage/LandingPage";
 import AdminPanel from "./containers/AdminPanelPage/AdminPanelPage";
 import LoginForm from "./forms/LoginForm/LoginForm";
@@ -25,7 +24,6 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={LandingPage} />
           <Route path="/manage" component={AdminPanel} />
-          <Route path="/authentication" component={HomePage} />
           <Route path="/login" component={LoginForm} />
           <Route path="/register" component={RegisterForm} />
           <Route path="/categories" component={CategoriesForm} />

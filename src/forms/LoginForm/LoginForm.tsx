@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { observer } from "mobx-react-lite";
 import { Container, Header, Button, Form } from "semantic-ui-react";
 import FieldTextInput from "../../components/FieldTextInput/FieldTextInput";
 import { Form as FinalForm } from "react-final-form";
 import { useStore } from "../../stores/store";
+import { history } from "../../";
 import {
   composeValidators,
   emailFormatValid,
@@ -19,7 +20,6 @@ type SubmitProps = {
 };
 
 export default observer(function LoginForm() {
-  const [error, setError] = useState<string>("");
   const { userStore } = useStore();
   return (
     <Container textAlign="center" className="login-form">
@@ -28,8 +28,11 @@ export default observer(function LoginForm() {
           onSubmit={(values: SubmitProps) =>
             userStore
               .login(values)
-              .then(() => setError(""))
-              .catch(() => setError("Invalid email or password"))
+              .then((response: any) =>
+                response.role === "consultant"
+                  ? history.push("/categories")
+                  : history.push("/profile")
+              )
           }
           render={({ handleSubmit, valid, submitting }) => (
             <Form onSubmit={handleSubmit}>
@@ -55,12 +58,11 @@ export default observer(function LoginForm() {
               <Button
                 disabled={!valid}
                 loading={submitting}
-                positive
+                primary
                 content="Login"
                 type="submit"
                 fluid
               />
-              <div className="login-form__form__error">{error}</div>
             </Form>
           )}
         ></FinalForm>
