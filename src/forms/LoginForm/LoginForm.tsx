@@ -13,6 +13,11 @@ import {
 
 import "./LoginForm.scss";
 
+type SubmitProps = {
+  email: string;
+  password: string;
+};
+
 export default observer(function LoginForm() {
   const [error, setError] = useState<string>("");
   const { userStore } = useStore();
@@ -20,7 +25,7 @@ export default observer(function LoginForm() {
     <Container textAlign="center" className="login-form">
       <div className="login-form__form">
         <FinalForm
-          onSubmit={(values: any) =>
+          onSubmit={(values: SubmitProps) =>
             userStore
               .login(values)
               .then(() => setError(""))

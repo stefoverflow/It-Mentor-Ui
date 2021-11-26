@@ -16,7 +16,7 @@ import { roles } from "../../constants";
 
 import "./RegisterForm.scss";
 
-type RegisterSubmitProps = {
+type SubmitProps = {
   displayName: string;
   userName: string;
   email: string;
@@ -33,7 +33,7 @@ export default function RegisterForm() {
     <Container textAlign="center" className="register-form">
       <div className="register-form__form">
         <FinalForm
-          onSubmit={(values: RegisterSubmitProps) =>
+          onSubmit={(values: SubmitProps) =>
             userStore
               .register(values)
               .then(() =>

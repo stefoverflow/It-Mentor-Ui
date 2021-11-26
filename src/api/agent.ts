@@ -8,7 +8,7 @@ import { UserFormValues } from "../models/user";
 import { toast } from "react-toastify";
 import { history } from "..";
 
-axios.defaults.baseURL = "http://localhost:5000";
+axios.defaults.baseURL = "https://itmentor.herokuapp.com";
 
 axios.interceptors.response.use(
   async (response) => {
