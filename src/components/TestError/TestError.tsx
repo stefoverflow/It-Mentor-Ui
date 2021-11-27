@@ -5,7 +5,7 @@ import { useStore } from "../../stores/store";
 import ValidationErrors from "../ValidationErrors/ValidationErrors";
 export default function TestErrors() {
   const baseUrl = "http://localhost:5000/";
-  const { consultantStore } = useStore();
+  const { mentorStore } = useStore();
 
   const [errors, setErrors] = useState(null);
 
@@ -41,10 +41,7 @@ export default function TestErrors() {
 
   function handleValidationError() {
     axios
-      .post(
-        baseUrl + `consultants/${consultantStore.selectedConsultant}/posts`,
-        {}
-      )
+      .post(baseUrl + `consultants/${mentorStore.selectedConsultant}/posts`, {})
       .catch((err) => setErrors(err));
   }
 

@@ -20,7 +20,7 @@ interface Props {
 }
 
 export default observer(function ConsultantListItem({ consultant }: Props) {
-  const { consultantStore } = useStore();
+  const { mentorStore } = useStore();
 
   const calculateLevel = (totalStarRating: number) => {
     if (totalStarRating < 5)
@@ -93,7 +93,7 @@ export default observer(function ConsultantListItem({ consultant }: Props) {
         </Segment>
         <Segment>
           <Button
-            onClick={() => consultantStore.selectConsultant(consultant.id)}
+            onClick={() => mentorStore.selectConsultant(consultant.id)}
             floated="right"
             content="View"
             color="blue"

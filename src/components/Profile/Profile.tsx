@@ -4,18 +4,16 @@ import ProfileFeed from "./ProfileFeed";
 import ProfileHeader from "./ProfileHeader";
 
 export default function Profile() {
-  const { consultantStore } = useStore();
+  const { mentorStore } = useStore();
   const { reviewStore } = useStore();
   const { postStore } = useStore();
 
   useEffect(() => {
-    reviewStore.getReviewsForSelectedConsultant(
-      consultantStore.selectedConsultant
-    );
+    reviewStore.getReviewsForSelectedConsultant(mentorStore.selectedConsultant);
     postStore.getListOfPostsForSelectedConsultant(
-      consultantStore.selectedConsultant
+      mentorStore.selectedConsultant
     );
-  }, [reviewStore, postStore, consultantStore]);
+  }, [reviewStore, postStore, mentorStore]);
 
   return (
     <div>

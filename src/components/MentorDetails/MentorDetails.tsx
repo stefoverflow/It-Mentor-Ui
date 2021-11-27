@@ -14,14 +14,16 @@ import {
 import { useStore } from "../../stores/store";
 
 export default observer(function ConsultantDetails() {
-  const { consultantStore } = useStore();
-  const { selectedConsultant } = consultantStore;
+  const { mentorStore } = useStore();
+  const { selectedConsultant } = mentorStore;
   const { commonStore } = useStore();
 
-  const [starRating, setStarReviewForSelectedConsultant] =
-    useState<number | string | undefined>(0);
-  const [comment, setTextReviewForSelectedConsultant] =
-    useState<string | number | undefined>(undefined);
+  const [starRating, setStarReviewForSelectedConsultant] = useState<
+    number | string | undefined
+  >(0);
+  const [comment, setTextReviewForSelectedConsultant] = useState<
+    string | number | undefined
+  >(undefined);
 
   const rateAConsultant = (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>,
@@ -58,12 +60,9 @@ export default observer(function ConsultantDetails() {
       />
       <Form
         onSubmit={() => {
-          consultantStore.setReview(starRating, comment);
-          consultantStore.postReviewForSelectedConsultant();
-          consultantStore.updateReviewsForSelectedConsultant(
-            starRating,
-            comment
-          );
+          mentorStore.setReview(starRating, comment);
+          mentorStore.postReviewForSelectedConsultant();
+          mentorStore.updateReviewsForSelectedConsultant(starRating, comment);
         }}
         success
       >
@@ -89,7 +88,7 @@ export default observer(function ConsultantDetails() {
           />
           <Button
             as={Link}
-            to={`/consultants/${consultantStore.selectedConsultant?.id}`}
+            to={`/consultants/${mentorStore.selectedConsultant?.id}`}
             basic
             color="black"
             content="View Profile"

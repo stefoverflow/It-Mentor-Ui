@@ -4,6 +4,6 @@ export const MAX_MOBILE_SCREEN_WIDTH = 768;
 export const PAGE_LIMIT = 1;
 
 export const roles = [
-  { key: "co", text: "Consultant", value: "consultant" },
-  { key: "cl", text: "Client", value: "client" },
+  { key: "co", text: "Mentor", value: "Mentor" },
+  { key: "cl", text: "Client", value: "Client" },
 ];

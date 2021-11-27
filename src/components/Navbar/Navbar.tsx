@@ -1,5 +1,5 @@
 import { observer } from "mobx-react-lite";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { NavLink } from "react-router-dom";
 import { history } from "../../";
 import {
@@ -67,13 +67,18 @@ export default observer(function Navbar() {
         Home
       </MenuItem>
       {isLoggedIn ? (
-        <Menu.Menu>
+        <Menu.Menu position="right">
+          <MenuItem as={NavLink} to="/mentors" exact>
+            Mentors
+          </MenuItem>
+          <MenuItem as={NavLink} to="/profile" exact>
+            Profile
+          </MenuItem>
           <MenuItem
             onClick={() => {
               logout();
               history.replace("/");
             }}
-            position="right"
           >
             Logout
           </MenuItem>
@@ -91,11 +96,6 @@ export default observer(function Navbar() {
       {isAdmin && (
         <MenuItem as={NavLink} to="/manage">
           Admin panel
-        </MenuItem>
-      )}
-      {isLoggedIn && (
-        <MenuItem as={NavLink} to="/profile" exact>
-          Profile
         </MenuItem>
       )}
     </React.Fragment>

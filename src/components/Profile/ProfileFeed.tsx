@@ -18,11 +18,12 @@ import ValidationErrors from "../ValidationErrors/ValidationErrors";
 export default observer(function ProfileFeed() {
   const { reviewStore } = useStore();
   const { postStore } = useStore();
-  const { consultantStore } = useStore();
+  const { mentorStore } = useStore();
 
   const [postTitle, setPostTitle] = useState<string>("");
-  const [postDescription, setPostDescription] =
-    useState<string | number | undefined>("");
+  const [postDescription, setPostDescription] = useState<
+    string | number | undefined
+  >("");
 
   const handlePostTitleChange = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -59,7 +60,7 @@ export default observer(function ProfileFeed() {
                 onClick={() => {
                   postStore.setPost(postTitle, postDescription);
                   postStore.submitAPost(
-                    consultantStore.selectedConsultant,
+                    mentorStore.selectedConsultant,
                     postStore.post
                   );
                 }}

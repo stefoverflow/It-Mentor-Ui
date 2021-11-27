@@ -4,7 +4,7 @@ import { useStore } from "../../stores/store";
 import HomerImage from "../../assets/homersimpson.0.0.jpg";
 
 export default function ProfileHeader() {
-  const { consultantStore } = useStore();
+  const { mentorStore } = useStore();
 
   return (
     <div>
@@ -19,20 +19,19 @@ export default function ProfileHeader() {
                     <Item.Group>
                       <Item>
                         <Item.Header>
-                          {consultantStore.selectedConsultant?.displayName}
+                          {mentorStore.selectedConsultant?.displayName}
                         </Item.Header>
                       </Item>
                     </Item.Group>
                     <Item.Description>
-                      {consultantStore.selectedConsultant?.bio}
+                      {mentorStore.selectedConsultant?.bio}
                     </Item.Description>
                     <Progress
                       percent={50}
                       style={{ width: "17em", marginBottom: "4em" }}
                       success
                     >
-                      {consultantStore.selectedConsultant?.categories[0]} Level:{" "}
-                      {4}
+                      {mentorStore.selectedConsultant?.categories[0]} Level: {4}
                     </Progress>
                   </Grid.Column>
                   <Grid.Column verticalAlign="middle" width="4">

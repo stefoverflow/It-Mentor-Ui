@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "./components/Navbar/Navbar";
-import ConsultantDashboard from "./components/ConsultantDashboard/ConsultantDashboard";
+import MentorsPage from "./containers/MentorsPage/MentorsPage";
 import { observer } from "mobx-react-lite";
 import { Route, Switch } from "react-router-dom";
 import LandingPage from "./containers/LandingPage/LandingPage";
@@ -28,7 +28,7 @@ const App = () => {
           <Route path="/register" component={RegisterForm} />
           <Route path="/categories" component={CategoriesForm} />
           <Route path="/skills" component={SkillsForm} />
-          <Route exact path="/consultants" component={ConsultantDashboard} />
+          <Route exact path="/mentors" component={MentorsPage} />
           <Route path="/profile" component={Profile} />
           <Route path="/consultants/hire" component={Calendly} />
           <Route path="/consultants/:id" component={Profile} />

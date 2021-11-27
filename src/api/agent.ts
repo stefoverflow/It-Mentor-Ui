@@ -52,7 +52,7 @@ axios.interceptors.request.use(async (request) => {
   return request;
 });
 
-const responseBody = (response: AxiosResponse) => response.data.value;
+const responseBody = (response: AxiosResponse) => response.data;
 const responseBodyForPost = (response: AxiosResponse) => response.data;
 
 const requests = {
@@ -64,7 +64,8 @@ const requests = {
 };
 
 const Consultants = {
-  list: () => requests.get("/consultants", {}),
+  getMentorsPaginated: (PageNumber: number, PageSize: number) =>
+    requests.get(`/mentors?PageNumber=${PageNumber}&PageSize=${PageSize}`, {}),
   postAReview: (
     selectedConsultant: Consultant | undefined,
     review: Review | undefined

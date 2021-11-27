@@ -10,7 +10,7 @@ import agent from "../../api/agent";
 import { useStore } from "../../stores/store";
 
 export default function ConsultantContactForm() {
-  const { consultantStore } = useStore();
+  const { mentorStore } = useStore();
   const { messageStore } = useStore();
   const [message, setMessage] = useState<string>("");
 
@@ -26,10 +26,7 @@ export default function ConsultantContactForm() {
     data: FormProps
   ) => {
     messageStore.setMessage(message);
-    agent.Messages.send(
-      consultantStore.selectedConsultant,
-      messageStore.message
-    );
+    agent.Messages.send(mentorStore.selectedConsultant, messageStore.message);
   };
 
   return (
