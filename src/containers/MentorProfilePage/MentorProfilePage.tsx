@@ -16,14 +16,18 @@ type MentorProfileProps = {
 
 const MentorProfilePage: React.FC<MentorProfileProps> = (props) => {
   const { mentorStore } = useStore();
-  const { fetchMentor, fetchMentorInProgress, fetchMentorError, mentor } =
+  const { loadMentor, fetchMentorInProgress, fetchMentorError, mentor } =
     mentorStore;
   const mentorId = props.match.params.id;
 
+  const fetchMentor = () => {
+    loadMentor(mentorId);
+  };
+
   useEffect(() => {
-    fetchMentor(mentorId);
+    fetchMentor();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mentorId]);
+  }, []);
 
   // useEffect(() => {
   //   reviewStore.getReviewsForSelectedConsultant(mentorStore.selectedConsultant);

@@ -70,7 +70,7 @@ export default class MentorStore {
     }
   };
 
-  fetchMentor = async (id: string) => {
+  loadMentor = async (id: string) => {
     runInAction(() => {
       this.fetchMentorInProgress = true;
       this.fetchMentorError = "";
