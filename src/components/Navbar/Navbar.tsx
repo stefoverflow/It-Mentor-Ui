@@ -20,8 +20,11 @@ import "./Navbar.scss";
 
 export default observer(function Navbar() {
   const currentUser = JSON.parse(localStorage.getItem("user") || "{}");
-  const isLoggedIn = !isEmptyObject(currentUser);
-  const isAdmin = currentUser ? currentUser.role === "admin" : false;
+  const isLoggedIn = useMemo(() => !isEmptyObject(currentUser), [currentUser]);
+  const isAdmin = useMemo(
+    () => (currentUser ? currentUser.role === "admin" : false),
+    [currentUser]
+  );
 
   // const { consultantStore } = useStore();
   const {

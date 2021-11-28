@@ -1,0 +1,10 @@
+@import "../../scss/color";
+
+.mentor-profile-page {
+  &__error {
+    padding: 20px 0;
+    color: $color-error;
+    font-size: 20px;
+    text-align: center;
+  }
+}

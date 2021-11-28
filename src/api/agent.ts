@@ -1,6 +1,6 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { Category } from "../models/category";
-import { Consultant } from "../models/consultant";
+import { Mentor } from "../models/mentor";
 import { Message } from "../models/message";
 import { Post } from "../models/post";
 import { Review } from "../models/review";
@@ -63,24 +63,25 @@ const requests = {
   del: (url: string, body: {}) => axios.delete(url, body).then(responseBody),
 };
 
-const Consultants = {
+const Mentors = {
   getMentorsPaginated: (PageNumber: number, PageSize: number) =>
     requests.get(`/mentors?PageNumber=${PageNumber}&PageSize=${PageSize}`, {}),
+  getMentor: (id: string) => requests.get(`/mentors/${id}`, {}),
   postAReview: (
-    selectedConsultant: Consultant | undefined,
+    selectedConsultant: Mentor | undefined,
     review: Review | undefined
   ) =>
     requests.post("/consultants/" + selectedConsultant?.id + "/reviews", {
       starRating: review?.starRating,
       comment: review?.comment,
     }),
-  getListOfReviews: (currentConsultant: Consultant | undefined) =>
+  getListOfReviews: (currentConsultant: Mentor | undefined) =>
     requests.get("/consultants/" + currentConsultant?.id + "/reviews", {}),
   listForSelectedCategory: (selectedCategory: Category | undefined | null) =>
     requests.get("/categories/" + selectedCategory?.id + "/consultants", {}),
-  getListOfPosts: (consultant: Consultant | undefined) =>
+  getListOfPosts: (consultant: Mentor | undefined) =>
     requests.get("/consultants/" + consultant?.id + "/posts", {}),
-  submitAPost: (consultant: Consultant | undefined, post: Post | undefined) =>
+  submitAPost: (consultant: Mentor | undefined, post: Post | undefined) =>
     requests.post("/consultants/" + consultant?.id + "/posts", {
       id: post?.id,
       title: post?.title,
@@ -102,7 +103,7 @@ const Categories = {
 
 const Messages = {
   send: (
-    selectedConsultant: Consultant | undefined,
+    selectedConsultant: Mentor | undefined,
     message: Message | undefined
   ) =>
     requests.post("/message/" + selectedConsultant?.id, {
@@ -129,7 +130,7 @@ const Skills = {
 };
 
 const agent = {
-  Consultants,
+  Mentors,
   Categories,
   Messages,
   Account,

@@ -1,4 +1,3 @@
-import { observer } from "mobx-react-lite";
 import React, { useState } from "react";
 import {
   Button,
@@ -11,14 +10,18 @@ import {
   TextAreaProps,
 } from "semantic-ui-react";
 import { useStore } from "../../stores/store";
-import PostItem from "../PostItem/PostItem";
-import ReviewItem from "../ReviewItem/ReviewItem";
-import ValidationErrors from "../ValidationErrors/ValidationErrors";
+import PostItem from "../../components/PostItem/PostItem";
+import ReviewItem from "../../components/ReviewItem/ReviewItem";
+import ValidationErrors from "../../components/ValidationErrors/ValidationErrors";
+import { Mentor } from "../../models/mentor";
 
-export default observer(function ProfileFeed() {
+type ProfileFeedType = {
+  mentor: Mentor;
+};
+
+const ProfileFeed: React.FC<ProfileFeedType> = ({ mentor }) => {
   const { reviewStore } = useStore();
   const { postStore } = useStore();
-  const { mentorStore } = useStore();
 
   const [postTitle, setPostTitle] = useState<string>("");
   const [postDescription, setPostDescription] = useState<
@@ -59,10 +62,7 @@ export default observer(function ProfileFeed() {
               <Button
                 onClick={() => {
                   postStore.setPost(postTitle, postDescription);
-                  postStore.submitAPost(
-                    mentorStore.selectedConsultant,
-                    postStore.post
-                  );
+                  postStore.submitAPost(mentor, postStore.post);
                 }}
                 primary
               >
@@ -84,4 +84,6 @@ export default observer(function ProfileFeed() {
       </Grid.Row>
     </Grid>
   );
-});
+};
+
+export default ProfileFeed;

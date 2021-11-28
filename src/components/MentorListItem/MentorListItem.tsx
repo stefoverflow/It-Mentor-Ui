@@ -2,7 +2,6 @@ import React from "react";
 import { observer } from "mobx-react-lite";
 import { Link } from "react-router-dom";
 import {
-  Button,
   Icon,
   Item,
   Label,
@@ -10,18 +9,15 @@ import {
   Rating,
   Segment,
 } from "semantic-ui-react";
-import { Consultant } from "../../models/consultant";
-import { useStore } from "../../stores/store";
+import { Mentor } from "../../models/mentor";
 
 import HomerImage from "../../assets/homersimpson.0.0.jpg";
 
 interface Props {
-  consultant: Consultant;
+  mentor: Mentor;
 }
 
-export default observer(function ConsultantListItem({ consultant }: Props) {
-  const { mentorStore } = useStore();
-
+export default observer(function ConsultantListItem({ mentor }: Props) {
   const calculateLevel = (totalStarRating: number) => {
     if (totalStarRating < 5)
       return [Math.floor((totalStarRating / 5) * 100), 1];
@@ -43,7 +39,7 @@ export default observer(function ConsultantListItem({ consultant }: Props) {
     return [percentage, level];
   };
 
-  const [percentage, level] = calculateLevel(consultant.totalStarRating);
+  const [percentage, level] = calculateLevel(mentor.totalStarRating);
 
   return (
     <Segment.Group>
@@ -52,10 +48,10 @@ export default observer(function ConsultantListItem({ consultant }: Props) {
           <Item>
             <Item.Image size="tiny" circular src={HomerImage} alt="photo" />
             <Item.Content>
-              <Item.Header as={Link} to={`/consultants/${consultant.id}`}>
-                {consultant.displayName}
+              <Item.Header as={Link} to={`/mentors/${mentor.id}`}>
+                {mentor.displayName}
               </Item.Header>
-              <Item.Description>{consultant.bio}</Item.Description>
+              <Item.Description>{mentor.bio}</Item.Description>
             </Item.Content>
           </Item>
         </Item.Group>
@@ -63,7 +59,7 @@ export default observer(function ConsultantListItem({ consultant }: Props) {
       <Item>
         <Rating
           icon="star"
-          defaultRating={consultant.averageStarReview}
+          defaultRating={mentor.averageStarReview}
           maxRating={5}
           disabled
           size="huge"
@@ -72,32 +68,24 @@ export default observer(function ConsultantListItem({ consultant }: Props) {
       <Item.Extra>
         <Label
           basic
-          content={
-            consultant.reviews.length !== 0 ? consultant.reviews[0].comment : 0
-          }
+          content={mentor.reviews.length !== 0 ? mentor.reviews[0].comment : 0}
         />
       </Item.Extra>
       <Segment>
         <span>
           <Icon name="checkmark" />{" "}
-          {consultant.reviews.length !== 0 ? consultant.reviews.length : 0}{" "}
-          reviews
+          {mentor.reviews.length !== 0 ? mentor.reviews.length : 0} reviews
         </span>
       </Segment>
-      <Segment.Group horizontal secondary clearing>
+      <Segment.Group horizontal>
         <Segment>123 Followers 45 Following</Segment>
         <Segment>
           <Progress percent={percentage} style={{ width: "17em" }} success>
-            {consultant.categories[0]} Level: {level}
+            {mentor.categories[0]} Level: {level}
           </Progress>
         </Segment>
         <Segment>
-          <Button
-            onClick={() => mentorStore.selectConsultant(consultant.id)}
-            floated="right"
-            content="View"
-            color="blue"
-          />
+          <Link to={`/mentors/${mentor.id}`}>View</Link>
         </Segment>
       </Segment.Group>
     </Segment.Group>

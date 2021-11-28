@@ -1,19 +1,33 @@
-import { makeAutoObservable } from "mobx";
+import { runInAction, makeAutoObservable } from "mobx";
 import agent from "../api/agent";
-import { Consultant } from "../models/consultant";
+import { Mentor } from "../models/mentor";
 import { Review } from "../models/review";
 import { Pagination } from "../models/pagination";
 import { v4 as uuid } from "uuid";
 import { ConsultantSearchDto } from "../models/consultantSearchDto";
 
-export default class ConsultantStore {
+export default class MentorStore {
   fetchMentorsInProgress: boolean = false;
-  mentors: Consultant[] = [];
+  fetchMentorsError: string = "";
+  mentors: Mentor[] = [];
+  fetchMentorInProgress: boolean = false;
+  fetchMentorError: string = "";
+  mentor: Mentor = {
+    id: "",
+    displayName: "",
+    image: "",
+    averageStarReview: 0,
+    totalStarRating: 0,
+    numberOfReviews: 0,
+    bio: "",
+    reviews: [],
+    categories: [],
+  };
   pagination: Pagination = {
     pageNumber: 0,
     totalPages: 0,
   };
-  selectedConsultant: Consultant | undefined = undefined;
+  selectedConsultant: Mentor | undefined = undefined;
   review: Review | undefined = undefined;
   // currentConsultants: Consultant[] = [];
   filteredConsultants: ConsultantSearchDto[] = [];
@@ -31,25 +45,48 @@ export default class ConsultantStore {
   // };
 
   loadConsultants = async (PageNumber: number, PageSize: number) => {
-    this.fetchMentorsInProgress = true;
+    runInAction(() => {
+      this.fetchMentorsInProgress = true;
+      this.fetchMentorsError = "";
+    });
     try {
-      const response = await agent.Consultants.getMentorsPaginated(
+      const response = await agent.Mentors.getMentorsPaginated(
         PageNumber,
         PageSize
       );
 
       const { totalPages, value } = response;
-      console.log("response", response);
-      this.pagination.totalPages = totalPages;
-      this.pagination.pageNumber = PageNumber;
-      this.mentors = value;
-      // consultants.forEach((consultant) => {
-      //   this.updateConsultants(consultant);
-      // });
+      runInAction(() => {
+        this.pagination = { totalPages, pageNumber: PageNumber };
+        this.mentors = value;
+      });
     } catch (error) {
-      console.log(error);
+      runInAction(
+        () =>
+          (this.fetchMentorsError = "An error occurred while fetching mentors.")
+      );
     } finally {
-      this.fetchMentorsInProgress = false;
+      runInAction(() => (this.fetchMentorsInProgress = false));
+    }
+  };
+
+  fetchMentor = async (id: string) => {
+    runInAction(() => {
+      this.fetchMentorInProgress = true;
+      this.fetchMentorError = "";
+    });
+    try {
+      const response = await agent.Mentors.getMentor(id);
+      const { value } = response;
+
+      runInAction(() => (this.mentor = value));
+    } catch (error) {
+      runInAction(
+        () =>
+          (this.fetchMentorError = "An error occurred while fetching mentor.")
+      );
+    } finally {
+      runInAction(() => (this.fetchMentorInProgress = false));
     }
   };
 
@@ -71,7 +108,7 @@ export default class ConsultantStore {
     // }
   };
 
-  addReviewToConsultant = (consultant: Consultant, review: Review) => {
+  addReviewToConsultant = (consultant: Mentor, review: Review) => {
     consultant.reviews.push(review);
   };
 

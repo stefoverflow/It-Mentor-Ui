@@ -1,9 +1,7 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect } from "react";
 import {
   Container,
   Item,
-  Menu,
-  MenuItemProps,
   Dimmer,
   Loader,
   Pagination,
@@ -14,10 +12,17 @@ import { useStore } from "../../stores/store";
 import MentorListItem from "../MentorListItem/MentorListItem";
 import { PAGE_LIMIT } from "../../constants";
 
+import "./MentorList.scss";
+
 export default observer(function ConsultantList() {
   const { mentorStore } = useStore();
-  const { mentors, fetchMentorsInProgress, pagination, loadConsultants } =
-    mentorStore;
+  const {
+    mentors,
+    fetchMentorsInProgress,
+    fetchMentorsError,
+    pagination,
+    loadConsultants,
+  } = mentorStore;
   const { totalPages, pageNumber } = pagination;
 
   // const [activeItem, setActiveItem] = useState<string | undefined>("topRated");
@@ -79,22 +84,26 @@ export default observer(function ConsultantList() {
         <Dimmer active>
           <Loader />
         </Dimmer>
+      ) : fetchMentorsError ? (
+        <div className="mentor-list__error">{fetchMentorsError}</div>
       ) : (
         <Item.Group divided>
           {mentors.map((mentor) => (
-            <MentorListItem consultant={mentor} />
+            <MentorListItem key={mentor.id} mentor={mentor} />
           ))}
         </Item.Group>
       )}
 
-      <Pagination
-        activePage={pageNumber}
-        onPageChange={handlePageChange}
-        firstItem={null}
-        lastItem={null}
-        secondary
-        totalPages={totalPages}
-      />
+      {!fetchMentorsError && (
+        <Pagination
+          activePage={pageNumber}
+          onPageChange={handlePageChange}
+          firstItem={null}
+          lastItem={null}
+          secondary
+          totalPages={totalPages}
+        />
+      )}
     </Container>
   );
 });

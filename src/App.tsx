@@ -6,7 +6,7 @@ import { Route, Switch } from "react-router-dom";
 import LandingPage from "./containers/LandingPage/LandingPage";
 import AdminPanel from "./containers/AdminPanelPage/AdminPanelPage";
 import LoginForm from "./forms/LoginForm/LoginForm";
-import Profile from "./components/Profile/Profile";
+import MentorProfilePage from "./containers/MentorProfilePage/MentorProfilePage";
 import Calendly from "./components/Calendy/Calendly";
 import TestErrors from "./components/TestError/TestError";
 import { ToastContainer } from "react-toastify";
@@ -29,9 +29,8 @@ const App = () => {
           <Route path="/categories" component={CategoriesForm} />
           <Route path="/skills" component={SkillsForm} />
           <Route exact path="/mentors" component={MentorsPage} />
-          <Route path="/profile" component={Profile} />
           <Route path="/consultants/hire" component={Calendly} />
-          <Route path="/consultants/:id" component={Profile} />
+          <Route path="/mentors/:id" component={MentorProfilePage} />
           <Route path="/errors" component={TestErrors} />
           <Route component={NotFound} />
         </Switch>

@@ -1,10 +1,14 @@
 import React from "react";
 import { Button, Grid, Item, Progress, Segment } from "semantic-ui-react";
-import { useStore } from "../../stores/store";
 import HomerImage from "../../assets/homersimpson.0.0.jpg";
+import { Mentor } from "../../models/mentor";
 
-export default function ProfileHeader() {
-  const { mentorStore } = useStore();
+type ProfileHeaderProps = {
+  mentor: Mentor;
+};
+
+const ProfileHeader: React.FC<ProfileHeaderProps> = ({ mentor }) => {
+  const { displayName, bio, categories } = mentor;
 
   return (
     <div>
@@ -18,20 +22,16 @@ export default function ProfileHeader() {
                   <Grid.Column width="6">
                     <Item.Group>
                       <Item>
-                        <Item.Header>
-                          {mentorStore.selectedConsultant?.displayName}
-                        </Item.Header>
+                        <Item.Header>{displayName}</Item.Header>
                       </Item>
                     </Item.Group>
-                    <Item.Description>
-                      {mentorStore.selectedConsultant?.bio}
-                    </Item.Description>
+                    <Item.Description>{bio}</Item.Description>
                     <Progress
                       percent={50}
                       style={{ width: "17em", marginBottom: "4em" }}
                       success
                     >
-                      {mentorStore.selectedConsultant?.categories[0]} Level: {4}
+                      {categories[0]} Level: {4}
                     </Progress>
                   </Grid.Column>
                   <Grid.Column verticalAlign="middle" width="4">
@@ -67,4 +67,6 @@ export default function ProfileHeader() {
       </Segment>
     </div>
   );
-}
+};
+
+export default ProfileHeader;
