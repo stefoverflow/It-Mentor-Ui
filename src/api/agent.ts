@@ -3,7 +3,6 @@ import { Category } from "../models/category";
 import { Mentor } from "../models/mentor";
 import { Message } from "../models/message";
 import { Post } from "../models/post";
-import { Review } from "../models/review";
 import { UserFormValues } from "../models/user";
 import { toast } from "react-toastify";
 import { history } from "..";
@@ -48,7 +47,10 @@ axios.interceptors.response.use(
 );
 
 axios.interceptors.request.use(async (request) => {
-  console.log(request);
+  const token = localStorage.getItem("jwt");
+  if (token) {
+    request.headers.common.Authorization = `Bearer ${token}`;
+  }
   return request;
 });
 
@@ -68,12 +70,13 @@ const Mentors = {
     requests.get(`/mentors?PageNumber=${PageNumber}&PageSize=${PageSize}`, {}),
   getMentor: (id: string) => requests.get(`/mentors/${id}`, {}),
   postAReview: (
-    selectedConsultant: Mentor | undefined,
-    review: Review | undefined
+    mentorId: string,
+    reviewStarRating: number,
+    reviewComment: string
   ) =>
-    requests.post("/consultants/" + selectedConsultant?.id + "/reviews", {
-      starRating: review?.starRating,
-      comment: review?.comment,
+    requests.post("/mentors/" + mentorId + "/reviews", {
+      starRating: reviewStarRating,
+      comment: reviewComment,
     }),
   getListOfReviews: (currentConsultant: Mentor | undefined) =>
     requests.get("/consultants/" + currentConsultant?.id + "/reviews", {}),

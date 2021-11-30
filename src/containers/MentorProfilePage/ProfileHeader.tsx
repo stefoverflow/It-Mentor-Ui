@@ -22,7 +22,9 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ mentor }) => {
                   <Grid.Column width="6">
                     <Item.Group>
                       <Item>
-                        <Item.Header>{displayName}</Item.Header>
+                        <Item.Header>
+                          <b>{displayName}</b>
+                        </Item.Header>
                       </Item>
                     </Item.Group>
                     <Item.Description>{bio}</Item.Description>

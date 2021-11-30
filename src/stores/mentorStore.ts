@@ -2,7 +2,6 @@ import { runInAction, makeAutoObservable } from "mobx";
 import agent from "../api/agent";
 import { Mentor } from "../models/mentor";
 import { Review } from "../models/review";
-import { Pagination } from "../models/pagination";
 import { v4 as uuid } from "uuid";
 import { ConsultantSearchDto } from "../models/consultantSearchDto";
 
@@ -23,10 +22,6 @@ export default class MentorStore {
     reviews: [],
     categories: [],
   };
-  pagination: Pagination = {
-    pageNumber: 0,
-    totalPages: 0,
-  };
   selectedConsultant: Mentor | undefined = undefined;
   review: Review | undefined = undefined;
   // currentConsultants: Consultant[] = [];
@@ -44,7 +39,11 @@ export default class MentorStore {
   //   this.filteredConsultants = consultants;
   // };
 
-  loadConsultants = async (PageNumber: number, PageSize: number) => {
+  loadConsultants = async (
+    PageNumber: number,
+    PageSize: number,
+    setTotalPages: (totalPages: number) => void
+  ) => {
     runInAction(() => {
       this.fetchMentorsInProgress = true;
       this.fetchMentorsError = "";
@@ -56,8 +55,8 @@ export default class MentorStore {
       );
 
       const { totalPages, value } = response;
+      setTotalPages(totalPages);
       runInAction(() => {
-        this.pagination = { totalPages, pageNumber: PageNumber };
         this.mentors = value;
       });
     } catch (error) {
@@ -70,7 +69,7 @@ export default class MentorStore {
     }
   };
 
-  loadMentor = async (id: string) => {
+  loadConsultant = async (id: string) => {
     runInAction(() => {
       this.fetchMentorInProgress = true;
       this.fetchMentorError = "";
@@ -87,6 +86,23 @@ export default class MentorStore {
       );
     } finally {
       runInAction(() => (this.fetchMentorInProgress = false));
+    }
+  };
+
+  postReview = async (
+    mentorId: string,
+    reviewStarRating: number,
+    reviewComment: string
+  ) => {
+    try {
+      const response = await agent.Mentors.postAReview(
+        mentorId,
+        reviewStarRating,
+        reviewComment
+      );
+      console.log("postReview", response);
+    } catch (error) {
+      console.log("postReview - error", error);
     }
   };
 

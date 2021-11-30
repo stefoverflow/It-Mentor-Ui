@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import {
   Container,
   Item,
-  Dimmer,
   Loader,
   Pagination,
   PaginationProps,
@@ -11,6 +10,8 @@ import { observer } from "mobx-react-lite";
 import { useStore } from "../../stores/store";
 import MentorListItem from "../MentorListItem/MentorListItem";
 import { PAGE_LIMIT } from "../../constants";
+import usePagination from "../../hooks/usePagination";
+import useQueryParams from "../../hooks/useQueryParams";
 
 import "./MentorList.scss";
 
@@ -20,21 +21,44 @@ export default observer(function ConsultantList() {
     mentors,
     fetchMentorsInProgress,
     fetchMentorsError,
-    pagination,
     loadConsultants,
   } = mentorStore;
-  const { totalPages, pageNumber } = pagination;
+  const { params, setQueryParam } =
+    useQueryParams<{ pageNumber: string; pageSize: string }>();
+  const { pageNumber, pageSize } = params;
+  const { currentPage, totalPages, setTotalPages, setCurrentPage } =
+    usePagination({
+      initialPage: pageNumber ? Number.parseInt(pageNumber) : 1,
+    });
 
-  // const [activeItem, setActiveItem] = useState<string | undefined>("topRated");
+  useEffect(() => {
+    setQueryParam("pageNumber", currentPage.toString(), true);
+    setQueryParam(
+      "pageSize",
+      pageSize ? pageSize.toString() : PAGE_LIMIT.toString(),
+      true
+    );
+  }, [setQueryParam, currentPage, pageSize]);
 
-  const fetchMentors = (page: number) => {
-    loadConsultants(page, PAGE_LIMIT);
+  const handlePageChange = (
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    data: PaginationProps
+  ) => {
+    const { activePage } = data;
+    setCurrentPage(activePage as number);
   };
 
   useEffect(() => {
-    fetchMentors(1);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    if (pageNumber && pageSize) {
+      loadConsultants(
+        Number.parseInt(pageNumber),
+        Number.parseInt(pageSize),
+        setTotalPages
+      );
+    }
+  }, [loadConsultants, pageNumber, pageSize, setTotalPages]);
+
+  // const [activeItem, setActiveItem] = useState<string | undefined>("topRated");
 
   // const handleItemClick = (
   //   event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
@@ -55,14 +79,6 @@ export default observer(function ConsultantList() {
   //     a.averageStarReview < b.averageStarReview ? 1 : -1
   //   );
   // };
-
-  const handlePageChange = (
-    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-    data: PaginationProps
-  ) => {
-    const { activePage } = data;
-    fetchMentors(activePage as number);
-  };
 
   return (
     <Container fluid textAlign="center">

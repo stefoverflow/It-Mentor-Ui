@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useStore } from "../../stores/store";
 import ProfileFeed from "./ProfileFeed";
 import ProfileHeader from "./ProfileHeader";
-import { Dimmer, Loader } from "semantic-ui-react";
+import { Loader } from "semantic-ui-react";
 
 import "./MentorProfilePage.scss";
 

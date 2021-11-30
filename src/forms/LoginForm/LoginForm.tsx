@@ -26,13 +26,7 @@ export default observer(function LoginForm() {
       <div className="login-form__form">
         <FinalForm
           onSubmit={(values: SubmitProps) =>
-            userStore
-              .login(values)
-              .then((response: any) =>
-                response.role === "consultant"
-                  ? history.push("/categories")
-                  : history.push("/profile")
-              )
+            userStore.login(values).then((response: any) => history.push("/"))
           }
           render={({ handleSubmit, valid, submitting }) => (
             <Form onSubmit={handleSubmit}>

@@ -1,9 +1,12 @@
 @import "../../scss/color";
 
 .mentor-list {
-  &__error {
+  &__container {
     padding: 20px 0;
-    color: $color-error;
-    font-size: 20px;
+
+    &__error {
+      color: $color-error;
+      font-size: 20px;
+    }
   }
 }
