@@ -80,19 +80,21 @@ export default observer(function ConsultantList() {
         />
       </Menu>*/}
 
-      {fetchMentorsInProgress ? (
-        <Dimmer active>
-          <Loader />
-        </Dimmer>
-      ) : fetchMentorsError ? (
-        <div className="mentor-list__error">{fetchMentorsError}</div>
-      ) : (
-        <Item.Group divided>
-          {mentors.map((mentor) => (
-            <MentorListItem key={mentor.id} mentor={mentor} />
-          ))}
-        </Item.Group>
-      )}
+      <Container className="mentor-list__container">
+        {fetchMentorsInProgress ? (
+          <Loader active inline />
+        ) : fetchMentorsError ? (
+          <div className="mentor-list__container__error">
+            {fetchMentorsError}
+          </div>
+        ) : (
+          <Item.Group divided>
+            {mentors.map((mentor) => (
+              <MentorListItem key={mentor.id} mentor={mentor} />
+            ))}
+          </Item.Group>
+        )}
+      </Container>
 
       {!fetchMentorsError && (
         <Pagination

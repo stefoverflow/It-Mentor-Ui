@@ -16,13 +16,16 @@ type MentorProfileProps = {
 
 const MentorProfilePage: React.FC<MentorProfileProps> = (props) => {
   const { mentorStore } = useStore();
-  const { loadMentor, fetchMentorInProgress, fetchMentorError, mentor } =
+  const { loadConsultant, fetchMentorInProgress, fetchMentorError, mentor } =
     mentorStore;
   const mentorId = props.match.params.id;
 
   const fetchMentor = () => {
-    loadMentor(mentorId);
+    loadConsultant(mentorId);
   };
+
+  console.log("id", mentorId);
+  console.log("mentor.displayName", mentor.displayName);
 
   useEffect(() => {
     fetchMentor();
@@ -39,9 +42,7 @@ const MentorProfilePage: React.FC<MentorProfileProps> = (props) => {
   return (
     <div>
       {fetchMentorInProgress ? (
-        <Dimmer active>
-          <Loader />
-        </Dimmer>
+        <Loader active inline />
       ) : fetchMentorError ? (
         <div className="mentor-profile-page__error">{fetchMentorError}</div>
       ) : (
