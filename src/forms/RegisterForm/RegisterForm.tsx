@@ -33,7 +33,7 @@ export default function RegisterForm() {
         <FinalForm
           onSubmit={
             (values: SubmitProps) =>
-              userStore.register(values).then(() => history.push("/"))
+              userStore.register(values).then(() => values.role === 'Mentor' ?  history.push("/profile") : history.push('/mentors') )
             // .catch((e) => setError(e.toString()))
           }
           render={({ handleSubmit, valid, submitting }) => (

@@ -74,7 +74,7 @@ export default observer(function Navbar() {
           <MenuItem as={NavLink} to="/mentors" exact>
             Mentors
           </MenuItem>
-          <MenuItem as={NavLink} to={`/mentors/${currentUser.id}`} exact>
+          <MenuItem as={NavLink} to="/profile" exact>
             Profile
           </MenuItem>
           <MenuItem

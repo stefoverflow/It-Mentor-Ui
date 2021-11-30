@@ -14,6 +14,7 @@ import NotFound from "./components/NotFoundError/NotFound";
 import RegisterForm from "./forms/RegisterForm/RegisterForm";
 import CategoriesForm from "./forms/CategoriesForm/CategoriesForm";
 import SkillsForm from "./forms/SkillsForm/SkillsForm";
+import ProfilePage from "./containers/ProfilePage/ProfilePage";
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="/categories" component={CategoriesForm} />
           <Route path="/skills" component={SkillsForm} />
           <Route exact path="/mentors" component={MentorsPage} />
+          <Route exact path="/profile" component={ProfilePage} />
           <Route path="/consultants/hire" component={Calendly} />
           <Route path="/mentors/:id" component={MentorProfilePage} />
           <Route path="/errors" component={TestErrors} />
