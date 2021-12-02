@@ -3,6 +3,7 @@ import { useStore } from "../../stores/store";
 import ProfileFeed from "./ProfileFeed";
 import ProfileHeader from "./ProfileHeader";
 import { Loader } from "semantic-ui-react";
+import { observer } from "mobx-react-lite";
 
 import "./MentorProfilePage.scss";
 
@@ -55,4 +56,4 @@ const MentorProfilePage: React.FC<MentorProfileProps> = (props) => {
   );
 };
 
-export default MentorProfilePage;
+export default observer(MentorProfilePage);

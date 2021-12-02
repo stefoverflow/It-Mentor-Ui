@@ -4,11 +4,15 @@ import { Mentor } from "../models/mentor";
 import { Review } from "../models/review";
 import { v4 as uuid } from "uuid";
 import { ConsultantSearchDto } from "../models/consultantSearchDto";
+import { Category } from "../models/category";
+import { Skill } from "../models/skill";
 
 export default class MentorStore {
+  // mentors
   fetchMentorsInProgress: boolean = false;
   fetchMentorsError: string = "";
   mentors: Mentor[] = [];
+  // mentor
   fetchMentorInProgress: boolean = false;
   fetchMentorError: string = "";
   mentor: Mentor = {
@@ -22,6 +26,15 @@ export default class MentorStore {
     reviews: [],
     categories: [],
   };
+  // categories
+  fetchCategoriesInProgress: boolean = false;
+  fetchCategoriesError: string = "";
+  categories: Category[] = [];
+  // skills
+  fetchSkillsInProgress: boolean = false;
+  fetchSkillsError: string = "";
+  skills: Skill[] = [];
+  //////////
   selectedConsultant: Mentor | undefined = undefined;
   review: Review | undefined = undefined;
   // currentConsultants: Consultant[] = [];
@@ -103,6 +116,49 @@ export default class MentorStore {
       console.log("postReview", response);
     } catch (error) {
       console.log("postReview - error", error);
+    }
+  };
+
+  fetchCategories = async () => {
+    runInAction(() => {
+      this.fetchCategoriesInProgress = true;
+      this.fetchCategoriesError = "";
+    });
+    try {
+      const response = await agent.Categories.list();
+      const { value } = response;
+      runInAction(() => {
+        this.categories = value;
+      });
+    } catch (error) {
+      runInAction(() => {
+        this.fetchCategoriesError = "Nismo uspeli da pronađemo kategorije.";
+      });
+    } finally {
+      runInAction(() => {
+        this.fetchCategoriesInProgress = false;
+      });
+    }
+  };
+
+  fetchSkills = async (categoryId: string) => {
+    runInAction(() => {
+      this.fetchSkillsInProgress = true;
+      this.fetchSkillsError = "";
+    });
+    try {
+      const response = await agent.Skills.list(categoryId);
+      const { value } = response;
+      runInAction(() => {
+        this.skills = value;
+      });
+    } catch (error) {
+      runInAction(() => {
+        this.fetchSkillsError =
+          "Nismo uspeli da pronađemo veštine za prosleđenu kategoriju.";
+      });
+    } finally {
+      runInAction(() => (this.fetchSkillsInProgress = false));
     }
   };
 
