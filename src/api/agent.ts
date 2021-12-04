@@ -69,6 +69,8 @@ const Mentors = {
   getMentorsPaginated: (PageNumber: number, PageSize: number) =>
     requests.get(`/mentors?PageNumber=${PageNumber}&PageSize=${PageSize}`, {}),
   getMentor: (id: string) => requests.get(`/mentors/${id}`, {}),
+  canPostReview: (mentorId: string) =>
+    requests.post(`/reviews`, { id: mentorId }),
   postAReview: (
     mentorId: string,
     reviewStarRating: number,

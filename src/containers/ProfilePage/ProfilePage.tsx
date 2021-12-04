@@ -9,7 +9,6 @@ type ProfilePageProps = {};
 
 const ProfilePage: React.FC<ProfilePageProps> = () => {
   const currentUser: User = JSON.parse(localStorage.getItem("user") || "{}");
-  console.log("currentUser", currentUser);
 
   return (
     <Container className="profile-page">

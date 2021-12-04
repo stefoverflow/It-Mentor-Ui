@@ -1,9 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useStore } from "../../stores/store";
 import ProfileFeed from "./ProfileFeed";
 import ProfileHeader from "./ProfileHeader";
 import { Loader } from "semantic-ui-react";
 import { observer } from "mobx-react-lite";
+import { User } from "../../models/user";
+import { ROLES } from "../../constants";
 
 import "./MentorProfilePage.scss";
 
@@ -17,6 +19,9 @@ type MentorProfileProps = {
 
 const MentorProfilePage: React.FC<MentorProfileProps> = (props) => {
   const { mentorStore } = useStore();
+  const currentUser: User = JSON.parse(localStorage.getItem("user") || "{}");
+  const { role } = currentUser;
+  const isClient = useMemo(() => role === ROLES.CLIENT, [role]);
   const { loadConsultant, fetchMentorInProgress, fetchMentorError, mentor } =
     mentorStore;
   const mentorId = props.match.params.id;
@@ -25,20 +30,10 @@ const MentorProfilePage: React.FC<MentorProfileProps> = (props) => {
     loadConsultant(mentorId);
   };
 
-  console.log("id", mentorId);
-  console.log("mentor.displayName", mentor.displayName);
-
   useEffect(() => {
     fetchMentor();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  // useEffect(() => {
-  //   reviewStore.getReviewsForSelectedConsultant(mentorStore.selectedConsultant);
-  //   postStore.getListOfPostsForSelectedConsultant(
-  //     mentorStore.selectedConsultant
-  //   );
-  // }, [reviewStore, postStore, mentorStore]);
 
   return (
     <div>
@@ -49,7 +44,7 @@ const MentorProfilePage: React.FC<MentorProfileProps> = (props) => {
       ) : (
         <>
           <ProfileHeader mentor={mentor} />
-          <ProfileFeed mentor={mentor} />
+          <ProfileFeed mentor={mentor} isClient={isClient} />
         </>
       )}
     </div>

@@ -29,7 +29,6 @@ const EditProfileForm: React.FC<EditProfileFormProps> = ({ user }) => {
   const { mentorStore } = useStore();
   const { loadConsultant, mentor, fetchMentorInProgress, fetchMentorError } =
     mentorStore;
-  console.log("role", role);
   const [editMode, setEditMode] = useState(false);
   const isMentor = useMemo(() => role === ROLES.MENTOR, [role]);
 
