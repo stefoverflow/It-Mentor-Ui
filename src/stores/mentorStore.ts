@@ -25,6 +25,7 @@ export default class MentorStore {
     bio: "",
     reviews: [],
     categories: [],
+    skills: [],
   };
   // categories
   fetchCategoriesInProgress: boolean = false;

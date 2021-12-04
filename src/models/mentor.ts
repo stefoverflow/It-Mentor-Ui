@@ -10,4 +10,5 @@ export interface Mentor {
   bio: string;
   reviews: Review[];
   categories: string[];
+  skills: string[];
 }

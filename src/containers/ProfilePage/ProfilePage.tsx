@@ -2,7 +2,6 @@ import React from "react";
 import { Container } from "semantic-ui-react";
 import { User } from "../../models/user";
 import EditProfileForm from "../../forms/EditProfileForm/EditProfileForm";
-import CategoriesSkillsForm from "../../forms/CategoriesSkillsForm/CategoriesSkillsForm";
 
 import "./ProfilePage.scss";
 
@@ -15,7 +14,6 @@ const ProfilePage: React.FC<ProfilePageProps> = () => {
   return (
     <Container className="profile-page">
       <EditProfileForm user={currentUser} />
-      <CategoriesSkillsForm />
     </Container>
   );
 };
