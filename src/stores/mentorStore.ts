@@ -31,10 +31,18 @@ export default class MentorStore {
   fetchCategoriesInProgress: boolean = false;
   fetchCategoriesError: string = "";
   categories: Category[] = [];
+  // choose
+  chooseCategoryInProgress: boolean = false;
+  chooseCategoryError: string = "";
+  chooseCategorySent: boolean = false;
   // skills
   fetchSkillsInProgress: boolean = false;
   fetchSkillsError: string = "";
   skills: Skill[] = [];
+  // choose
+  chooseSkillsInProgress: boolean = false;
+  chooseSkillsError: string = "";
+  chooseSkillsSent: boolean = false;
   //////////
   selectedConsultant: Mentor | undefined = undefined;
   review: Review | undefined = undefined;
@@ -142,6 +150,26 @@ export default class MentorStore {
     }
   };
 
+  chooseCategory = async (consultantId: string, categoryId: string) => {
+    runInAction(() => {
+      this.chooseCategoryInProgress = true;
+      this.chooseCategoryError = "";
+      this.chooseCategorySent = true;
+    });
+    try {
+      await agent.Categories.choose(consultantId, categoryId);
+      runInAction(() => (this.chooseCategorySent = false));
+    } catch (error) {
+      runInAction(() => {
+        this.chooseCategoryError = "Doslo je do greske kod odabira kategorije.";
+      });
+    } finally {
+      runInAction(() => {
+        this.chooseCategoryInProgress = false;
+      });
+    }
+  };
+
   fetchSkills = async (categoryId: string) => {
     runInAction(() => {
       this.fetchSkillsInProgress = true;
@@ -160,6 +188,26 @@ export default class MentorStore {
       });
     } finally {
       runInAction(() => (this.fetchSkillsInProgress = false));
+    }
+  };
+
+  chooseSkills = async (categoryId: string, skills: Skill[]) => {
+    runInAction(() => {
+      this.chooseSkillsInProgress = true;
+      this.chooseSkillsError = "";
+      this.chooseSkillsSent = true;
+    });
+    try {
+      await agent.Skills.choose(categoryId, skills);
+      runInAction(() => (this.chooseSkillsSent = false));
+    } catch (error) {
+      runInAction(() => {
+        this.chooseSkillsError = "Doslo je do greske kod odabira veština.";
+      });
+    } finally {
+      runInAction(() => {
+        this.chooseSkillsInProgress = false;
+      });
     }
   };
 

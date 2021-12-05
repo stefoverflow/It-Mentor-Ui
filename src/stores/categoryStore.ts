@@ -36,10 +36,7 @@ export default class CategoryStore {
     }
   };
 
-  chooseCategory = async (
-    consultantId: string | undefined,
-    categoryId: string
-  ) => {
+  chooseCategory = async (consultantId: string, categoryId: string) => {
     await agent.Categories.choose(consultantId, categoryId);
     history.push("/skills");
   };

@@ -1,4 +1,6 @@
+import { Category } from "./category";
 import { Review } from "./review";
+import { Skill } from "./skill";
 
 export interface Mentor {
   id: string;
@@ -9,6 +11,6 @@ export interface Mentor {
   numberOfReviews: number;
   bio: string;
   reviews: Review[];
-  categories: string[];
-  skills: string[];
+  categories: Category[];
+  skills: Skill[];
 }

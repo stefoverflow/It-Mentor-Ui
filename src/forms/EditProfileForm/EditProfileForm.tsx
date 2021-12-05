@@ -29,8 +29,13 @@ const EditProfileForm: React.FC<EditProfileFormProps> = ({ user }) => {
   const { mentorStore } = useStore();
   const { loadConsultant, mentor, fetchMentorInProgress, fetchMentorError } =
     mentorStore;
+  const { categories, skills } = mentor;
   const [editMode, setEditMode] = useState(false);
   const isMentor = useMemo(() => role === ROLES.MENTOR, [role]);
+
+  const initialCategoryMaybe =
+    categories && categories.length > 0 ? { categories: categories[0].id } : {};
+  const initialSkillsMaybe = skills && skills.length > 0 ? { skills } : {};
 
   useEffect(() => {
     if (isMentor) {
@@ -45,15 +50,22 @@ const EditProfileForm: React.FC<EditProfileFormProps> = ({ user }) => {
       </div>
       {editMode ? (
         <FinalForm
-          initialValues={{ displayName, username }}
+          initialValues={{
+            displayName,
+            username,
+            ...initialCategoryMaybe,
+            ...initialSkillsMaybe,
+          }}
           onSubmit={(values: SubmitProps) =>
             console.log("edit-profile-submit ->", values)
           }
           validate={CategoriesSkillsFieldsValidation}
-          render={({ handleSubmit, valid, submitting, form }) => (
+          render={({ handleSubmit, valid, submitting, form, values }) => (
             <Form onSubmit={handleSubmit}>
               <EditProfileFields />
-              {isMentor && <EditCategoriesSkillsFields form={form} />}
+              {isMentor && (
+                <EditCategoriesSkillsFields form={form} values={values} />
+              )}
               <Button
                 disabled={!valid}
                 loading={submitting}
@@ -85,16 +97,16 @@ const EditProfileForm: React.FC<EditProfileFormProps> = ({ user }) => {
                 <Container>
                   <Header as="h4" content="Categories:" />
                   {mentor.categories.map((c) => (
-                    <div key={c} className="edit-profile-form__field">
-                      {c}
+                    <div key={c.id} className="edit-profile-form__field">
+                      {c.name}
                     </div>
                   ))}
                 </Container>
                 <Container>
                   <Header as="h4" content="Skills:" />
                   {mentor.skills.map((s) => (
-                    <div key={s} className="edit-profile-form__field">
-                      {s}
+                    <div key={s.id} className="edit-profile-form__field">
+                      {s.name}
                     </div>
                   ))}
                 </Container>

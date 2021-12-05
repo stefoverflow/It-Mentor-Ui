@@ -15,6 +15,7 @@ import RegisterForm from "./forms/RegisterForm/RegisterForm";
 import CategoriesForm from "./forms/CategoriesForm/CategoriesForm";
 import SkillsForm from "./forms/SkillsForm/SkillsForm";
 import ProfilePage from "./containers/ProfilePage/ProfilePage";
+import CategoriesSkillsForm from "./forms/CategoriesSkillsForm/CategoriesSkillsForm";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/manage" component={AdminPanel} />
           <Route path="/login" component={LoginForm} />
           <Route path="/register" component={RegisterForm} />
+          <Route path="/choose" component={CategoriesSkillsForm} />
           <Route path="/categories" component={CategoriesForm} />
           <Route path="/skills" component={SkillsForm} />
           <Route exact path="/mentors" component={MentorsPage} />

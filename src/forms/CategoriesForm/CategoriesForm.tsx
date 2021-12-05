@@ -33,7 +33,7 @@ const CategoriesForm: React.FC<CategoriesForm> = (props) => {
     useState<boolean>(false);
   const [addCategoryError, setAddCategoryError] = useState<string>("");
 
-  const { commonStore, categoryStore } = useStore();
+  const { categoryStore } = useStore();
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -72,12 +72,9 @@ const CategoriesForm: React.FC<CategoriesForm> = (props) => {
     }
   };
 
-  const chooseCategory = async (
-    consultantId: string | undefined,
-    categoryId: string
-  ) => {
-    await categoryStore.chooseCategory(consultantId, categoryId);
-  };
+  // const chooseCategory = async (consultantId: string, categoryId: string) => {
+  //   await categoryStore.chooseCategory(consultantId, categoryId);
+  // };
 
   return fetchCategoriesInProgress ? (
     <Dimmer active inverted>
@@ -91,7 +88,7 @@ const CategoriesForm: React.FC<CategoriesForm> = (props) => {
         <FinalForm
           onSubmit={(values: any) => {
             categoryStore.setSelectedCategory(values.categoryId);
-            chooseCategory(commonStore.getUserObject().id, values.categoryId);
+            // chooseCategory(commonStore.getUserObject().id, values.categoryId);
           }}
           render={({ handleSubmit, valid, values, submitting }) => (
             <Form onSubmit={handleSubmit}>

@@ -6,6 +6,7 @@ import { Post } from "../models/post";
 import { UserFormValues } from "../models/user";
 import { toast } from "react-toastify";
 import { history } from "..";
+import { Skill } from "../models/skill";
 
 axios.defaults.baseURL = "https://itmentor.herokuapp.com";
 
@@ -102,8 +103,8 @@ const Categories = {
   list: () => requests.get("/categories", {}),
   add: (id: string | undefined, name: string) =>
     requests.post("/categories", { id, name }),
-  choose: (consultantId: string | undefined, categoryId: string) =>
-    requests.post("/categories/choose", { consultantId, categoryId }),
+  choose: (mentorId: string, categoryId: string) =>
+    requests.post("/categories/choose", { mentorId, categoryId }),
 };
 
 const Messages = {
@@ -132,6 +133,8 @@ const Admin = {
 const Skills = {
   list: (categoryId: string | undefined) =>
     requests.get(`/skills/${categoryId}`, {}),
+  choose: (categoryId: string, skills: Skill[]) =>
+    axios.post("/skills/choose", { categoryId, skills }),
 };
 
 const agent = {

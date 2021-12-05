@@ -9,6 +9,7 @@ import FieldRadioButton from "../../components/FieldRadioButton/FieldRadioButton
 
 type CategoriesSkillsFieldsProps = {
   form: any;
+  values: any;
 };
 
 export const CategoriesSkillsFieldsValidation = (values: any) => {
@@ -24,6 +25,7 @@ export const CategoriesSkillsFieldsValidation = (values: any) => {
 
 const CategoriesSkillsFields: React.FC<CategoriesSkillsFieldsProps> = ({
   form,
+  values,
 }) => {
   const { mentorStore } = useStore();
   const {
@@ -38,16 +40,22 @@ const CategoriesSkillsFields: React.FC<CategoriesSkillsFieldsProps> = ({
     fetchSkillsError,
     skills,
   } = mentorStore;
-  const [selectedCategory, setSelectedCategory] = useState<string>("");
+  const { categories: initialCategory } = values;
+  const [selectedCategory, setSelectedCategory] = useState<string>(
+    initialCategory ? initialCategory : ""
+  );
 
   useEffect(() => {
     fetchCategories();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    fetchSkills(selectedCategory);
+  }, [fetchSkills, selectedCategory]);
+
   const handleCategoryChange = (id: string) => {
     setSelectedCategory(id);
-    fetchSkills(id);
   };
 
   return (
