@@ -27,21 +27,54 @@ type SubmitProps = {};
 const EditProfileForm: React.FC<EditProfileFormProps> = ({ user }) => {
   const { id = "", displayName, username, role } = user;
   const { mentorStore } = useStore();
-  const { loadConsultant, mentor, fetchMentorInProgress, fetchMentorError } =
-    mentorStore;
-  const { categories, skills } = mentor;
+  const {
+    loadConsultant,
+    mentor,
+    fetchMentorInProgress,
+    fetchMentorError,
+    fetchCategories,
+    fetchCategoriesInProgress,
+    fetchCategoriesError,
+    categories,
+    fetchSkills,
+    fetchSkillsInProgress,
+    fetchSkillsError,
+    skills: fechedSkills,
+  } = mentorStore;
+  const { categories: mentorCategories, skills: mentorSkills } = mentor;
+  const selectedCategoryId = mentorCategories
+    ? mentorCategories.length > 0
+      ? mentorCategories[0].id
+      : ""
+    : "";
+
   const [editMode, setEditMode] = useState(false);
   const isMentor = useMemo(() => role === ROLES.MENTOR, [role]);
 
   const initialCategoryMaybe =
     categories && categories.length > 0 ? { categories: categories[0].id } : {};
-  const initialSkillsMaybe = skills && skills.length > 0 ? { skills } : {};
+  const initialSkillsMaybe =
+    mentorSkills && mentorSkills.length > 0
+      ? { skills: mentorSkills.map((s) => s.id) }
+      : {};
 
   useEffect(() => {
     if (isMentor) {
       loadConsultant(id);
     }
   }, [id, isMentor, loadConsultant]);
+
+  useEffect(() => {
+    fetchCategories();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (selectedCategoryId) {
+      fetchSkills(selectedCategoryId);
+    }
+  }, [fetchSkills, selectedCategoryId]);
+
   return (
     <Container>
       <div className="edit-profile-form__edit-icon">
@@ -64,7 +97,19 @@ const EditProfileForm: React.FC<EditProfileFormProps> = ({ user }) => {
             <Form onSubmit={handleSubmit}>
               <EditProfileFields />
               {isMentor && (
-                <EditCategoriesSkillsFields form={form} values={values} />
+                <EditCategoriesSkillsFields
+                  fetchCategoriesInProgress={fetchCategoriesInProgress}
+                  fetchCategoriesError={fetchCategoriesError}
+                  categories={categories}
+                  fetchSkillsInProgress={fetchSkillsInProgress}
+                  fetchSkillsError={fetchSkillsError}
+                  skills={fechedSkills}
+                  handleCategoryChange={() => {}}
+                  selectedCategory={selectedCategoryId}
+                  disableCategorySelection={true}
+                  form={form}
+                  values={values}
+                />
               )}
               <Button
                 disabled={!valid}

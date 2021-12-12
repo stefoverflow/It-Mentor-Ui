@@ -81,7 +81,7 @@ export default observer(function ConsultantListItem({ mentor }: Props) {
         <Segment>123 Followers 45 Following</Segment>
         <Segment>
           <Progress percent={percentage} style={{ width: "17em" }} success>
-            {mentor.categories[0]} Level: {level}
+            {mentor?.categories[0]?.name} Level: {level}
           </Progress>
         </Segment>
         <Segment>

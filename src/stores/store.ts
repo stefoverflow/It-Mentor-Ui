@@ -4,6 +4,7 @@ import CommentStore from "./commentStore";
 import CommonStore from "./commonStore";
 import MentorStore from "./mentorStore";
 import MessageStore from "./messageStore";
+import ProfileStore from "./profileStore";
 import PostStore from "./postStore";
 import ReviewStore from "./reviewStore";
 import SkillStore from "./skillStore";
@@ -16,6 +17,7 @@ interface Store {
   commonStore: CommonStore;
   messageStore: MessageStore;
   postStore: PostStore;
+  profileStore: ProfileStore;
   categoryStore: CategoryStore;
   commentStore: CommentStore;
   skillStore: SkillStore;
@@ -28,6 +30,7 @@ export const store: Store = {
   commonStore: new CommonStore(),
   messageStore: new MessageStore(),
   postStore: new PostStore(),
+  profileStore: new ProfileStore(),
   categoryStore: new CategoryStore(),
   commentStore: new CommentStore(),
   skillStore: new SkillStore(),

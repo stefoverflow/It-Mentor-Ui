@@ -1,15 +1,25 @@
+import React from "react";
 import { observer } from "mobx-react-lite";
-import React, { useEffect, useState } from "react";
 import { ValidationErrors } from "final-form";
 import { Loader } from "semantic-ui-react";
-import { useStore } from "../../stores/store";
 import { required } from "../../util/validators";
 import FieldCheckbox from "../../components/FieldCheckbox/FieldCheckbox";
 import FieldRadioButton from "../../components/FieldRadioButton/FieldRadioButton";
+import { Skill } from "../../models/skill";
+import { Category } from "../../models/category";
 
 type CategoriesSkillsFieldsProps = {
   form: any;
   values: any;
+  fetchCategoriesInProgress: boolean;
+  fetchCategoriesError: string;
+  categories: Category[];
+  fetchSkillsInProgress: boolean;
+  fetchSkillsError: string;
+  skills: Skill[];
+  handleCategoryChange: any;
+  selectedCategory: string;
+  disableCategorySelection?: boolean;
 };
 
 export const CategoriesSkillsFieldsValidation = (values: any) => {
@@ -26,38 +36,16 @@ export const CategoriesSkillsFieldsValidation = (values: any) => {
 const CategoriesSkillsFields: React.FC<CategoriesSkillsFieldsProps> = ({
   form,
   values,
+  fetchCategoriesInProgress,
+  fetchCategoriesError,
+  categories,
+  fetchSkillsInProgress,
+  fetchSkillsError,
+  skills,
+  handleCategoryChange,
+  selectedCategory,
+  disableCategorySelection = false,
 }) => {
-  const { mentorStore } = useStore();
-  const {
-    //categories
-    fetchCategories,
-    fetchCategoriesInProgress,
-    fetchCategoriesError,
-    categories,
-    //skills
-    fetchSkills,
-    fetchSkillsInProgress,
-    fetchSkillsError,
-    skills,
-  } = mentorStore;
-  const { categories: initialCategory } = values;
-  const [selectedCategory, setSelectedCategory] = useState<string>(
-    initialCategory ? initialCategory : ""
-  );
-
-  useEffect(() => {
-    fetchCategories();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    fetchSkills(selectedCategory);
-  }, [fetchSkills, selectedCategory]);
-
-  const handleCategoryChange = (id: string) => {
-    setSelectedCategory(id);
-  };
-
   return (
     <div>
       {fetchCategoriesInProgress ? (
@@ -74,6 +62,7 @@ const CategoriesSkillsFields: React.FC<CategoriesSkillsFieldsProps> = ({
               label={c.name}
               name="categories"
               value={c.id}
+              disabled={disableCategorySelection}
               onChange={() => {
                 form.change("categories", c.id);
                 form.change("skills", null);

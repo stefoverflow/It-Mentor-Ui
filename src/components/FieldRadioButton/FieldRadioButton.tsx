@@ -9,10 +9,11 @@ type FieldRadioButtonProps = {
   value: string;
   validate?: any;
   onChange?: any;
+  disabled?: boolean;
 };
 
 const FieldRadioButton: React.FC<FieldRadioButtonProps> = (props) => {
-  const { name, label, value, validate, onChange } = props;
+  const { name, label, value, validate, onChange, disabled = false } = props;
   const onChangeMaybe = onChange ? { onChange } : {};
   return (
     <label>
@@ -23,6 +24,7 @@ const FieldRadioButton: React.FC<FieldRadioButtonProps> = (props) => {
         type="radio"
         value={value}
         validate={validate}
+        disabled={disabled}
       />
       {label}
     </label>

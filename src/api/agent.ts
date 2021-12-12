@@ -64,12 +64,22 @@ const requests = {
     axios.post(url, body).then(responseBodyForPost),
   put: (url: string, body: {}) => axios.put(url, body).then(responseBody),
   del: (url: string, body: {}) => axios.delete(url, body).then(responseBody),
+  patch: (url: string, body: {}) => axios.patch(url, body).then(responseBody),
 };
 
 const Mentors = {
   getMentorsPaginated: (PageNumber: number, PageSize: number) =>
     requests.get(`/mentors?PageNumber=${PageNumber}&PageSize=${PageSize}`, {}),
   getMentor: (id: string) => requests.get(`/mentors/${id}`, {}),
+  editMentor: (id: string, displayName: string, bio: string, skills: Skill[]) =>
+    requests.patch(`/mentors`, { id, displayName, bio, skills }),
+  uploadPhoto: (file: Blob) => {
+    let formData = new FormData();
+    formData.append("File", file);
+    return axios.post("photos", formData, {
+      headers: { "Content-type": "multipart/form-data" },
+    });
+  },
   canPostReview: (mentorId: string) =>
     requests.post(`/reviews`, { id: mentorId }),
   postAReview: (
@@ -134,7 +144,7 @@ const Skills = {
   list: (categoryId: string | undefined) =>
     requests.get(`/skills/${categoryId}`, {}),
   choose: (categoryId: string, skills: Skill[]) =>
-    axios.post("/skills/choose", { categoryId, skills }),
+    axios.post(`/skills`, skills),
 };
 
 const agent = {
