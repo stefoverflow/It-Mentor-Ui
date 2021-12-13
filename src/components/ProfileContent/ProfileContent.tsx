@@ -1,6 +1,7 @@
 import React from "react";
 import { Tab } from "semantic-ui-react";
 import EditProfileForm from "../../forms/EditProfileForm/EditProfileForm";
+import ProfileCoverLetter from "../ProfileCoverLetter/ProfileCoverLetter";
 import ProfilePhoto from "../ProfilePhoto/ProfilePhoto";
 
 type ProfileContentProps = {
@@ -22,14 +23,9 @@ export default function ProfileContent({
       ),
     },
     { menuItem: "Photos", render: () => <ProfilePhoto photo={photo} /> },
-    { menuItem: "Events", render: () => <Tab.Pane>Events Content</Tab.Pane> },
     {
-      menuItem: "Followers",
-      render: () => <Tab.Pane>Followers Content</Tab.Pane>,
-    },
-    {
-      menuItem: "Following",
-      render: () => <Tab.Pane>Following Content</Tab.Pane>,
+      menuItem: "Cover letter",
+      render: () => <ProfileCoverLetter />,
     },
   ];
 

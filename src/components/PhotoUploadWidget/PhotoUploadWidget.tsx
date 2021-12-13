@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { observer } from "mobx-react-lite";
 import { Grid, Header, Button } from "semantic-ui-react";
 import PhotoWidgetCropper from "../PhotoWidgetCropper/PhotoWidgetCropper";
-import PhotoWidgetDropzone from "../PhotoWidgetDropzone/PhotoWidgetDropzone";
+import PhotoWidgetDropzone from "../WidgetDropzone/WidgetDropzone";
 import { useStore } from "../../stores/store";
 
 type Props = {};
@@ -32,7 +32,7 @@ const PhotoUploadWidget: React.FC<Props> = () => {
     <Grid>
       <Grid.Column width={4}>
         <Header sub color="teal" content="Step 1 - Add Photo" />
-        <PhotoWidgetDropzone setFiles={setFiles} />
+        <PhotoWidgetDropzone text="Drop image here" setFiles={setFiles} />
       </Grid.Column>
       <Grid.Column width={1} />
       <Grid.Column width={4}>

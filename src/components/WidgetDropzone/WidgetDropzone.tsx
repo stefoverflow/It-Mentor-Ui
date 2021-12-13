@@ -3,10 +3,11 @@ import { useDropzone } from "react-dropzone";
 import { Header, Icon } from "semantic-ui-react";
 
 interface Props {
+  text: string;
   setFiles: (files: any) => void;
 }
 
-const PhotoWidgetDropzone = ({ setFiles }: Props) => {
+const PhotoWidgetDropzone = ({ text, setFiles }: Props) => {
   const dzStyles = {
     border: "dashed 3px #eee",
     borderColor: "#eee",
@@ -39,7 +40,7 @@ const PhotoWidgetDropzone = ({ setFiles }: Props) => {
     >
       <input {...getInputProps()} />
       <Icon name="upload" size="huge" />
-      <Header content="Drop image here" />
+      <Header content={text} />
     </div>
   );
 };

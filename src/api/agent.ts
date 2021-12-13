@@ -80,6 +80,13 @@ const Mentors = {
       headers: { "Content-type": "multipart/form-data" },
     });
   },
+  uploadCV: (file: Blob) => {
+    let formData = new FormData();
+    formData.append("File", file);
+    return axios.post("jobApplication", formData, {
+      headers: { "Content-type": "multipart/form-data" },
+    });
+  },
   canPostReview: (mentorId: string) =>
     requests.post(`/reviews`, { id: mentorId }),
   postAReview: (
