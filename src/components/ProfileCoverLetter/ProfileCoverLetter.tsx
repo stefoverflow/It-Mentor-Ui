@@ -8,9 +8,31 @@ const ProfileCoverLetter: React.FC<{}> = () => {
 
   console.log("files", files);
 
+  function fileToByteArray(file: any) {
+    return new Promise((resolve, reject) => {
+      try {
+        let reader = new FileReader();
+        let fileByteArray: any = [];
+        reader.readAsArrayBuffer(file);
+        reader.onloadend = (evt: any) => {
+          if (evt.target.readyState == FileReader.DONE) {
+            let arrayBuffer = evt.target.result,
+              array = new Uint8Array(arrayBuffer);
+            array.forEach((byte: any) => fileByteArray.push(byte));
+          }
+          resolve(fileByteArray);
+        };
+      } catch (e) {
+        reject(e);
+      }
+    });
+  }
+
   const uploadCV = async () => {
     try {
-      const response = await agent.Mentors.uploadCV(files[0]);
+      const byteArray = await fileToByteArray(files[0]);
+      console.log({ byteArray });
+      const response = await agent.Mentors.uploadCV(byteArray);
       console.log("response", response);
     } catch (e) {
       console.error(e);

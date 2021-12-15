@@ -80,12 +80,24 @@ const Mentors = {
       headers: { "Content-type": "multipart/form-data" },
     });
   },
-  uploadCV: (file: Blob) => {
-    let formData = new FormData();
-    formData.append("File", file);
-    return axios.post("jobApplication", formData, {
-      headers: { "Content-type": "multipart/form-data" },
-    });
+  uploadCV: (file: any) => {
+    // let formData = new FormData();
+    // formData.append("File", file);
+    return axios.post(
+      "jobApplication",
+      {
+        category: "Web Development",
+        country: "Serbia",
+        email: "stefankrstic96@yahoo.com",
+        firstName: "Stefan",
+        lastName: "Krstic",
+        phoneNumber: "0643344556",
+        cv: file,
+      },
+      {
+        // headers: { "Content-Encoding": "multipart/form-data" },
+      }
+    );
   },
   canPostReview: (mentorId: string) =>
     requests.post(`/reviews`, { id: mentorId }),
