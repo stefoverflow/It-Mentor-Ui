@@ -18,6 +18,7 @@
     "classnames": "^2.3.1",
     "final-form": "^4.20.2",
     "formik": "^2.2.6",
+    "lodash": "^4.17.21",
     "mobx": "^6.3.0",
     "mobx-react-lite": "^3.2.0",
     "mobx-utils": "^6.0.4",
@@ -59,6 +60,7 @@
     ]
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.178",
     "@types/react-router-dom": "^5.1.7"
   }
 }

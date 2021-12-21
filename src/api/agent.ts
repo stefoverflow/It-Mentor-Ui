@@ -70,6 +70,8 @@ const requests = {
 const Mentors = {
   getMentorsPaginated: (PageNumber: number, PageSize: number) =>
     requests.get(`/mentors?PageNumber=${PageNumber}&PageSize=${PageSize}`, {}),
+  searchMentorsBySkill: (skillName: string) =>
+    requests.post("/mentors", { name: skillName }),
   getMentor: (id: string) => requests.get(`/mentors/${id}`, {}),
   editMentor: (id: string, displayName: string, bio: string, skills: Skill[]) =>
     requests.patch(`/mentors`, { id, displayName, bio, skills }),

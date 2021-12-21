@@ -48,6 +48,10 @@ export default class MentorStore {
   review: Review | undefined = undefined;
   // currentConsultants: Consultant[] = [];
   filteredConsultants: ConsultantSearchDto[] = [];
+  // search mentors by skill
+  searchMentorsInProgress: boolean = false;
+  searchMentorsError: string = "";
+  searchedMentors: Mentor[] = [];
 
   constructor() {
     makeAutoObservable(this);
@@ -207,6 +211,28 @@ export default class MentorStore {
     } finally {
       runInAction(() => {
         this.chooseSkillsInProgress = false;
+      });
+    }
+  };
+
+  searchMentors = async (skillName: string) => {
+    runInAction(() => {
+      this.searchMentorsInProgress = true;
+      this.searchMentorsError = "";
+    });
+    try {
+      const response = await agent.Mentors.searchMentorsBySkill(skillName);
+      runInAction(() => {
+        this.searchedMentors = response.value;
+      });
+    } catch {
+      runInAction(() => {
+        this.searchMentorsError =
+          "Doslo je do greske prilikom pretrage mentora.";
+      });
+    } finally {
+      runInAction(() => {
+        this.searchMentorsInProgress = false;
       });
     }
   };

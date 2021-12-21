@@ -8,13 +8,13 @@ import {
   Sidebar,
   Icon,
   Segment,
-  // SearchProps,
+  Search,
+  SearchProps,
 } from "semantic-ui-react";
-// import agent from "../../api/agent";
 import { MAX_MOBILE_SCREEN_WIDTH } from "../../constants";
 import { isEmptyObject } from "../../util/data";
-// import { Category } from "../../models/category";
 import { useStore } from "../../stores/store";
+import { debounce } from "lodash";
 
 import "./Navbar.scss";
 
@@ -26,23 +26,19 @@ export default observer(function Navbar() {
     [currentUser]
   );
 
-  // const { consultantStore } = useStore();
   const {
-    userStore: { /*user,*/ logout },
+    mentorStore,
+    userStore: { logout },
   } = useStore();
-
-  // const [categories, setCategories] = useState<Category[]>([]);
-  // const [isLoading, setIsLoading] = useState<boolean>(false);
-  // const [searchedName, setSearchedName] = useState<string | undefined>("");
+  const {
+    searchMentorsInProgress,
+    // searchMentorsError,
+    searchedMentors,
+    searchMentors,
+  } = mentorStore;
 
   const [width, setWidth] = useState(window.innerWidth);
   const [sidebarVisible, setSidebarVisible] = useState(false);
-
-  // useEffect(() => {
-  //   agent.Categories.list().then((response) => {
-  //     setCategories(response);
-  //   });
-  // }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -54,21 +50,28 @@ export default observer(function Navbar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // const handleSearchChange = (
-  //   event: React.MouseEvent<HTMLElement, MouseEvent>,
-  //   data: SearchProps
-  // ) => {
-  //   setIsLoading(true);
-  //   setSearchedName(data.value);
-
-  //   consultantStore.filterConsultants(data.value);
-  // };
+  const handleSearchChange = debounce(
+    (_event: React.MouseEvent<HTMLElement, MouseEvent>, data: SearchProps) => {
+      searchMentors(data.value!);
+    },
+    500
+  );
 
   const tabs = (
     <React.Fragment>
       <MenuItem as={NavLink} to="/" exact position="left">
         Home
       </MenuItem>
+      <MenuItem
+        as={Search}
+        position="left"
+        loading={searchMentorsInProgress}
+        onSearchChange={handleSearchChange}
+        results={searchedMentors}
+        noResultsMessage="Nismo pronasli mentore."
+        // iskoristiti funkciju ispod da renderujem kartice mentora
+        // resultRenderer
+      />
       {isLoggedIn ? (
         <Menu.Menu position="right">
           <MenuItem as={NavLink} to="/mentors" exact>
