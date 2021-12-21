@@ -29,7 +29,7 @@ export default observer(function LoginForm() {
             userStore
               .login(values)
               .then((response: any) =>
-                response.data.role === "mentor"
+                response?.data?.role === "mentor"
                   ? history.push("/profile")
                   : history.push("/mentors")
               )
