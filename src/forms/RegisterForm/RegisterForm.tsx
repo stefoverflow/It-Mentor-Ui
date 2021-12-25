@@ -84,7 +84,7 @@ export default function RegisterForm() {
                 {roles.map((role) => (
                   <FieldRadioButton
                     key={role.value}
-                    name="role"
+                    name="roleName"
                     value={role.value}
                     label={role.text}
                     validate={required("You must select role.")}
