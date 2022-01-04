@@ -52,6 +52,10 @@ export default class MentorStore {
   searchMentorsInProgress: boolean = false;
   searchMentorsError: string = "";
   searchedMentors: Mentor[] = [];
+  // choose mentor
+  chooseMentorInProgress: boolean = false;
+  chooseMentorError: string = "";
+  chooseMentorSent: boolean = false;
 
   constructor() {
     makeAutoObservable(this);
@@ -236,6 +240,26 @@ export default class MentorStore {
       });
     }
   };
+
+  chooseMentor = async (mentorId: string, numberOfSessions: string) => {
+    runInAction(() => {
+      this.chooseMentorInProgress = true;
+      this.chooseMentorError = '';
+      this.chooseMentorSent = false;
+    });
+    try {
+      await agent.Mentors.chooseMentor(mentorId, numberOfSessions);
+      runInAction(() => {
+        this.chooseMentorSent = true;
+      });
+    } catch {
+      runInAction(() => {
+        this.chooseMentorError = 'Doslo je do greske prilikom odabira mentora.'
+      });
+    } finally {
+      runInAction(() => this.chooseMentorInProgress = false);
+    }
+  }
 
   // updateConsultants = (consultant: Consultant) => {
   //   this.consultants.unshift(consultant);

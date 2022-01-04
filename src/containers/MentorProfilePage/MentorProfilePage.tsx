@@ -22,7 +22,7 @@ const MentorProfilePage: React.FC<MentorProfileProps> = (props) => {
   const currentUser: User = JSON.parse(localStorage.getItem("user") || "{}");
   const { role } = currentUser;
   const isClient = useMemo(() => role === ROLES.CLIENT, [role]);
-  const { loadConsultant, fetchMentorInProgress, fetchMentorError, mentor } =
+  const { loadConsultant, fetchMentorInProgress, fetchMentorError, mentor, chooseMentor, chooseMentorInProgress, chooseMentorError, chooseMentorSent } =
     mentorStore;
   const mentorId = props.match.params.id;
 
@@ -43,7 +43,7 @@ const MentorProfilePage: React.FC<MentorProfileProps> = (props) => {
         <div className="mentor-profile-page__error">{fetchMentorError}</div>
       ) : (
         <>
-          <ProfileHeader mentor={mentor} />
+          <ProfileHeader mentor={mentor} chooseMentor={chooseMentor} chooseMentorInProgress={chooseMentorInProgress} chooseMentorError={chooseMentorError} chooseMentorSent={chooseMentorSent}/>
           <ProfileFeed mentor={mentor} isClient={isClient} />
         </>
       )}
