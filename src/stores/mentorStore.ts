@@ -6,6 +6,7 @@ import { v4 as uuid } from "uuid";
 import { ConsultantSearchDto } from "../models/consultantSearchDto";
 import { Category } from "../models/category";
 import { Skill } from "../models/skill";
+import { Client } from "../models/client";
 
 export default class MentorStore {
   // mentors
@@ -56,6 +57,10 @@ export default class MentorStore {
   chooseMentorInProgress: boolean = false;
   chooseMentorError: string = "";
   chooseMentorSent: boolean = false;
+  // fetch clients
+  fetchClientsInProgress: boolean = false;
+  fetchClientsError: string = "";
+  clients: Client[] = [];
 
   constructor() {
     makeAutoObservable(this);
@@ -258,6 +263,22 @@ export default class MentorStore {
       });
     } finally {
       runInAction(() => this.chooseMentorInProgress = false);
+    }
+  };
+
+  fetchClients = async () => {
+    runInAction(() => {
+      this.fetchClientsInProgress = true
+      this.fetchClientsError = '';
+    });
+    try {
+      const { value } =  await agent.Mentors.getClients();
+      runInAction(() => this.clients = value);
+    } catch {
+      runInAction(() => this.fetchClientsError = 'Doslo je do greske prilikom pribavljanja liste klijenta.');
+    }
+    finally {
+      runInAction(() => this.fetchClientsInProgress = false );
     }
   }
 

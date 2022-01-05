@@ -22,9 +22,10 @@ export default observer(function Navbar() {
   const currentUser = JSON.parse(localStorage.getItem("user") || "{}");
   const isLoggedIn = useMemo(() => !isEmptyObject(currentUser), [currentUser]);
   const isAdmin = useMemo(
-    () => (currentUser ? currentUser.role === "admin" : false),
+    () => (currentUser ? currentUser.role === "Admin" : false),
     [currentUser]
   );
+  const isMentor = useMemo(() => (currentUser ? currentUser.role === 'Mentor' : false), []);
 
   const {
     mentorStore,
@@ -77,6 +78,11 @@ export default observer(function Navbar() {
           <MenuItem as={NavLink} to="/mentors" exact>
             Mentors
           </MenuItem>
+          {isMentor && (
+            <MenuItem as={NavLink} to="/clients" exact>
+              Clients
+            </MenuItem>
+          )}
           <MenuItem as={NavLink} to="/profile" exact>
             Profile
           </MenuItem>

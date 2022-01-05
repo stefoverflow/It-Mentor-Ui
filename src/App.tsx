@@ -16,6 +16,7 @@ import CategoriesForm from "./forms/CategoriesForm/CategoriesForm";
 import SkillsForm from "./forms/SkillsForm/SkillsForm";
 import ProfilePage from "./containers/ProfilePage/ProfilePage";
 import CategoriesSkillsForm from "./forms/CategoriesSkillsForm/CategoriesSkillsForm";
+import ClientsPage from './containers/ClientsPage/ClientsPage';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
       <div /*style={{ marginTop: "7em" }}*/>
         <Switch>
           <Route exact path="/" component={LandingPage} />
+          <Route path="/clients" component={ClientsPage} />
           <Route path="/manage" component={AdminPanel} />
           <Route path="/login" component={LoginForm} />
           <Route path="/register" component={RegisterForm} />
