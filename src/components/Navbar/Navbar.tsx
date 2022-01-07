@@ -19,18 +19,17 @@ import { debounce } from "lodash";
 import "./Navbar.scss";
 
 export default observer(function Navbar() {
-  const currentUser = JSON.parse(localStorage.getItem("user") || "{}");
-  const isLoggedIn = useMemo(() => !isEmptyObject(currentUser), [currentUser]);
+  const {
+    mentorStore,
+    userStore: { logout, currentUser },
+  } = useStore();
+  const isLoggedIn = useMemo(() => currentUser ? true : false, [currentUser]);
   const isAdmin = useMemo(
     () => (currentUser ? currentUser.role === "Admin" : false),
     [currentUser]
   );
   const isMentor = useMemo(() => (currentUser ? currentUser.role === 'Mentor' : false), []);
 
-  const {
-    mentorStore,
-    userStore: { logout },
-  } = useStore();
   const {
     searchMentorsInProgress,
     // searchMentorsError,

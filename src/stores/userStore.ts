@@ -5,14 +5,14 @@ import { User, UserFormValues } from "../models/user";
 import { store } from "./store";
 
 export default class UserStore {
-  user: User | null = null;
+  currentUser: User | null = JSON.parse(localStorage.getItem("user") || "{}");
 
   constructor() {
     makeAutoObservable(this);
   }
 
   get isLoggedIn() {
-    return !!this.user;
+    return !!this.currentUser;
   }
 
   getUsersPaginated = async (PageNumber: number, PageSize: number) => {
@@ -28,7 +28,7 @@ export default class UserStore {
       const user = await agent.Account.login(creds);
       store.commonStore.setToken(user.token);
       store.commonStore.setUser(user);
-      runInAction(() => (this.user = user));
+      runInAction(() => (this.currentUser = user));
       return user;
     } catch (error) {
       throw error;
@@ -39,17 +39,16 @@ export default class UserStore {
     store.commonStore.setToken(null);
     window.localStorage.removeItem("jwt");
     window.localStorage.removeItem("user");
-    this.user = null;
+    this.currentUser = null;
     history.push("/");
   };
 
   register = async (creds: UserFormValues) => {
     try {
       const user = await agent.Account.register(creds);
-      console.log("register", user);
       store.commonStore.setToken(user.token);
       store.commonStore.setUser(user);
-      runInAction(() => (this.user = user));
+      runInAction(() => (this.currentUser = user));
     } catch (error) {
       throw error;
     }

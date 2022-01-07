@@ -14,7 +14,7 @@ export default class CommentStore{
     createHubConnection = (postId:string)=>{
         this.hubConnection=new HubConnectionBuilder()
             .withUrl('http://localhost:5000/chat?postId='+ postId,{
-                accessTokenFactory:()=>store.userStore.user?.token!
+                accessTokenFactory:()=>store.userStore.currentUser?.token!
             })
             .withAutomaticReconnect()
             .configureLogging(LogLevel.Information)
