@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import MentorsPage from "./containers/MentorsPage/MentorsPage";
 import { observer } from "mobx-react-lite";
 import { Route, Switch } from "react-router-dom";
-import LandingPage from "./containers/LandingPage/LandingPage";
+import NewLandingPage from './containers/NewLandingPage/NewLandingPage';
 import AdminPanel from "./containers/AdminPanelPage/AdminPanelPage";
 import LoginForm from "./forms/LoginForm/LoginForm";
 import MentorProfilePage from "./containers/MentorProfilePage/MentorProfilePage";
@@ -23,9 +23,9 @@ const App = () => {
     <div>
       <ToastContainer position="bottom-right" hideProgressBar />
       <Navbar />
-      <div /*style={{ marginTop: "7em" }}*/>
+      <div>
         <Switch>
-          <Route exact path="/" component={LandingPage} />
+          <Route exact path="/" component={NewLandingPage} />
           <Route path="/clients" component={ClientsPage} />
           <Route path="/manage" component={AdminPanel} />
           <Route path="/login" component={LoginForm} />

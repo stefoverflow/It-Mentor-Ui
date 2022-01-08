@@ -1,0 +1,126 @@
+@import "../../scss/color";
+
+
+.landing {
+    &__video {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    &__gradient {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        background: linear-gradient(109.31deg, rgba(0, 0, 0, 0.9) 7.33%, rgba(72, 215, 209, 0.6) 99.41%);
+    }
+
+    &__become-mentor {
+        position: fixed;
+        top: 40px;
+        right: 140px;
+        padding: 18px 26px;
+        background-color: $color-main-purple;
+        color: $color-white;
+        box-shadow: 0px 18px 60px -12px rgba(141, 92, 246, 0.3);
+        border-radius: 5px;
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: 300;
+        font-family: GiloryLight;
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+
+    &__content {
+        position: fixed;
+        // top: 134px;
+        top: 100px;
+        color: #f1f1f1;
+        width: 100%;
+        text-align: center;
+        font-weight: 800;
+        
+        &__title {
+            font-size: 80px;
+            line-height: 98px;
+            letter-spacing: 0.04em;
+        }
+
+        &__description {
+            font-size: 24px;
+            line-height: 29px;
+            letter-spacing: 0.04em;
+            max-width: 1087px;
+            margin: 0 auto;
+        }
+
+        &__client-container {
+            width: max-content;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 32px;
+            // gap: 20px;
+            gap: 12px;
+            font-size: 24px;
+            line-height: 28px;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            // margin-top: 56px;
+            margin-top: 20px;
+    
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(20px);
+            border-radius: 5px;
+
+            &__start-button {
+                width: 250px;
+                text-align: center;
+                padding: 20px;
+                background-color: $color-main-red;
+                color: $color-white;
+                border-radius: 5px;
+
+                &:hover {
+                    color: $color-primary;
+                }
+            }
+
+            &__image-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 138px;
+                height: 138px;
+                border-radius: 50%;
+                background-color: $color-white;
+
+                &__image {
+                    width: 72px;
+                    height: 92px;
+                }
+            }
+
+            &__got-account {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+
+                &__login-link {
+                    color: $color-main-red;
+                }
+            }
+        }
+    }
+}
