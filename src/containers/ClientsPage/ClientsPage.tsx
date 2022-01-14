@@ -1,17 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { Container, Loader, Table } from 'semantic-ui-react';
 import { useStore } from '../../stores/store';
 import { observer } from "mobx-react-lite";
+import { Redirect } from 'react-router-dom';
 
 import './ClientsPage.scss';
 
 const ClientsPage = () => {
-    const { mentorStore } = useStore();
+    const { mentorStore, userStore: { currentUser } } = useStore();
     const { fetchClients, fetchClientsInProgress, fetchClientsError, clients } = mentorStore;
-
+    const isMentor = useMemo(() => (currentUser ? currentUser.role === 'Mentor' : false), []);
+    
     useEffect(() => {
         fetchClients();
     }, []);
+    
+    if(!isMentor) 
+        return <Redirect to="/mentors"/>;
 
     return <Container className="clients-page__container">
         {fetchClientsInProgress ? <Loader inverted active/>
