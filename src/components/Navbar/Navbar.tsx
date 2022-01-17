@@ -12,11 +12,17 @@ import {
   SearchProps,
 } from "semantic-ui-react";
 import { MAX_MOBILE_SCREEN_WIDTH } from "../../constants";
-import { isEmptyObject } from "../../util/data";
 import { useStore } from "../../stores/store";
 import { debounce } from "lodash";
 
 import "./Navbar.scss";
+import { Skill } from "../../models/skill";
+
+interface SearchResultType {
+  displayName: string;
+  id: string;
+  skills: Skill[];
+}
 
 export default observer(function Navbar() {
   const {
@@ -27,8 +33,9 @@ export default observer(function Navbar() {
   const isAdmin = useMemo(
     () => (currentUser ? currentUser.role === "Admin" : false),
     [currentUser]
-  );
-  const isMentor = useMemo(() => (currentUser ? currentUser.role === 'Mentor' : false), []);
+    );
+    const isMentor = useMemo(() => (currentUser ? currentUser.role === 'Mentor' : false), []);
+    const [searchText, setSearchText] = useState<string>('');
 
   const {
     searchMentorsInProgress,
@@ -53,6 +60,7 @@ export default observer(function Navbar() {
   const handleSearchChange = debounce(
     (_event: React.MouseEvent<HTMLElement, MouseEvent>, data: SearchProps) => {
       searchMentors(data.value!);
+      setSearchText(data.value!);
     },
     500
   );
@@ -68,9 +76,27 @@ export default observer(function Navbar() {
         loading={searchMentorsInProgress}
         onSearchChange={handleSearchChange}
         results={searchedMentors}
+        resultRenderer={(m: SearchResultType) => (
+          <div className="navbar__search-result" onClick={() => history.push(`/mentors/${m.id}`)}> 
+            <div>
+              {m.displayName} -
+            </div>
+            <div className="navbar__search-result">
+              {m.skills.map(({ name }: Skill) => {
+                const match = name.includes(searchText);
+                const rest = name.replace(searchText, '');
+              return (
+                 <div className="navbar__search-result__skill">
+                   <b>
+                     {match && searchText}
+                   </b>
+                   {rest}
+                </div>)
+              })}
+            </div>
+          </div>
+        )}
         noResultsMessage="Nismo pronasli mentore."
-        // iskoristiti funkciju ispod da renderujem kartice mentora
-        // resultRenderer
       />
       {isLoggedIn ? (
         <Menu.Menu position="right">
@@ -78,13 +104,15 @@ export default observer(function Navbar() {
             Mentors
           </MenuItem>
           {isMentor && (
-            <MenuItem as={NavLink} to="/clients" exact>
-              Clients
-            </MenuItem>
+            <>
+              <MenuItem as={NavLink} to="/clients" exact>
+                Clients
+              </MenuItem>
+              <MenuItem as={NavLink} to="/profile" exact>
+                Profile
+              </MenuItem>
+            </>
           )}
-          <MenuItem as={NavLink} to="/profile" exact>
-            Profile
-          </MenuItem>
           <MenuItem
             onClick={() => {
               logout();
