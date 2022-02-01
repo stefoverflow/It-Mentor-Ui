@@ -21,17 +21,16 @@
 
     &__become-mentor {
         position: fixed;
-        top: 40px;
-        right: 140px;
-        padding: 18px 26px;
+        top: 4.0rem;
+        right: 14.0rem;
+        padding: 1.8rem 2.6rem;
         background-color: $color-main-purple;
         color: $color-white;
         box-shadow: 0px 18px 60px -12px rgba(141, 92, 246, 0.3);
         border-radius: 5px;
-        font-size: 24px;
-        line-height: 28px;
+        font-size: 2.4rem;
+        line-height: 2.8rem;
         font-weight: 300;
-        font-family: GiloryLight;
 
         &:hover {
             color: $color-primary;
@@ -40,25 +39,24 @@
 
     &__content {
         position: fixed;
-        // top: 134px;
-        top: 100px;
+        top: 13.4rem;
         color: #f1f1f1;
         width: 100%;
         text-align: center;
         font-weight: 800;
         
         &__title {
-            font-size: 80px;
-            line-height: 98px;
+            font-size: 8rem;
+            line-height: 9.8rem;
             letter-spacing: 0.04em;
         }
 
         &__description {
-            font-size: 24px;
-            line-height: 29px;
-            letter-spacing: 0.04em;
-            max-width: 1087px;
-            margin: 0 auto;
+            font-size: 2.4rem;
+            line-height: 2.9rem;
+            letter-spacing: 0.04rem;
+            max-width: 108.7rem;
+            margin: 2.0rem auto 5.6rem;
         }
 
         &__client-container {
@@ -68,24 +66,21 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 32px;
-            // gap: 20px;
-            gap: 12px;
-            font-size: 24px;
-            line-height: 28px;
+            padding: 3.2rem;
+            gap: 1.2rem;
+            font-size: 2.4rem;
+            line-height: 2.8rem;
             font-weight: 800;
             letter-spacing: 0.04em;
-            // margin-top: 56px;
-            margin-top: 20px;
     
             background: rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(20px);
             border-radius: 5px;
 
             &__start-button {
-                width: 250px;
+                width: 25.0rem;
                 text-align: center;
-                padding: 20px;
+                padding: 2.0rem;
                 background-color: $color-main-red;
                 color: $color-white;
                 border-radius: 5px;
@@ -99,14 +94,14 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                width: 138px;
-                height: 138px;
+                width: 13.8rem;
+                height: 13.8rem;
                 border-radius: 50%;
                 background-color: $color-white;
 
                 &__image {
-                    width: 72px;
-                    height: 92px;
+                    width: 7.2rem;
+                    height: 9.2rem;
                 }
             }
 
@@ -115,7 +110,7 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                gap: 8px;
+                gap: 0.8rem;
 
                 &__login-link {
                     color: $color-main-red;
