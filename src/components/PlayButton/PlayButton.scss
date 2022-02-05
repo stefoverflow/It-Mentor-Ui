@@ -1,0 +1,22 @@
+.play-button {
+    position: absolute;
+    left: 47.55%;
+    right: 47.55%;
+    top: 33.55%;
+    bottom: 67.55%;
+    
+    width: 9.5rem;
+    height: 9.4rem;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(180deg, #3F50FF -49.07%, #97A0FF 359.67%);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .icon {
+        width: 1.7rem;
+        height: 2.4rem;
+    }
+}
