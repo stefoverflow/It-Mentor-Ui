@@ -26,7 +26,7 @@ const NewLandingPage: React.FC<NewLandingPageType> = () => {
             </div>
             <div className="landing__content__client-container">
                 <div>Do prvog posla</div>
-                <Link to="/register" className="landing__content__client-container__start-button">
+                <Link to="/client-landing" className="landing__content__client-container__start-button">
                     Start
                 </Link>
                 <div className="landing__content__client-container__image-container">

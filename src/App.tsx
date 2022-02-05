@@ -1,4 +1,5 @@
 import React from "react";
+import ClientLandingPage from './containers/ClientLandingPage/ClientLandingPage';
 import Navbar from "./components/Navbar/Navbar";
 import MentorsPage from "./containers/MentorsPage/MentorsPage";
 import { observer } from "mobx-react-lite";
@@ -22,10 +23,11 @@ const App = () => {
   return (
     <div>
       <ToastContainer position="bottom-right" hideProgressBar />
-      <Navbar />
+      {/* <Navbar /> */}
       <div>
         <Switch>
           <Route exact path="/" component={NewLandingPage} />
+          <Route path="/client-landing" component={ClientLandingPage} />
           <Route path="/clients" component={ClientsPage} />
           <Route path="/manage" component={AdminPanel} />
           <Route path="/login" component={LoginForm} />
