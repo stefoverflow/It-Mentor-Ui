@@ -18,6 +18,7 @@ import { PAGE_LIMIT } from "../../constants";
 
 import "./AdminPanelPage.scss";
 import ConfirmModal from "../../components/ConfirmModal/ConfirmModal";
+import PromoteModal from "../../components/PromoteModal/PromoteModal";
 
 type AdminPanelPageProps = {};
 
@@ -29,6 +30,7 @@ const AdminPanelPage: React.FC<AdminPanelPageProps> = (props) => {
   const [deleteError, setDeleteError] = useState<string>("");
   const [selectedUserToDelete, setSelectedUserToDelete] =
     useState<User | null>();
+  const [selectedUserToPromote, setSelectedUserToPromote] = useState<User | null>();
   const { userStore } = useStore();
   const { params, setQueryParam } = useQueryParams<{ PageNumber: string }>();
   const { currentPage, totalPages, setTotalPages, setCurrentPage } =
@@ -84,6 +86,10 @@ const AdminPanelPage: React.FC<AdminPanelPageProps> = (props) => {
     }
   };
 
+  const onPromoteUser = async (user: User | null | undefined, rate: number) => {
+    console.log({user, rate});
+  }
+
   return (
     <div>
       <Container className="admin-panel-page">
@@ -103,10 +109,18 @@ const AdminPanelPage: React.FC<AdminPanelPageProps> = (props) => {
                 displayName={u.displayName}
                 image={u.image}
               >
-                <Button onClick={() => setSelectedUserToDelete(u)} color="red">
-                  <Icon name="remove user" />
-                  Delete
-                </Button>
+                <div>
+                  <Button onClick={() => setSelectedUserToDelete(u)} color="red">
+                    <Icon name="remove user" />
+                    Delete
+                  </Button>
+                  {u.role === 'Potential Mentor' &&
+                    <Button onClick={() => setSelectedUserToPromote(u)} color="green">
+                      <Icon name="angle double up" />
+                      Promote
+                    </Button>
+                  }
+                </div>
               </UserCard>
             ))}
           </div>
@@ -119,6 +133,12 @@ const AdminPanelPage: React.FC<AdminPanelPageProps> = (props) => {
           onCancel={() => setSelectedUserToDelete(null)}
           headerText="Delete user"
           descriptionText="Are you sure you want to delete user?"
+        />
+        <PromoteModal
+          open={!!selectedUserToPromote}
+          onSubmit={(rate: number) => onPromoteUser(selectedUserToPromote, rate)}
+          onCancel={() => setSelectedUserToPromote(null)}
+          isMentor={true}//selectedUserToPromote?.role === 'Mentor'}
         />
         {error && <div className="admin-panel-page__error">{error}</div>}
         {deleteError && (

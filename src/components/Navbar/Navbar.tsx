@@ -98,6 +98,11 @@ export default observer(function Navbar() {
         )}
         noResultsMessage="Nismo pronasli mentore."
       />
+      {isAdmin && (
+        <MenuItem as={NavLink} to="/manage">
+          Admin panel
+        </MenuItem>
+      )}
       {isLoggedIn ? (
         <Menu.Menu position="right">
           <MenuItem as={NavLink} to="/mentors" exact>
@@ -131,11 +136,6 @@ export default observer(function Navbar() {
             Register
           </MenuItem>
         </Menu.Menu>
-      )}
-      {isAdmin && (
-        <MenuItem as={NavLink} to="/manage">
-          Admin panel
-        </MenuItem>
       )}
     </React.Fragment>
   );
