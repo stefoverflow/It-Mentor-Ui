@@ -18,6 +18,7 @@ import SkillsForm from "./forms/SkillsForm/SkillsForm";
 import ProfilePage from "./containers/ProfilePage/ProfilePage";
 import CategoriesSkillsForm from "./forms/CategoriesSkillsForm/CategoriesSkillsForm";
 import ClientsPage from './containers/ClientsPage/ClientsPage';
+import ClientContactPage from "./containers/ClientContactPage/ClientContactPage";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={NewLandingPage} />
           <Route path="/client-landing" component={ClientLandingPage} />
+          <Route path="/client-contact" component={ClientContactPage} />
           <Route path="/clients" component={ClientsPage} />
           <Route path="/manage" component={AdminPanel} />
           <Route path="/login" component={LoginForm} />
