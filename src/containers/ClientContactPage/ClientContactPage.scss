@@ -4,4 +4,17 @@
     background-color: #171930;
     width: 100vw;
     height: 100vh;
+    padding: 15.2rem 14rem;
+
+    &__row {
+        display: flex;
+        flex-direction: row;
+        gap: 15.5rem;
+        &__column {
+            width: 53.6rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+    }
 }
