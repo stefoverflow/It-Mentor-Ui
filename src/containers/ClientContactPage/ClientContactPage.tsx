@@ -6,16 +6,27 @@ import FieldSelectInput from '../../components/FieldSelectInput/FieldSelectInput
 import FieldTextInput from '../../components/FieldTextInput/FieldTextInput';
 
 import './ClientContactPage.scss';
-import { required } from '../../util/validators';
+import { composeValidators, emailFormatValid, required } from '../../util/validators';
+import agent from '../../api/agent';
+import { Redirect } from 'react-router-dom';
 
 interface ClientContactPageType {};
 
 const ClientContactPage: React.FC<ClientContactPageType> = () => {
     
+    const submit = async (values: any) => {
+        try {
+            const response = await agent.Mentors.registerClient(values);
+            console.log(response);
+            // return <Redirect to="/client-landing"/>
+        } catch(e) {
+
+        }
+    }
     return <div className="client-contact">
         <div>
         <FinalForm
-          onSubmit={(values: any) => console.log('submit', values)}
+          onSubmit={submit}
           render={({ handleSubmit, valid, values, submitting }) => (
             <form onSubmit={handleSubmit} className="client-contact__row">
                 <div className="client-contact__row__column">
@@ -33,7 +44,7 @@ const ClientContactPage: React.FC<ClientContactPageType> = () => {
                     <FieldTextInput
                         placeholder="Email"
                         name="Email"
-                        validate={required('treba stil i tekst')}
+                        validate={composeValidators(required('treba stil i tekst'), emailFormatValid('email los tekst neki'))}
                     />
                     <div className="client-contact__row__column__description">
                         <div className="client-contact__row__column__description__text">
