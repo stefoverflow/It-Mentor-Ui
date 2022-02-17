@@ -10,11 +10,53 @@
         display: flex;
         flex-direction: row;
         gap: 15.5rem;
+        
         &__column {
             width: 53.6rem;
             display: flex;
             flex-direction: column;
             gap: 2rem;
+
+            &__description {
+                
+                &__text {
+                    margin-top: 5.1rem;
+                    margin-bottom: 2.6rem;
+                    max-width: 47.7rem;
+                    font-family: GilroyLight;
+                    font-weight: 300;
+                    font-size: 2.4rem;
+                    line-height: 2.7rem;
+                    color: #FFFFFF;
+                }
+
+                &__button {
+                    position: relative;
+                    height: 7rem;
+                    padding: 2rem 4.7rem;
+                    box-shadow: 0px 18px 60px -12px rgba(141, 92, 246, 0.3);
+                    border-radius: 5px;
+                    border: none;
+                    background-color: #8D5CF6;
+                    font-family: Gilroy;
+                    font-weight: 800;
+                    font-size: 2.4rem;
+                    line-height: 2.9rem;
+                    width: 25rem;
+                    color: #FFFFFF;
+                    cursor: pointer;
+                    &:hover {
+                        opacity: 0.9;
+                    }
+                }
+                &__button-disabled {
+                    opacity: 0.5;
+                    cursor: default;
+                    &:hover {
+                        opacity: 0.5;
+                    }
+                }
+            }
         }
     }
 }

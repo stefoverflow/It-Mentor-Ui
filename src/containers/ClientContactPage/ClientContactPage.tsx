@@ -1,13 +1,17 @@
 import React from 'react';
+import classNames from 'classnames';
 import { Form as FinalForm } from 'react-final-form';
-import { Form } from 'semantic-ui-react';
+import { Button, Dimmer, Loader } from 'semantic-ui-react';
+import FieldSelectInput from '../../components/FieldSelectInput/FieldSelectInput';
 import FieldTextInput from '../../components/FieldTextInput/FieldTextInput';
 
 import './ClientContactPage.scss';
+import { required } from '../../util/validators';
 
 interface ClientContactPageType {};
 
 const ClientContactPage: React.FC<ClientContactPageType> = () => {
+    
     return <div className="client-contact">
         <div>
         <FinalForm
@@ -16,39 +20,128 @@ const ClientContactPage: React.FC<ClientContactPageType> = () => {
             <form onSubmit={handleSubmit} className="client-contact__row">
                 <div className="client-contact__row__column">
                     <FieldTextInput
-                            label="Unesi svoju e-mail adresu."
+                        label="Unesi svoju e-mail adresu."
                         placeholder="Ime"
-                        name="name"
+                        name="FirstName"
+                        validate={required('treba stil i tekst')}
                     />
                     <FieldTextInput
                         placeholder="Prezime"
-                        name="subname"
+                        name="LastName"
+                        validate={required('treba stil i tekst')}
                     />
                     <FieldTextInput
                         placeholder="Email"
-                        name="email"
+                        name="Email"
+                        validate={required('treba stil i tekst')}
                     />
+                    <div className="client-contact__row__column__description">
+                        <div className="client-contact__row__column__description__text">
+                            Neki tekst tipa finalizujte kreiranje svog profila 
+                            verifikacionim pozivom bla bla 
+                        </div>
+                        <button className={classNames("client-contact__row__column__description__button", [{'client-contact__row__column__description__button-disabled': !valid}])} type="submit">
+                            {
+                                submitting ?
+                                <Loader active inverted size="big"/>
+                                :
+                                'Stefke Hotline'
+                            }
+                        </button>
+                    </div>
                 </div>
                 <div className="client-contact__row__column">
-                    <FieldTextInput
-                            label="Ukupni budžet koji bih izdvojio zamentorstvo:"
-                        placeholder="Manje od 1000e"
-                        name="budget"
+                    <FieldSelectInput
+                        label="Ukupni budžet koji bih izdvojio zamentorstvo:"
+                        name="TotalBudget"
+                        validate={required('treba stil i tekst')}
+                        options={[
+                            {
+                                key: 'Manje od 500e',
+                                text: 'Manje od 500e',
+                            },
+                            {
+                                key: 'Manje od 750e',
+                                text: 'Manje od 750e',
+                            },
+                            {
+                                key: 'Manje od 1000e',
+                                text: 'Manje od 1000e',
+                            },
+                            {
+                                key: 'Preko 1000e',
+                                text: 'Preko 1000e',
+                            }
+                        ]}
                     />
-                    <FieldTextInput
+                    <FieldSelectInput
                         label="Hteo bih da se obučim za:"
-                        placeholder="Web programiranje"
-                        name="category"
+                        name="FieldOfInterest"
+                        validate={required('treba stil i tekst')}
+                        options={[
+                            {
+                                key: 'Web programiranje',
+                                text: 'Web programiranje',
+                            },
+                            {
+                                key: 'data-science',
+                                text: 'Data science',
+                            },
+                            {
+                                key: 'Mobile development',
+                                text: 'Mobile development'
+                            },
+                            {
+                                key: 'QA testiranje',
+                                text: 'QA testiranje',
+                            },
+                            {
+                                key: 'Blockchain Development',
+                                text: 'Blockchain Development',
+                            },
+                            {
+                                key: 'Drugo',
+                                text: 'Drugo',
+                            }
+                        ]}
                     />
-                    <FieldTextInput
+                    <FieldSelectInput
                         label="Poznavanje Engleskog jezika"
-                        placeholder="Početni nivo"
-                        name="language"
+                        name="EnglishLevel"
+                        validate={required('treba stil i tekst')}
+                        options={[
+                            {
+                                key: 'Početni nivo',
+                                text: 'Početni nivo',
+                            },
+                            {
+                                key: 'Srednji nivo',
+                                text: 'Srednji nivo',
+                            },
+                            {
+                                key: 'Napredni nivo',
+                                text: 'Napredni nivo',
+                            }
+                        ]}
                     />
-                    <FieldTextInput
+                    <FieldSelectInput
                         label="Mesečna plata koju očekuješ u narednih godinu dana?"
-                        placeholder="Manje od 750e"
-                        name="salary"
+                        name="ExpectedSalary"
+                        validate={required('treba stil i tekst')}
+                        options={[
+                            {
+                                key: 'Manje od 1000e',
+                                text: 'Manje od 1000e'
+                            },
+                            {
+                                key: 'Između 1000e i 3000e',
+                                text: 'Između 3000e i 5000e',
+                            },
+                            {
+                                key: 'Više od 5000e',
+                                text: 'Više od 5000e',
+                            }
+                        ]}
                     />
                 </div>
               </form>
