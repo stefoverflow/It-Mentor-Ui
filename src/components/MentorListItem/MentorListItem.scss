@@ -4,6 +4,10 @@
     flex-direction: column;
     max-width: 39.8rem;
     text-align: left;
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
 
     &__image-container {
         max-width: 39.8rem;
