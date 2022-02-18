@@ -1,0 +1,60 @@
+
+.mentor {
+    display: flex;
+    flex-direction: column;
+    max-width: 39.8rem;
+    text-align: left;
+
+    &__image-container {
+        max-width: 39.8rem;
+        max-height: 50rem;
+
+        &__image {
+            max-width: 39.8rem;
+            max-height: 50rem;
+            object-fit: contain;
+        }
+    }
+
+    &__title {
+        font-size: 4.8rem;
+        line-height: 5.8rem;
+        letter-spacing: 0.04em;
+        color: #15172C;
+        font-family: Gilroy;
+        font-style: normal;
+        font-weight: 800;
+        margin-top: 7.6rem;
+    }
+
+    &__category {
+        margin-top: 1.9rem;
+        font-size: 1.8rem;
+        line-height: 2.075rem;
+        letter-spacing: 0.04em;
+        color: #58595F;
+        font-family: GilroyLight;
+        font-style: normal;
+        font-weight: 300;
+    }
+
+    &__icons {
+        margin-top: 1.6rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 3.2rem;
+    }
+
+    &__bio {
+        margin-top: 2rem;
+        font-size: 1.8rem;
+        line-height: 3rem;
+        letter-spacing: 0.04em;
+        color: #58595F;
+        font-family: GilroyLight;
+        font-style: normal;
+        font-weight: 300;
+    }
+}

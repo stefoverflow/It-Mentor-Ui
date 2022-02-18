@@ -1,0 +1,33 @@
+
+
+.mentors-page {
+    padding: 11rem 27.8rem;
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+        font-size: 9.6rem;
+        line-height: 11.7rem;
+        font-family: Gilroy;
+        font-style: normal;
+        font-weight: 800;
+        color: #15172C;
+    }
+
+    &__description {
+        font-size: 2.4rem;
+        line-height: 2.7rem;
+        font-family: GilroyLight;
+        font-style: normal;
+        font-weight: 300;
+        color: #58595F;
+        letter-spacing: 0.04em;
+        max-width: 92rem;
+        margin-top: 6.4rem;
+        margin-bottom: 16.6rem;
+    }
+
+    &__list {
+        margin-top: 7.4rem;
+    }
+}

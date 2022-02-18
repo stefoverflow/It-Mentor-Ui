@@ -2,11 +2,36 @@
 
 .mentor-list {
   &__container {
-    padding: 20px 0;
-
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 8.5rem;
+    grid-row-gap: 15.4rem;
     &__error {
       color: $color-error;
       font-size: 20px;
+    }
+  }
+
+  &__load {
+    margin-top: 17.2rem;
+    width: 100%;
+    height: 7rem;
+    padding: 2.6rem;
+    border: 0.1rem solid #58595F;
+    font-size: 1.6rem;
+    line-height: 1.845rem;
+    letter-spacing: 0.08em;
+    font-weight: 300;
+    font-family: GilroyLight;
+    font-style: normal;
+    background-color: #FFFFFF;
+    color: #58595F;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #58595F;
+      color: #FFFFFF;
     }
   }
 }

@@ -18,7 +18,7 @@ const ClientContactPage: React.FC<ClientContactPageType> = () => {
     const submit = async (values: any) => {
         try {
             await agent.Mentors.registerClient(values);
-            history.push('/');
+            history.push('/mentors');
         } catch(e) {
             // error handling
         }
