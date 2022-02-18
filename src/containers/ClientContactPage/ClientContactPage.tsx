@@ -8,19 +8,19 @@ import FieldTextInput from '../../components/FieldTextInput/FieldTextInput';
 import './ClientContactPage.scss';
 import { composeValidators, emailFormatValid, required } from '../../util/validators';
 import agent from '../../api/agent';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 
 interface ClientContactPageType {};
 
 const ClientContactPage: React.FC<ClientContactPageType> = () => {
-    
+    const history = useHistory();
+
     const submit = async (values: any) => {
         try {
-            const response = await agent.Mentors.registerClient(values);
-            console.log(response);
-            // return <Redirect to="/client-landing"/>
+            await agent.Mentors.registerClient(values);
+            history.push('/');
         } catch(e) {
-
+            // error handling
         }
     }
     return <div className="client-contact">
@@ -68,20 +68,16 @@ const ClientContactPage: React.FC<ClientContactPageType> = () => {
                         validate={required('treba stil i tekst')}
                         options={[
                             {
-                                key: 'Manje od 500e',
-                                text: 'Manje od 500e',
-                            },
-                            {
-                                key: 'Manje od 750e',
-                                text: 'Manje od 750e',
-                            },
-                            {
                                 key: 'Manje od 1000e',
-                                text: 'Manje od 1000e',
+                                text: 'Manje od 1000e'
                             },
                             {
-                                key: 'Preko 1000e',
-                                text: 'Preko 1000e',
+                                key: 'Između 1000e i 3000e',
+                                text: 'Između 3000e i 5000e',
+                            },
+                            {
+                                key: 'Više od 5000e',
+                                text: 'Više od 5000e',
                             }
                         ]}
                     />
@@ -117,7 +113,7 @@ const ClientContactPage: React.FC<ClientContactPageType> = () => {
                         ]}
                     />
                     <FieldSelectInput
-                        label="Poznavanje Engleskog jezika"
+                        label="Poznavanje Engleskog jezika:"
                         name="EnglishLevel"
                         validate={required('treba stil i tekst')}
                         options={[
@@ -141,16 +137,16 @@ const ClientContactPage: React.FC<ClientContactPageType> = () => {
                         validate={required('treba stil i tekst')}
                         options={[
                             {
-                                key: 'Manje od 1000e',
-                                text: 'Manje od 1000e'
+                                key: 'Manje od 750e',
+                                text: 'Manje od 750e',
                             },
                             {
-                                key: 'Između 1000e i 3000e',
-                                text: 'Između 3000e i 5000e',
+                                key: 'Izmedju 750e i 1500e',
+                                text: 'Izmedju 750e i 1500e',
                             },
                             {
-                                key: 'Više od 5000e',
-                                text: 'Više od 5000e',
+                                key: 'Preko 1500e',
+                                text: 'Preko 1500e',
                             }
                         ]}
                     />

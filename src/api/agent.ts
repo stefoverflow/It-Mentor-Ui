@@ -68,7 +68,7 @@ const requests = {
 };
 
 const Mentors = {
-  registerClient: (values: any) => requests.post(`/register/client`, values),
+  registerClient: (values: any) => requests.post(`/account/register/client`, values),
   getMentorsPaginated: (PageNumber: number, PageSize: number) =>
     requests.get(`/mentors?PageNumber=${PageNumber}&PageSize=${PageSize}`, {}),
   searchMentorsBySkill: (skillName: string) =>
