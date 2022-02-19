@@ -11,6 +11,7 @@ import ClientProofImage from '../../assets/client-proof.png';
 import ClientMainContentVideoPlaceholderImage from '../../assets/main-content-video-placeholder.png';
 import ClientMainContentElonMuskImage from '../../assets/elon-musk-dont-give-a.png';
 import OfficeImage from '../../assets/office.png';
+import ArrowRightImage from '../../assets/arrow-right.png';
 
 import './ClientLandingPage.scss';
 import PlayButton from '../../components/PlayButton/PlayButton';
@@ -180,6 +181,7 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
                 <div className="landing-client__main-section__mentors__card__title">
                     Pogledajte detaljnije naš mentorski tim. Vama na usluzi.
                 </div>
+                <img src={ArrowRightImage} className="landing-client__main-section__mentors__card__icon"/>
                 <IconArrowRight />
             </Link>
         </div>
