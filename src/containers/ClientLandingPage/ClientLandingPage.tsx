@@ -10,12 +10,15 @@ import ClientCryImage from '../../assets/client-cry.png';
 import ClientProofImage from '../../assets/client-proof.png';
 import ClientMainContentVideoPlaceholderImage from '../../assets/main-content-video-placeholder.png';
 import ClientMainContentElonMuskImage from '../../assets/elon-musk-dont-give-a.png';
+import OfficeImage from '../../assets/office.png';
 
 import './ClientLandingPage.scss';
 import PlayButton from '../../components/PlayButton/PlayButton';
 import { Link } from 'react-router-dom';
 import MenuButton from '../../components/MenuButton/MenuButton';
 import ClientContactButton from '../../components/ClientContactButton/ClientContactButton';
+import IconArrowRight from '../../components/IconArrowRight/IconArrowRight';
+import Footer from '../../components/Footer/Footer';
 
 interface ClientLandingPageType {};
 
@@ -166,6 +169,21 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
                 </div>
             </div>
         </div>
+        <div className="landing-client__main-section__mentors">
+            <div className="landing-client__main-section__mentors__image-container">
+                <img className="landing-client__main-section__mentors__image-container__image" src={OfficeImage}/>
+            </div>
+            <Link to="/mentors" className="landing-client__main-section__mentors__card">
+                <div className="landing-client__main-section__mentors__card__mentor">
+                    MENTORI
+                </div>
+                <div className="landing-client__main-section__mentors__card__title">
+                    Pogledajte detaljnije naš mentorski tim. Vama na usluzi.
+                </div>
+                <IconArrowRight />
+            </Link>
+        </div>
+        <Footer />
         <MenuButton />
         <ClientContactButton />
     </div>

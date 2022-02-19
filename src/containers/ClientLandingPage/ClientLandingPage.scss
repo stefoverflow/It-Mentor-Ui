@@ -324,5 +324,64 @@
                 }
             }
         }
+
+        &__mentors {
+            position: relative;
+            min-height: 122.1rem;
+            min-width: 100%;
+    
+            &__card {
+                position: absolute;
+                bottom: 29.5rem;
+                left: 0;
+                padding: 19rem 19.3rem 19rem 26.2rem;
+                background-color: #15172C;
+                height: 51.5rem;
+                width: 88.3rem;
+                z-index: 10;
+                
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+
+                &:hover {
+                    text-decoration: underline;
+                    text-decoration-color: #FFFFFF;
+                }
+
+                &__mentor {
+                    font-family: Gilroy;
+                    font-weight: 800;
+                    font-size: 1.2rem;
+                    line-height: 2rem;
+                    letter-spacing: 0.04em;
+                    color: #FFFFFF;
+                }
+
+                &__title {
+                    font-family: Gilroy;
+                    font-weight: 800;
+                    font-size: 2.4rem;
+                    line-height: 4rem;
+                    letter-spacing: 0.04em;
+                    color: #FFFFFF;
+                }
+            }
+    
+            &__image-container {
+                position:absolute;
+                bottom: 0;
+                right: 0;
+                width: 124.4rem;
+                height: 108rem;
+                z-index: 1;
+    
+                &__image {
+                    width: 124.4rem;
+                    height: 108rem;
+                    object-fit: contain;
+                }
+            }
+        }
     }
 }
