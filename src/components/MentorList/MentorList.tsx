@@ -21,7 +21,7 @@ import MentorExampleImage6 from '../../assets/mentor-example-6.png';
 
 import "./MentorList.scss";
 
-const exampleMentors = [
+export const exampleMentors = [
   {
     id: '0',
     image: MentorExampleImage1,

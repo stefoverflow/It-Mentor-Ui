@@ -17,6 +17,7 @@ import './MentorListItem.scss';
 import IconLinkedin from "../IconLinkedin/IconLinedin";
 import IconBasketball from "../IconBasketball/IconBasketball";
 import IconBe from "../IconBe/IconBe";
+import { Link } from "react-router-dom";
 
 interface ExampleMentorsType {
   id: string;
@@ -56,25 +57,27 @@ export default observer(function ConsultantListItem({ mentor }: Props) {
   // const [percentage, level] = calculateLevel(mentor.totalStarRating);
 
   return (
-    <div className="mentor" key={id}>
-      <div className="mentor__image-container">
-        <img className="mentor__image-container__image" src={image} />
+    <Link to={`/mentors/${id}`}>
+      <div className="mentor" key={id}>
+        <div className="mentor__image-container">
+          <img className="mentor__image-container__image" src={image} />
+        </div>
+        <div className="mentor__title">
+          {displayName}
+        </div>
+        <div className="mentor__category">
+          {categories[0]}
+        </div>
+        <div className="mentor__icons">
+            <IconBe />
+            <IconBasketball />
+            <IconLinkedin />
+        </div>
+        <div className="mentor__bio">
+          {bio}
+        </div>
       </div>
-      <div className="mentor__title">
-        {displayName}
-      </div>
-      <div className="mentor__category">
-        {categories[0]}
-      </div>
-      <div className="mentor__icons">
-          <IconBe />
-          <IconBasketball />
-          <IconLinkedin />
-      </div>
-      <div className="mentor__bio">
-        {bio}
-      </div>
-    </div>
+    </Link>
     // <Segment.Group>
     //   <Segment>
     //     <Item.Group>
