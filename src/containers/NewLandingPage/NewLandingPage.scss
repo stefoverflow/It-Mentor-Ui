@@ -1,4 +1,5 @@
 @import "../../scss/color";
+@import "../../scss/breakpoints";
 
 
 .landing {
@@ -32,6 +33,11 @@
         line-height: 2.8rem;
         font-weight: 300;
 
+        @include mobile() {
+            position: initial;
+            margin-top: 47px;
+        }
+
         &:hover {
             color: $color-primary;
         }
@@ -45,10 +51,21 @@
         text-align: center;
         font-weight: 800;
         
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
         &__title {
             font-size: 8rem;
             line-height: 9.8rem;
             letter-spacing: 0.04em;
+
+            @include mobile() {
+                font-size: 30px;
+                line-height: 36px;
+                padding: 0 43px;
+                text-align: center;
+            }
         }
 
         &__description {
@@ -57,6 +74,14 @@
             letter-spacing: 0.04rem;
             max-width: 108.7rem;
             margin: 2.0rem auto 5.6rem;
+
+            @include mobile() {
+                font-size: 18px;
+                line-height: 22px;
+                padding: 0 24px;
+                margin-top: 32px;
+                text-align: center;
+            }
         }
 
         &__client-container {
@@ -76,6 +101,14 @@
             background: rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(20px);
             border-radius: 5px;
+
+            @include mobile() {
+                margin: 0 60px;
+                width: auto;
+                font-size: 18px;
+                line-height: 22px;
+                gap: 18px;
+            }
 
             &__start-button {
                 width: 25.0rem;
@@ -99,9 +132,19 @@
                 border-radius: 50%;
                 background-color: $color-white;
 
+                @include mobile() {
+                    width: 117px;
+                    height: 117px;
+                }
+
                 &__image {
                     width: 7.2rem;
                     height: 9.2rem;
+
+                    @include mobile() {
+                        width: 117px;
+                        height: 117px;
+                    }
                 }
             }
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import GraphicWorkImage from '../../assets/graphic-work.png';
+import MenuButton from "../../components/MenuButton/MenuButton";
 
 import './NewLandingPage.scss';
 
@@ -33,17 +34,17 @@ const NewLandingPage: React.FC<NewLandingPageType> = () => {
                     <img className="landing__content__client-container__image-container__image" src={GraphicWorkImage} />
                 </div>
                 <div className="landing__content__client-container__got-account">
-                    <div>Već imate nalog?</div>
+                    <div className="landing__content__client-container__got-account__text">Već imate nalog?</div>
                     <Link to='/login' className="landing__content__client-container__got-account__login-link">
                         Ulogujte se
                     </Link>
                 </div>
             </div>
+            <Link to='/register' className="landing__become-mentor">
+                Postani mentor
+            </Link>
         </div>
 
-        <Link to='/register' className="landing__become-mentor">
-            Postani mentor
-        </Link>
     </div>
 };
 
