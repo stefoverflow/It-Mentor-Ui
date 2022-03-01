@@ -36,6 +36,7 @@
         @include mobile() {
             position: initial;
             margin-top: 47px;
+            margin-bottom: 72px;
         }
 
         &:hover {
@@ -50,6 +51,10 @@
         width: 100%;
         text-align: center;
         font-weight: 800;
+
+        @include mobile() {
+            position: absolute;
+        }
         
         display: flex;
         flex-direction: column;

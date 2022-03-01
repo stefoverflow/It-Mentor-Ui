@@ -37,6 +37,7 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
                     Umesto da potrošiš najmanje 4000e samo na školarinu, minimum 4 godina svog života 
                     i bezbroj živaca, može i ovako : 
                 </div>
+                {/* <ClientContactButton /> */}
             </div>
             <PlayButton />
         </div>
@@ -182,12 +183,10 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
                     Pogledajte detaljnije naš mentorski tim. Vama na usluzi.
                 </div>
                 <img src={ArrowRightImage} className="landing-client__main-section__mentors__card__icon"/>
-                <IconArrowRight />
             </Link>
         </div>
         <Footer />
-        <MenuButton />
-        <ClientContactButton />
+        {/* <MenuButton /> */}
     </div>
 };
 

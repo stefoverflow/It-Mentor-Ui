@@ -1,3 +1,5 @@
+@import "../../scss/breakpoints";
+
 .client-contact-button {
     position: fixed;
     bottom: 3.6rem;
@@ -17,4 +19,8 @@
     font-size: 2.4rem;
     line-height: 2.9rem;
     color: #fff;
+
+    @include mobile() {
+        
+    }
 }

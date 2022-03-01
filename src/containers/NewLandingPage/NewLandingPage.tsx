@@ -11,7 +11,7 @@ interface NewLandingPageType {
 const NewLandingPage: React.FC<NewLandingPageType> = () => {
     const LandingVideo = require('../../assets/video.mp4');
 
-    return <div>
+    return <div className="landing">
         <video autoPlay muted loop className="landing__video">
             <source src={LandingVideo} type="video/mp4"/>
         </video>
