@@ -1,3 +1,5 @@
+@import "../../scss/breakpoints";
+
 .menu-button {
     position: fixed;
     top: 4rem;
@@ -23,10 +25,17 @@
     padding-left: 33rem;
     background-color: #1a1d36; 
     z-index: 999;
+    text-align: left;
 
     display: flex;
     flex-direction: column;
     gap: 7rem;
+
+    @include mobile() {
+        padding-top: 242px;
+        padding-left: 24px;
+        gap: 100px;
+    }
 
     &__item {
         font-family: Gilroy;

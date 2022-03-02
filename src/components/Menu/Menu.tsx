@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import './MenuButton.scss';
+import './Menu.scss';
 
-const MenuButton = () => {
+const Menu = () => {
     const[isOpen, setIsOpen] = useState<boolean>(false);
     return (
         <>
@@ -36,4 +36,4 @@ const MenuButton = () => {
     );
 }
 
-export default MenuButton;
+export default Menu;

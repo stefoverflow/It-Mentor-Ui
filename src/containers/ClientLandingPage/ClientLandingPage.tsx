@@ -16,7 +16,7 @@ import ArrowRightImage from '../../assets/arrow-right.png';
 import './ClientLandingPage.scss';
 import PlayButton from '../../components/PlayButton/PlayButton';
 import { Link } from 'react-router-dom';
-import MenuButton from '../../components/MenuButton/MenuButton';
+import Menu from '../../components/Menu/Menu';
 import ClientContactButton from '../../components/ClientContactButton/ClientContactButton';
 import IconArrowRight from '../../components/IconArrowRight/IconArrowRight';
 import Footer from '../../components/Footer/Footer';
@@ -37,7 +37,7 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
                     Umesto da potrošiš najmanje 4000e samo na školarinu, minimum 4 godina svog života 
                     i bezbroj živaca, može i ovako : 
                 </div>
-                {/* <ClientContactButton /> */}
+                <ClientContactButton />
             </div>
             <PlayButton />
         </div>
@@ -186,7 +186,7 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
             </Link>
         </div>
         <Footer />
-        {/* <MenuButton /> */}
+        <Menu />
     </div>
 };
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import GraphicWorkImage from '../../assets/graphic-work.png';
-import MenuButton from "../../components/MenuButton/MenuButton";
+import Menu from "../../components/Menu/Menu";
 
 import './NewLandingPage.scss';
 
@@ -43,6 +43,7 @@ const NewLandingPage: React.FC<NewLandingPageType> = () => {
             <Link to='/register' className="landing__become-mentor">
                 Postani mentor
             </Link>
+            {/* <Menu /> */}
         </div>
 
     </div>

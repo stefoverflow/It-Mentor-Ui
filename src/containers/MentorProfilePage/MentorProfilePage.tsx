@@ -9,7 +9,7 @@ import { ROLES } from "../../constants";
 
 import "./MentorProfilePage.scss";
 import { exampleMentors } from "../../components/MentorList/MentorList";
-import MenuButton from "../../components/MenuButton/MenuButton";
+import Menu from "../../components/Menu/Menu";
 import Footer from "../../components/Footer/Footer";
 import ClientContactButton from "../../components/ClientContactButton/ClientContactButton";
 
@@ -85,7 +85,7 @@ const MentorProfilePage: React.FC<MentorProfileProps> = (props) => {
           <PackageCard title="Naslov paketa" checked={checkedCard === 2} list={['Mentorstvo do 6 meseci', '40 sesija', '1 sat po sesiji']} onClick={() => setCheckedCard(2)}/>
         </div>
       </div>
-      <MenuButton />
+      <Menu />
       <ClientContactButton />
 
       <Footer />

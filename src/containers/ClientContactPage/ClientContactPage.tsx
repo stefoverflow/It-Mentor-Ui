@@ -9,12 +9,29 @@ import './ClientContactPage.scss';
 import { composeValidators, emailFormatValid, required } from '../../util/validators';
 import agent from '../../api/agent';
 import { Redirect, useHistory } from 'react-router-dom';
-import MenuButton from '../../components/MenuButton/MenuButton';
+import Menu from '../../components/Menu/Menu';
 
 interface ClientContactPageType {};
 
 const ClientContactPage: React.FC<ClientContactPageType> = () => {
     const history = useHistory();
+    
+    const renderSubmitButton = (valid: boolean, submitting: boolean) => (
+        <div className="client-contact__row__column__description">
+            <div className="client-contact__row__column__description__text">
+                Neki tekst tipa finalizujte kreiranje svog profila 
+                verifikacionim pozivom bla bla 
+            </div>
+            <button className={classNames("client-contact__row__column__description__button", [{'client-contact__row__column__description__button-disabled': !valid}])} type="submit">
+                {
+                    submitting ?
+                    <Loader active inverted size="big"/>
+                    :
+                    'Stefke Hotline'
+                }
+            </button>
+        </div>
+    )
 
     const submit = async (values: any) => {
         try {
@@ -47,19 +64,8 @@ const ClientContactPage: React.FC<ClientContactPageType> = () => {
                         name="Email"
                         validate={composeValidators(required('treba stil i tekst'), emailFormatValid('email los tekst neki'))}
                     />
-                    <div className="client-contact__row__column__description">
-                        <div className="client-contact__row__column__description__text">
-                            Neki tekst tipa finalizujte kreiranje svog profila 
-                            verifikacionim pozivom bla bla 
-                        </div>
-                        <button className={classNames("client-contact__row__column__description__button", [{'client-contact__row__column__description__button-disabled': !valid}])} type="submit">
-                            {
-                                submitting ?
-                                <Loader active inverted size="big"/>
-                                :
-                                'Stefke Hotline'
-                            }
-                        </button>
+                    <div className="client-contact__row__column__submit-desktop">
+                        {renderSubmitButton(valid, submitting)}
                     </div>
                 </div>
                 <div className="client-contact__row__column">
@@ -152,11 +158,14 @@ const ClientContactPage: React.FC<ClientContactPageType> = () => {
                         ]}
                     />
                 </div>
+                <div className="client-contact__row__column__submit-mobile">
+                    {renderSubmitButton(valid, submitting)}
+                </div>
               </form>
             )
           }
         />
-        <MenuButton />
+        <Menu />
         </div>
     </div>   
 };

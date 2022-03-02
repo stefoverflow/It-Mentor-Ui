@@ -1,3 +1,5 @@
+@import "../../scss/breakpoints";
+
 .text-input {
   display: flex;
   flex-direction: column;
@@ -17,6 +19,10 @@
     max-width: 53.6rem;
     height: 7rem;
     padding: 2rem 3.1rem;
+
+    @include mobile() {
+      max-width: 100%;
+    }
 
     font-family: Gilroy;
     font-style: normal;

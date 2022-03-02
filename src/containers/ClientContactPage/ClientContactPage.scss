@@ -1,4 +1,4 @@
-
+@import "../../scss/breakpoints";
 
 .client-contact {
     background-color: #171930;
@@ -6,10 +6,20 @@
     height: 100vh;
     padding: 15.2rem 14rem;
 
+    @include mobile() {
+        padding: 122px 24px;
+        height: 100%;
+    }
+
     &__row {
         display: flex;
         flex-direction: row;
         gap: 15.5rem;
+
+        @include mobile() {
+            flex-direction: column;
+            gap: 80px;
+        }
         
         &__column {
             width: 53.6rem;
@@ -17,7 +27,34 @@
             flex-direction: column;
             gap: 2rem;
 
+            @include mobile() {
+                width: 100%;
+                gap: 40px;
+            }
+
+            &__submit-desktop {
+                display: block;
+
+                @include mobile() {
+                    display: none;
+                }
+            }
+
+            &__submit-mobile {
+                display: none;
+
+                @include mobile() {
+                    display: block;
+                }
+            }
+
             &__description {
+
+                @include mobile() {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
                 
                 &__text {
                     margin-top: 5.1rem;
@@ -28,6 +65,15 @@
                     font-size: 2.4rem;
                     line-height: 2.7rem;
                     color: #FFFFFF;
+
+                    @include mobile() {
+                        font-size: 18px;
+                        line-height: 20px;
+                        text-align: center;
+                        max-width: 100%;
+                        margin-top: 0;
+                        margin-bottoM: 50px;
+                    }
                 }
 
                 &__button {

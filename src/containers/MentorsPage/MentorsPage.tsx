@@ -4,7 +4,7 @@ import { observer } from "mobx-react-lite";
 import MentorList from "../../components/MentorList/MentorList";
 
 import './MentorsPage.scss';
-import MenuButton from "../../components/MenuButton/MenuButton";
+import Menu from "../../components/Menu/Menu";
 import ClientContactButton from "../../components/ClientContactButton/ClientContactButton";
 import SearchTextInput from "../../components/SearchTextInput/SearchTextInput";
 import Footer from "../../components/Footer/Footer";
@@ -15,7 +15,7 @@ export default observer(function ConsultantDashboard() {
   return (
     <>
       <div className="mentors-page">
-        <MenuButton />
+        <Menu />
         <ClientContactButton />
         <div className="mentors-page__title">
           Eksperti za vas!
