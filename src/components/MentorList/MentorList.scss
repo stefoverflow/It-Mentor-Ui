@@ -1,4 +1,5 @@
 @import "../../scss/color";
+@import "../../scss/breakpoints";
 
 .mentor-list {
   &__container {
@@ -9,6 +10,11 @@
     &__error {
       color: $color-error;
       font-size: 20px;
+    }
+
+    @include mobile() {
+      display: flex;
+      flex-direction: column;
     }
   }
 

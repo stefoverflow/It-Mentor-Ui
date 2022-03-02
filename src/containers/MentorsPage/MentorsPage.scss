@@ -1,9 +1,13 @@
-
+@import "../../scss/breakpoints";
 
 .mentors-page {
     padding: 11rem 27.8rem;
     display: flex;
     flex-direction: column;
+
+    @include mobile() {
+        padding: 128px 24px;
+    }
 
     &__title {
         font-size: 9.6rem;
@@ -12,6 +16,11 @@
         font-style: normal;
         font-weight: 800;
         color: #15172C;
+
+        @include mobile() {
+            font-size: 48px;
+            line-height: 60px;
+        }
     }
 
     &__description {
@@ -25,9 +34,21 @@
         max-width: 92rem;
         margin-top: 6.4rem;
         margin-bottom: 16.6rem;
+
+        @include mobile() {
+            max-width: 100%;
+            margin-top: 32px;
+            margin-bottom: 60px;
+            font-size: 18px;
+            line-height: 20px;
+        }
     }
 
     &__list {
         margin-top: 7.4rem;
+
+        @include mobile() {
+            margin-top: 60px;
+        }
     }
 }

@@ -21,6 +21,14 @@
     color: #fff;
 
     @include mobile() {
-        
+        position: fixed;
+        max-width: max-content;
+        margin: 0 auto;
+        bottom: 40px;
+        left: 0;
+        right: 0;
+        padding: 24px 36px;
+        font-size: 18px;
+        line-height: 24px;
     }
 }
