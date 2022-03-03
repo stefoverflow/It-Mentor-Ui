@@ -37,6 +37,10 @@ const MentorProfilePage: React.FC<MentorProfileProps> = (props) => {
   const mentor = exampleMentors[Number.parseInt(mentorId)];
   const { id, image, displayName, categories, bio } = mentor;
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // const fetchMentor = () => {
   //   loadConsultant(mentorId);
   // };

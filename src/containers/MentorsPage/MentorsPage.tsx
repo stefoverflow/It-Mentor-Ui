@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { observer } from "mobx-react-lite";
 // import { useStore } from "../../stores/store";
 import MentorList from "../../components/MentorList/MentorList";
@@ -12,8 +12,12 @@ import Footer from "../../components/Footer/Footer";
 export default observer(function ConsultantDashboard() {
   // const { mentorStore } = useStore();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <>
+    <div>
       <div className="mentors-page">
         <Menu />
         <ClientContactButton />
@@ -34,6 +38,6 @@ export default observer(function ConsultantDashboard() {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 });
