@@ -12,7 +12,7 @@ import MentorListItem from "../MentorListItem/MentorListItem";
 import { PAGE_LIMIT } from "../../constants";
 import usePagination from "../../hooks/usePagination";
 import useQueryParams from "../../hooks/useQueryParams";
-import MentorExampleImage1 from '../../assets/mentor-example-1.png';
+import AleksandarAndjelkovic from '../../assets/aleksandar-andjelkovic.png';
 import MentorExampleImage2 from '../../assets/mentor-example-2.png';
 import MentorExampleImage3 from '../../assets/mentor-example-3.png';
 import MentorExampleImage4 from '../../assets/mentor-example-4.png';
@@ -24,10 +24,29 @@ import "./MentorList.scss";
 export const exampleMentors = [
   {
     id: '0',
-    image: MentorExampleImage1,
-    displayName: 'Ime Prezime',
-    categories: ['web developer'],
-    bio: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore`,
+    firstAndLastName:"Aleksandar Anđelković",
+    bio: `Želiš senior softverskog inženjera kao svog ličnog mentora za C#, najtraženiji programski jezik na tržištu u Srbiji?
+    
+    Uz moju pomoć ćeš kroz praktične projekte stići do zavidnog nivoa bilo da si apsolutni početnik ili već imaš nekog predznanja.
+    
+    Zašto ja? 
+    
+    Opsednut sam najnovijim tehnologijama I uređajima iz čega proizilazi moj konstantan napredak i veštine koje su u koraku sa vremenom. Mentorstvo drugih me ispunjava i doprinosi mom ličnom razvoju. :)
+    
+    Ukratko priča o meni i mojim vrednostima. Ukoliko želiš da dođeš do narednog nivoa voleo bih da ti pomognem na tom putu.
+    
+    Klikni na dugme da zakažeš konsultaciju i krećemo sa radom! 💪`,
+    image: AleksandarAndjelkovic,
+    category: 'Web Developer',
+    skills: ["C#",
+    ".NET",
+    "Entity Framework",
+    "Softverska arhitektura", 
+    "Softverski paterni", 
+    "Monolitna arhitektura",
+    "Mikroservisna arhitektura", 
+    "Docker", 
+    "Azure Cloud"],
   },
   {
     id: '1',
