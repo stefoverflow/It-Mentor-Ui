@@ -2,6 +2,7 @@ import React from 'react';
 import { Icon } from 'semantic-ui-react';
 
 import ClientVideoPlacehoderImage from '../../assets/client-video-placeholder.png';
+import ClientVideoPlaceholderMobileImage from '../../assets/client-video-placeholder-mobile.png';
 import ClientHappyImage from '../../assets/client-happy.png';
 import ClientSmartImage from '../../assets/client-smart.png';
 import ClientStydyImage from '../../assets/client-study.png';
@@ -9,6 +10,7 @@ import ClientCodingImage from '../../assets/client-coding.png';
 import ClientCryImage from '../../assets/client-cry.png';
 import ClientProofImage from '../../assets/client-proof.png';
 import ClientMainContentVideoPlaceholderImage from '../../assets/main-content-video-placeholder.png';
+import ClientMainContentVideoPlaceholderMobileImage from '../../assets/main-content-video-placeholder-mobile.png';
 import ClientMainContentElonMuskImage from '../../assets/elon-musk-dont-give-a.png';
 import OfficeImage from '../../assets/office.png';
 import ArrowRightImage from '../../assets/arrow-right.png';
@@ -20,14 +22,16 @@ import Menu from '../../components/Menu/Menu';
 import ClientContactButton from '../../components/ClientContactButton/ClientContactButton';
 import IconArrowRight from '../../components/IconArrowRight/IconArrowRight';
 import Footer from '../../components/Footer/Footer';
+import useMobile from '../../hooks/useMobile';
 
 interface ClientLandingPageType {};
 
 const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
+    const { isMobile } = useMobile();
 
     return <div>
         <div className="landing-client__image-container">
-            <img className="landing-client__image-container__image" src={ClientVideoPlacehoderImage} />
+            <img className="landing-client__image-container__image" src={isMobile ? ClientVideoPlaceholderMobileImage : ClientVideoPlacehoderImage} />
             <div className="landing-client__image-container__gradient" />
             <div className="landing-client__image-container__content">
                 <div className="landing-client__image-container__content__title">
@@ -52,7 +56,7 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
                 </div>
             </div>
             <div className="landing-client__main-section__video-container">
-                <img className="landing-client__main-section__video-container__video" src={ClientMainContentVideoPlaceholderImage} />
+                <img className="landing-client__main-section__video-container__video" src={isMobile ? ClientMainContentVideoPlaceholderMobileImage : ClientMainContentVideoPlaceholderImage} />
                 <PlayButton />
             </div>
             <div className="landing-client__main-section__dissatisfied-title">

@@ -70,15 +70,21 @@
         }
     }
 
-    &__icons {
-        margin-top: 1.6rem;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 3.2rem;
+    &__work-in {
+        margin-top: 2rem;
+        font-size: 18px;
+        line-height: 2.075rem;
+        letter-spacing: 0.04rem;
+        color: #58595F;
+        font-family: GilroyLight;
+        font-style: normal;
+        font-weight: 300;
 
-        
+        @include mobile() {
+            margin-top: 18px;
+            font-size: 18px;
+            line-height: 20px;
+        }
     }
 
     &__bio {

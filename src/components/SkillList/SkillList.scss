@@ -1,0 +1,35 @@
+@import "../../scss/breakpoints";
+
+.skills-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 2.4rem;
+
+    @include mobile() {
+        gap: 6px;
+        margin-top: 24px;
+    }
+
+    color: #58595F;
+    font-family: Gilroy;
+    font-weight: 800;
+    
+    &__skill {
+        background: #FDF2F4;
+        border-radius: 1.4rem;
+        padding: 0.6rem 1.4rem;
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        
+        width: max-content;
+
+        @include mobile() {
+            padding: 6px 14px;
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+}

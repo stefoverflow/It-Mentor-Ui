@@ -1,4 +1,4 @@
-export const MAX_MOBILE_SCREEN_WIDTH = 768;
+export const MAX_MOBILE_SCREEN_WIDTH = 568;
 
 //Note: using in all paginations, should change
 export const PAGE_LIMIT = 1;

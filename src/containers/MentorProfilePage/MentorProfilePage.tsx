@@ -16,6 +16,7 @@ import ClientContactButton from "../../components/ClientContactButton/ClientCont
 import './MentorProfilePage.scss'
 import IconStar from "../../components/IconStar/IconStar";
 import PackageCard from "../../components/PackageCard/PackageCard";
+import SkillList from "../../components/SkillList/SkillList";
 
 type MentorProfileProps = {
   match: {
@@ -35,7 +36,7 @@ const MentorProfilePage: React.FC<MentorProfileProps> = (props) => {
   const [checkedCard, setCheckedCard] = useState<number>(2);
   const mentorId: string = props.match.params.id;
   const mentor = exampleMentors[Number.parseInt(mentorId)];
-  const { id, image, displayName, categories, bio } = mentor;
+  const { id, image, displayName, categories, bio, skills, radiU } = mentor;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -63,16 +64,19 @@ const MentorProfilePage: React.FC<MentorProfileProps> = (props) => {
           <div className="mentor-profile__header__text__category">
             {categories}
           </div>
-          <div className="mentor-profile__header__text__review">
-            <IconStar />
-            <IconStar />
-            <IconStar />
-            <IconStar />
-            <IconStar />
+          <div className="mentor-profile__header__text__category">
+            {`radi u: ${radiU}`}  
           </div>
+          {/* <div className="mentor-profile__header__text__review">
+            <IconStar />
+            <IconStar />
+            <IconStar />
+            <IconStar />
+            <IconStar />
+          </div> */}
+          <SkillList skills={skills}/>
           <div className="mentor-profile__header__text__bio">
-            {/* {bio} */}
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? 
+            {bio}
           </div>
         </div>
       </div>

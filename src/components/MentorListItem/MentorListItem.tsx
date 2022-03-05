@@ -18,13 +18,16 @@ import IconLinkedin from "../IconLinkedin/IconLinedin";
 import IconBasketball from "../IconBasketball/IconBasketball";
 import IconBe from "../IconBe/IconBe";
 import { Link } from "react-router-dom";
+import SkillList from "../SkillList/SkillList";
 
 interface ExampleMentorsType {
   id: string;
   image: string;
   displayName: string;
   categories: string[];
+  skills: string[];
   bio: string;
+  radiU: string;
 }
 
 interface Props {
@@ -32,7 +35,7 @@ interface Props {
 }
 
 export default observer(function ConsultantListItem({ mentor }: Props) {
-  const { id, image, displayName, categories, bio } = mentor;
+  const { id, image, displayName, categories, bio, skills, radiU } = mentor;
   // const calculateLevel = (totalStarRating: number) => {
   //   if (totalStarRating < 5)
   //     return [Math.floor((totalStarRating / 5) * 100), 1];
@@ -68,13 +71,12 @@ export default observer(function ConsultantListItem({ mentor }: Props) {
         <div className="mentor__category">
           {categories[0]}
         </div>
-        <div className="mentor__icons">
-            <IconBe />
-            <IconBasketball />
-            <IconLinkedin />
+        <div className="mentor__work-in">
+          {`radi u: ${radiU}`}
         </div>
+        <SkillList skills={skills} isLimited />
         <div className="mentor__bio">
-          {bio}
+          {bio.length > 120 ? bio.slice(0, 120) : bio}
         </div>
       </div>
     </Link>

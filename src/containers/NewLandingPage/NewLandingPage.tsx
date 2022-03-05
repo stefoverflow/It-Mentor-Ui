@@ -1,20 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import GraphicWorkImage from '../../assets/graphic-work.png';
-import Menu from "../../components/Menu/Menu";
+import LandingVideoImage from '../../assets/landing-video.png';
+import LandingVideoMobileImage from '../../assets/landing-video-mobile.png';
+// import Menu from "../../components/Menu/Menu";
+import { MAX_MOBILE_SCREEN_WIDTH } from "../../constants";
 
 import './NewLandingPage.scss';
+import useMobile from "../../hooks/useMobile";
 
 interface NewLandingPageType {
 };
 
 const NewLandingPage: React.FC<NewLandingPageType> = () => {
     const LandingVideo = require('../../assets/video.mp4');
+    const { isMobile } = useMobile();
 
     return <div className="landing">
-        <video autoPlay muted loop className="landing__video">
+        <div className="landing__video">
+            <img src={isMobile ? LandingVideoMobileImage : LandingVideoImage} className="landing__video" />
+        </div>
+        {/* <video autoPlay muted loop className="landing__video">
             <source src={LandingVideo} type="video/mp4"/>
-        </video>
+        </video> */}
 
         <div className="landing__gradient" />
 
