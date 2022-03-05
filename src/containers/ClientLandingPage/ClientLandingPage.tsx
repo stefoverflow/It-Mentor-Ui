@@ -5,9 +5,12 @@ import ClientVideoPlacehoderImage from '../../assets/client-video-placeholder.pn
 import ClientVideoPlaceholderMobileImage from '../../assets/client-video-placeholder-mobile.png';
 import ClientHappyImage from '../../assets/client-happy.png';
 import ClientSmartImage from '../../assets/client-smart.png';
+import ClientSmartMobileImage from '../../assets/client-smart-mobile.png';
 import ClientStydyImage from '../../assets/client-study.png';
+import ClientStudyMobileImage from '../../assets/client-study-mobile.png';
 import ClientCodingImage from '../../assets/client-coding.png';
 import ClientCryImage from '../../assets/client-cry.png';
+import ClientCryMobileImage from '../../assets/client-cry-mobile.png';
 import ClientProofImage from '../../assets/client-proof.png';
 import ClientMainContentVideoPlaceholderImage from '../../assets/main-content-video-placeholder.png';
 import ClientMainContentVideoPlaceholderMobileImage from '../../assets/main-content-video-placeholder-mobile.png';
@@ -88,14 +91,14 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
                     </div>
                 </div>
                 <div className="landing-client__main-section__invest-section__image-container">
-                    <img className="landing-client__main-section__invest-section__image-container__image" src={ClientSmartImage} />
-                    <div className="landing-client__main-section__invest-section__image-container__gradient" />
+                    <img className="landing-client__main-section__invest-section__image-container__image" src={isMobile ? ClientSmartMobileImage : ClientSmartImage} />
+                    {/* <div className="landing-client__main-section__invest-section__image-container__gradient" /> */}
                 </div>
             </div>
             <div className="landing-client__main-section__invest-section">
                 <div className="landing-client__main-section__invest-section__image-container">
-                    <img className="landing-client__main-section__invest-section__image-container__image" src={ClientStydyImage} />
-                    <div className="landing-client__main-section__invest-section__image-container__gradient" />
+                    <img className="landing-client__main-section__invest-section__image-container__image" src={isMobile ? ClientStudyMobileImage : ClientStydyImage} />
+                    {/* <div className="landing-client__main-section__invest-section__image-container__gradient" /> */}
                 </div>
                 <div className="landing-client__main-section__invest-section__text">
                     <div className="landing-client__main-section__invest-section__text__title">
@@ -170,8 +173,8 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
                     </div>
                 </div>
                 <div className="landing-client__main-section__proof__image-container">
-                    <div className="landing-client__main-section__proof__image-container__gradient" />
-                    <img src={ClientCryImage} className="landing-client__main-section__proof__image-container__image" />
+                    {/* <div className="landing-client__main-section__proof__image-container__gradient" /> */}
+                    <img src={isMobile ? ClientCryMobileImage : ClientCryImage} className="landing-client__main-section__proof__image-container__image" />
                 </div>
             </div>
         </div>

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { MAX_MOBILE_SCREEN_WIDTH } from '../constants';
 
 export default function () {
-    const [isMobile, setIsMobile] = useState<boolean>(false);
+    const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < MAX_MOBILE_SCREEN_WIDTH);
 
     useEffect(() => {
         const handleResize = () => {
