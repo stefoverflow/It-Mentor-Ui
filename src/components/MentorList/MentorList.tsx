@@ -15,6 +15,7 @@ import MentorListItem from "../MentorListItem/MentorListItem";
 import AleksandarAndjelkovic from '../../assets/aleksandar-andjelkovic.png';
 import MilanVasic from '../../assets/milan-vasic.png';
 import IgorDjurovic from '../../assets/igor-djurovic.png';
+import AleksandarStavric from '../../assets/aleksandar-stavric.png';
 // import MentorExampleImage2 from '../../assets/mentor-example-2.png';
 // import MentorExampleImage3 from '../../assets/mentor-example-3.png';
 // import MentorExampleImage4 from '../../assets/mentor-example-4.png';
@@ -110,6 +111,32 @@ export const exampleMentors = [
     'CSS', 
     'SCSS', 
     'Ubuntu server'
+    ],
+  },
+  {
+    id: '3',
+    displayName:"Aleksandar Stavrić",
+    bio: `Više si naklonjen dizajnu, da sve izgleda lepo i skladno, nasuprot kodiranju?
+
+    Look no further, na pravom si mestu! Obučiću te da prepoznaš najsitnije detalje i dizajniraš profesionalne web i mobilne sadržaje.
+
+    Sa 6+ godina iskustva u dizajnu skontao sam šta korisniku lepo a šta ga smara.
+
+    Kroz praktične projekte ću ti preneti svoje veštine i oko za dizajn.
+
+    Odaberi paket, zakaži konsultaciju i krećemo sa radom!
+    `,
+    image: AleksandarStavric,
+    radiU: 'aleksandarstavricdesign.weebly.com',
+    categories: ['UI/UX Designer'],
+    skills: ['UI/UX Design', 
+    'Web Design', 
+    'Mobile Apps Design', 
+    'Rapid Prototyping', 
+    'Wireframing', 
+    'Typography and layout', 
+    'Figma', 
+    'Adobe XD'
     ],
   }
 ]
