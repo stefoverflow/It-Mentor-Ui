@@ -15,8 +15,9 @@ import MentorListItem from "../MentorListItem/MentorListItem";
 import AleksandarAndjelkovic from '../../assets/aleksandar-andjelkovic.png';
 import MilanVasic from '../../assets/milan-vasic.png';
 import IgorDjurovic from '../../assets/igor-djurovic.png';
-import NemanjaKuzmic from '../../assets/nemanja-kuzmic';
+import NemanjaKuzmic from '../../assets/nemanja-kuzmic.png';
 import AleksandarStavric from '../../assets/aleksandar-stavric.png';
+import NatasaBodganovic from '../../assets/natasa-bogdanovic.png';
 // import MentorExampleImage2 from '../../assets/mentor-example-2.png';
 // import MentorExampleImage3 from '../../assets/mentor-example-3.png';
 // import MentorExampleImage4 from '../../assets/mentor-example-4.png';
@@ -163,6 +164,35 @@ export const exampleMentors = [
      'C++', 
      'C#', 
      'Strukture podataka i algoritmi'
+    ],
+  },
+  {
+    id: '5',
+    displayName:"Nataša Bogdanović",
+    bio: `Da li si apsolutni početnik i ne znaš odakle da kreneš? Ja ću ti pomoći. :)
+
+    Moja stručnost je Java programski jezik i imam četiri godine iskustva u radu sa njim.
+    
+    Uz pomoć Jave ćeš kreirati web i Android aplikacije za telefon nalik Instagramu, šta god poželiš.
+
+    Učenje programiranja me je dovelo od osobe kojoj je uvek bila interesantna matematika ali nisam znala kako da je primenim u praksi i zaradim, do toga da iste analitičke sposobnosti primenim u programiranju i živim od nečega što volim da radim.
+
+    Kao mentor imam preko 10 godina iskustva i osećaj koji dobijem kada moj klijent postigne svoj cilj me jako ispunjava. ^_^
+
+    Kada si već ovde i posetio naš sajt, znaš moju priču, trebaće ti pomoć da od apsolutnog početnika dođeš do prvog visoko plaćenog posla. Zašto ne bi načinio naredni korak i angažovao mene da ti pomognem na tom putu? :)
+
+    Radujem se našoj saradnji!      
+    `,
+    image: NatasaBodganovic,
+    radiU: 'Intermed Solutions',
+    categories: ['Web Developer'],
+    skills: ['Java', 
+    'Objektno orjentisano programiranje', 
+    'baze podataka', 
+    'SQL', 
+    'Strukture podataka i algoritmi',
+    'Android programiranje',
+    'Bekend', 
     ],
   }
 ]
