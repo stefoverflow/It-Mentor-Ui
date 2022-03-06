@@ -18,6 +18,7 @@ import IgorDjurovic from '../../assets/igor-djurovic.png';
 import NemanjaKuzmic from '../../assets/nemanja-kuzmic.png';
 import AleksandarStavric from '../../assets/aleksandar-stavric.png';
 import NatasaBodganovic from '../../assets/natasa-bogdanovic.png';
+import SlobodanZivkovic from '../../assets/slobodan-zivkovic.png';
 // import MentorExampleImage2 from '../../assets/mentor-example-2.png';
 // import MentorExampleImage3 from '../../assets/mentor-example-3.png';
 // import MentorExampleImage4 from '../../assets/mentor-example-4.png';
@@ -193,6 +194,32 @@ export const exampleMentors = [
     'Strukture podataka i algoritmi',
     'Android programiranje',
     'Bekend', 
+    ],
+  },
+  {
+    id: '6',
+    displayName:"Slobodan Živković",
+    bio: `Da li želiš da jednog dana postaneš fullstack tech lead?
+
+    Uz moju pomoć i stručnost potkrepljenu sa 7+ godina iskustva ćeš biti korak bliže ka cilju.
+
+    Promenio sam par firmi poput Atomie, Troxo-a i Dooer-a što mi je dalo mogućnost da na raznim projektima usavršim svoje veštine. 
+    
+    Sada je vreme da ih prenesem tebi.
+    `,
+    image: SlobodanZivkovic,
+    radiU: 'IT Mrav',
+    categories: ['Tech Lead'],
+    skills: ['Python', 
+    '.NET Core', 
+    'React', 
+    'PostgreSQL', 
+    'Docker', 
+    'Microservices', 
+    'Node.js', 
+    'React', 
+    'express', 
+    'GraphQL'
     ],
   }
 ]
