@@ -15,6 +15,7 @@ import MentorListItem from "../MentorListItem/MentorListItem";
 import AleksandarAndjelkovic from '../../assets/aleksandar-andjelkovic.png';
 import MilanVasic from '../../assets/milan-vasic.png';
 import IgorDjurovic from '../../assets/igor-djurovic.png';
+import NemanjaKuzmic from '../../assets/nemanja-kuzmic';
 import AleksandarStavric from '../../assets/aleksandar-stavric.png';
 // import MentorExampleImage2 from '../../assets/mentor-example-2.png';
 // import MentorExampleImage3 from '../../assets/mentor-example-3.png';
@@ -137,6 +138,31 @@ export const exampleMentors = [
     'Typography and layout', 
     'Figma', 
     'Adobe XD'
+    ],
+  },
+  {
+    id: '4',
+    displayName:"Nemanja Kuzmić",
+    bio: `Da li si se ikada pitao kako su napravili GTA 5?
+
+    U mentorstvu sa mnom ćeš postati majstor pravljenja video igara.
+    
+    Ako si iole sličan meni, od malena igraš igrice, zašto ne bi svoju strast unovčio?
+    Godinama sam svoju radoznalost pretvorio u C++ ekspertizu u oblasti game developmenta i želim da sa tobom podelim sve prečice koje sam naučio.
+    
+    Ako ti je ikada Ubisoft logo izašao pred oči pre paljenja video igrice imaćeš priliku da i ti, kao i ja, budeš zahvalan na prilici da radiš za kompanije poput ove, praveći naredni veliki hit.
+    
+    Voliš igrice, obožavam ih I ja kao što vidiš, kao I programiranje. Hajde da ukombinujemo ova dva i načinimo od tebe vrhunskog gameplay inženjera.
+    
+    Ukoliko ti ovo zvuči interesantno, zakaži konsultaciju I odaberi mene kao mentora. :)    
+    `,
+    image: NemanjaKuzmic,
+    radiU: 'Ubisoft',
+    categories: ['Gameplay Programmer'],
+    skills: ['Unity',
+     'C++', 
+     'C#', 
+     'Strukture podataka i algoritmi'
     ],
   }
 ]
