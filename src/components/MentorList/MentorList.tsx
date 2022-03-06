@@ -14,6 +14,7 @@ import MentorListItem from "../MentorListItem/MentorListItem";
 // import useQueryParams from "../../hooks/useQueryParams";
 import AleksandarAndjelkovic from '../../assets/aleksandar-andjelkovic.png';
 import MilanVasic from '../../assets/milan-vasic.png';
+import IgorDjurovic from '../../assets/igor-djurovic.png';
 // import MentorExampleImage2 from '../../assets/mentor-example-2.png';
 // import MentorExampleImage3 from '../../assets/mentor-example-3.png';
 // import MentorExampleImage4 from '../../assets/mentor-example-4.png';
@@ -25,7 +26,7 @@ import "./MentorList.scss";
 export const exampleMentors = [
   {
     id: '0',
-    displayName:"Aleksandar\nAnđelković",
+    displayName:"Aleksandar Anđelković",
     bio: `Želiš senior softverskog inženjera kao svog ličnog mentora za C#, najtraženiji programski jezik na tržištu u Srbiji?
     
     Uz moju pomoć ćeš kroz praktične projekte stići do zavidnog nivoa bilo da si apsolutni početnik ili već imaš nekog predznanja.
@@ -52,7 +53,7 @@ export const exampleMentors = [
   },
   {
     id: '1',
-    displayName:"Milan\nVasić",
+    displayName:"Milan Vasić",
     bio: `Mikroservisna arhitektura, Docker, RabbitMQ, šta je sve to?
 
     Samo neki od naprednijih koncepata I tehnologija kojima ćeš vladati nakon praktičnog rada sa mnom.
@@ -80,6 +81,36 @@ export const exampleMentors = [
      'Docker', 
      'MongoDB', 
      'Redis'],
+  },
+  {
+    id: '2',
+    displayName:"Igor Đurović",
+    bio: `Želiš da postaneš fullstack Web developer?
+
+    Na pravom si mestu! 
+
+    Preneću ti sve veštine koje sam stekao tokom vremena, sa više od 8 godina iskustva i preko 50 projekata, kako za strane tako i za domaće klijente u raznim industrijama, sa fokusom na Laravel framework.
+
+    Kroz rad na projektima sa mnom ćeš naučiti kako da postaviš arhitekturu aplikacije, primeniš softverske paterne kao I mnoge druge skill-ove kojima ćeš se istaknuti od konkurencije na intervjuu za posao.
+
+    Ovo je bila moja priča, ukoliko želiš da dođeš do naprednog nivoa programiranja biće mi zadovoljstvo da zajedničkim snagama stignemo do tvog cilja!
+
+    Zakaži konsultaciju I krećemo sa radom!
+    `,
+    image: IgorDjurovic,
+    radiU: 'CEO of Madcode',
+    categories: ['Web Developer'],
+    skills: ['Laravel', 
+    'PHP',
+    'Javascript', 
+    'Vue js', 
+    'MySQL', 
+    'Database Architecture', 
+    'HTML', 
+    'CSS', 
+    'SCSS', 
+    'Ubuntu server'
+    ],
   }
 ]
 
