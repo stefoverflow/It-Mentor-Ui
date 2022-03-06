@@ -13,6 +13,7 @@ import MentorListItem from "../MentorListItem/MentorListItem";
 // import usePagination from "../../hooks/usePagination";
 // import useQueryParams from "../../hooks/useQueryParams";
 import AleksandarAndjelkovic from '../../assets/aleksandar-andjelkovic.png';
+import MilanVasic from '../../assets/milan-vasic.png';
 // import MentorExampleImage2 from '../../assets/mentor-example-2.png';
 // import MentorExampleImage3 from '../../assets/mentor-example-3.png';
 // import MentorExampleImage4 from '../../assets/mentor-example-4.png';
@@ -37,7 +38,7 @@ export const exampleMentors = [
     
     Klikni na dugme da zakažeš konsultaciju i krećemo sa radom! 💪`,
     image: AleksandarAndjelkovic,
-    radiU: 'Ice Fyre solutions',
+    radiU: 'IceFyre Solutions',
     categories: ['Web Developer'],
     skills: ["C#",
     ".NET",
@@ -49,6 +50,37 @@ export const exampleMentors = [
     "Docker", 
     "Azure Cloud"],
   },
+  {
+    id: '1',
+    displayName:"Milan Vasić",
+    bio: `Mikroservisna arhitektura, Docker, RabbitMQ, šta je sve to?
+
+    Samo neki od naprednijih koncepata I tehnologija kojima ćeš vladati nakon praktičnog rada sa mnom.
+
+    Ako si imalo sličan meni, visoko motivisan sa konstantnom željom za znanjem I ličnim razvojem, odlično ćemo sarađivati! 
+    
+    Zahvalan sam na tome što trenutno radim u Američkoj firmi Grid Dynamics I sličan ishod želim I tebi u skoroj budućnosti.
+    
+    Na kraju obuke sa mnom ćeš imati samopouzdanja da realizuješ bilo koji softver koji tebi ili tvom klijentu padne na pamet.
+    
+    Ako već razmišljaš o odabiru mentora, biće mi čast da to budem ja.
+
+    Odaberi paket, klikni na dugme za zakazivanje konsultacije I krećemo sa radom!
+    `,
+    image: MilanVasic,
+    radiU: 'Grid Dynamics',
+    categories: ['Web Developer'],
+    skills: ['Java',
+     'Spring', 
+     'Mikroservisna arhitektura',
+     'Monolitna arhitektura',
+     'Hibernate',
+     'Junit', 
+     'Wiremock', 
+     'Docker', 
+     'MongoDB', 
+     'Redis'],
+  }
 ]
 
 
