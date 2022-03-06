@@ -25,7 +25,7 @@ import "./MentorList.scss";
 export const exampleMentors = [
   {
     id: '0',
-    displayName:"Aleksandar Anđelković",
+    displayName:"Aleksandar\nAnđelković",
     bio: `Želiš senior softverskog inženjera kao svog ličnog mentora za C#, najtraženiji programski jezik na tržištu u Srbiji?
     
     Uz moju pomoć ćeš kroz praktične projekte stići do zavidnog nivoa bilo da si apsolutni početnik ili već imaš nekog predznanja.
@@ -52,7 +52,7 @@ export const exampleMentors = [
   },
   {
     id: '1',
-    displayName:"Milan Vasić",
+    displayName:"Milan\nVasić",
     bio: `Mikroservisna arhitektura, Docker, RabbitMQ, šta je sve to?
 
     Samo neki od naprednijih koncepata I tehnologija kojima ćeš vladati nakon praktičnog rada sa mnom.
