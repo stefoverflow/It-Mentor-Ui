@@ -19,6 +19,7 @@ import IconBasketball from "../IconBasketball/IconBasketball";
 import IconBe from "../IconBe/IconBe";
 import { Link } from "react-router-dom";
 import SkillList from "../SkillList/SkillList";
+import Image from "../Image/Image";
 
 interface ExampleMentorsType {
   id: string;
@@ -63,7 +64,7 @@ export default observer(function ConsultantListItem({ mentor }: Props) {
     <Link to={`/mentors/${id}`}>
       <div className="mentor" key={id}>
         <div className="mentor__image-container">
-          <img className="mentor__image-container__image" src={image} />
+          <Image className="mentor__image-container__image" src={image} />
         </div>
         <div className="mentor__title">
           {displayName}

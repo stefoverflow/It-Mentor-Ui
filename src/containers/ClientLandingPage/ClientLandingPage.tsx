@@ -26,6 +26,7 @@ import ClientContactButton from '../../components/ClientContactButton/ClientCont
 import IconArrowRight from '../../components/IconArrowRight/IconArrowRight';
 import Footer from '../../components/Footer/Footer';
 import useMobile from '../../hooks/useMobile';
+import Image from '../../components/Image/Image';
 
 interface ClientLandingPageType {};
 
@@ -50,7 +51,10 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
         </div>
         <div className="landing-client__main-section">
             <div className="landing-client__main-section__happy-section">
-                <img className="landing-client__main-section__happy-section__image" src={ClientHappyImage} />
+                <Image
+                    className="landing-client__main-section__happy-section__image"
+                    src={ClientHappyImage}
+                />
                 <div className="landing-client__main-section__happy-section__description">
                 „Ako bi me neko pitao 
                 da li sad treba da upišeš fakultet, neki kurs 
@@ -71,7 +75,7 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
                 Preuzmi inicijativu i ukloni brigu o parama, proputuj svet, poveži se sa ljudima i pokreni sopstveni biznis uz pomoć novca koji ćeš zaraditi u IT sektoru.
             </div>
             <div className="landing-client__main-section__elon-musk-image-container">
-                <img className="landing-client__main-section__elon-musk-image-container__image" src={ClientMainContentElonMuskImage} />
+                <Image className="landing-client__main-section__elon-musk-image-container__image" src={ClientMainContentElonMuskImage} />
             </div>
             <div className="landing-client__main-section__invest-section">
                 <div className="landing-client__main-section__invest-section__text">
@@ -91,13 +95,13 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
                     </div>
                 </div>
                 <div className="landing-client__main-section__invest-section__image-container">
-                    <img className="landing-client__main-section__invest-section__image-container__image" src={isMobile ? ClientSmartMobileImage : ClientSmartImage} />
+                    <Image className="landing-client__main-section__invest-section__image-container__image" src={isMobile ? ClientSmartMobileImage : ClientSmartImage} />
                     {/* <div className="landing-client__main-section__invest-section__image-container__gradient" /> */}
                 </div>
             </div>
             <div className="landing-client__main-section__invest-section">
                 <div className="landing-client__main-section__invest-section__image-container">
-                    <img className="landing-client__main-section__invest-section__image-container__image" src={isMobile ? ClientStudyMobileImage : ClientStydyImage} />
+                    <Image className="landing-client__main-section__invest-section__image-container__image" src={isMobile ? ClientStudyMobileImage : ClientStydyImage} />
                     {/* <div className="landing-client__main-section__invest-section__image-container__gradient" /> */}
                 </div>
                 <div className="landing-client__main-section__invest-section__text">
@@ -147,7 +151,7 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
                     </div>
                 </div>
                 <div className="landing-client__main-section__qa-section__image-container">
-                    <img className="landing-client__main-section__qa-section__image-container__image" src={ClientCodingImage} />
+                    <Image className="landing-client__main-section__qa-section__image-container__image" src={ClientCodingImage} />
                 </div>
             </div>
             <div className="landing-client__main-section__begining">
@@ -169,18 +173,18 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
                         Tek kada sam prebacio fokus sa diplome na sticanje praktičnih veština, tada sam dobio rezultate. Možeš ići mojim putem ili izbeći moje greške i krenuti ka susret uspehu. Ovo je ponuda koju sam skoro dobio nakon 4 meseci radnog iskustva:
                     </div>
                     <div className="landing-client__main-section__proof__text__image-container">
-                        <img src={ClientProofImage} className="landing-client__main-section__proof__text__image-container__image"/>
+                        <Image src={ClientProofImage} className="landing-client__main-section__proof__text__image-container__image"/>
                     </div>
                 </div>
                 <div className="landing-client__main-section__proof__image-container">
                     {/* <div className="landing-client__main-section__proof__image-container__gradient" /> */}
-                    <img src={isMobile ? ClientCryMobileImage : ClientCryImage} className="landing-client__main-section__proof__image-container__image" />
+                    <Image src={isMobile ? ClientCryMobileImage : ClientCryImage} className="landing-client__main-section__proof__image-container__image" />
                 </div>
             </div>
         </div>
         <div className="landing-client__main-section__mentors">
             <div className="landing-client__main-section__mentors__image-container">
-                <img className="landing-client__main-section__mentors__image-container__image" src={OfficeImage}/>
+                <Image className="landing-client__main-section__mentors__image-container__image" src={OfficeImage}/>
             </div>
             <Link to="/mentors" className="landing-client__main-section__mentors__card">
                 <div className="landing-client__main-section__mentors__card__mentor">

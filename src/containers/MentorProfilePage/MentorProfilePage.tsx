@@ -17,6 +17,7 @@ import './MentorProfilePage.scss'
 import IconStar from "../../components/IconStar/IconStar";
 import PackageCard from "../../components/PackageCard/PackageCard";
 import SkillList from "../../components/SkillList/SkillList";
+import Image from "../../components/Image/Image";
 
 type MentorProfileProps = {
   match: {
@@ -55,7 +56,7 @@ const MentorProfilePage: React.FC<MentorProfileProps> = (props) => {
     <div className="mentor-profile">
       <div className="mentor-profile__header">
         <div className="mentor-profile__header__image">
-          <img src={image} className="mentor-profile__header__image"/>
+          <Image src={image} className="mentor-profile__header__image"/>
         </div>
         <div className="mentor-profile__header__text">
           <div className="mentor-profile__header__text__title">
