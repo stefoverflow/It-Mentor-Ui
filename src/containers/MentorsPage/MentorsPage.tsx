@@ -8,6 +8,7 @@ import Menu from "../../components/Menu/Menu";
 import ClientContactButton from "../../components/ClientContactButton/ClientContactButton";
 import SearchTextInput from "../../components/SearchTextInput/SearchTextInput";
 import Footer from "../../components/Footer/Footer";
+import Logo from "../../components/Logo/Logo";
 
 export default observer(function ConsultantDashboard() {
   // const { mentorStore } = useStore();
@@ -38,6 +39,7 @@ export default observer(function ConsultantDashboard() {
         </div>
       </div>
       <Footer />
+      <Logo />
     </div>
   );
 });

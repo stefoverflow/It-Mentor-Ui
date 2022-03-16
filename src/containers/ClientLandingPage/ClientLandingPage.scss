@@ -2,11 +2,7 @@
 @import "../../scss/breakpoints";
 
 .landing-client {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    font-family: Gilroy;
     &__image-container {
         position: relative;
         right: 0;

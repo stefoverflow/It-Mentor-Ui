@@ -4,10 +4,21 @@
     background-color: #0060FF;
     border-radius: 66px 66px 0px 0px;
     padding: 30.6rem 17.8rem 27.8rem;
-    margin-top: 23.1rem;
+    // margin-top: 23.1rem;
     display: flex;
     flex-direction: row;
     gap: 25rem;
+    font-family: Gilroy;
+
+    &__watermark {
+        margin-bottom: -23.1rem;
+        max-width: 1364px;
+        max-height: 347px;
+
+        @include mobile() {
+            margin-bottom: -10rem;
+        }
+    }
 
     @include mobile() {
         flex-direction: column;

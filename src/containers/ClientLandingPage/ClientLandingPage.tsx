@@ -27,13 +27,14 @@ import IconArrowRight from '../../components/IconArrowRight/IconArrowRight';
 import Footer from '../../components/Footer/Footer';
 import useMobile from '../../hooks/useMobile';
 import Image from '../../components/Image/Image';
+import Logo from '../../components/Logo/Logo';
 
 interface ClientLandingPageType {};
 
 const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
     const { isMobile } = useMobile();
 
-    return <div>
+    return <div className="landing-client">
         <div className="landing-client__image-container">
             <img className="landing-client__image-container__image" src={isMobile ? ClientVideoPlaceholderMobileImage : ClientVideoPlacehoderImage} />
             <div className="landing-client__image-container__gradient" />
@@ -75,7 +76,7 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
                 Preuzmi inicijativu i ukloni brigu o parama, proputuj svet, poveži se sa ljudima i pokreni sopstveni biznis uz pomoć novca koji ćeš zaraditi u IT sektoru.
             </div>
             <div className="landing-client__main-section__elon-musk-image-container">
-                <Image className="landing-client__main-section__elon-musk-image-container__image" src={ClientMainContentElonMuskImage} />
+                <img className="landing-client__main-section__elon-musk-image-container__image" src={ClientMainContentElonMuskImage} />
             </div>
             <div className="landing-client__main-section__invest-section">
                 <div className="landing-client__main-section__invest-section__text">
@@ -151,7 +152,7 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
                     </div>
                 </div>
                 <div className="landing-client__main-section__qa-section__image-container">
-                    <Image className="landing-client__main-section__qa-section__image-container__image" src={ClientCodingImage} />
+                    <img className="landing-client__main-section__qa-section__image-container__image" src={ClientCodingImage} />
                 </div>
             </div>
             <div className="landing-client__main-section__begining">
@@ -173,7 +174,7 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
                         Tek kada sam prebacio fokus sa diplome na sticanje praktičnih veština, tada sam dobio rezultate. Možeš ići mojim putem ili izbeći moje greške i krenuti ka susret uspehu. Ovo je ponuda koju sam skoro dobio nakon 4 meseci radnog iskustva:
                     </div>
                     <div className="landing-client__main-section__proof__text__image-container">
-                        <Image src={ClientProofImage} className="landing-client__main-section__proof__text__image-container__image"/>
+                        <img src={ClientProofImage} className="landing-client__main-section__proof__text__image-container__image"/>
                     </div>
                 </div>
                 <div className="landing-client__main-section__proof__image-container">
@@ -198,6 +199,7 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
         </div>
         <Footer />
         <Menu />
+        <Logo />
     </div>
 };
 

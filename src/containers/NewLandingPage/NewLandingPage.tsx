@@ -8,6 +8,7 @@ import { MAX_MOBILE_SCREEN_WIDTH } from "../../constants";
 
 import './NewLandingPage.scss';
 import useMobile from "../../hooks/useMobile";
+import Logo from "../../components/Logo/Logo";
 
 interface NewLandingPageType {
 };
@@ -51,6 +52,7 @@ const NewLandingPage: React.FC<NewLandingPageType> = () => {
             <Link to='/register' className="landing__become-mentor">
                 Postani mentor
             </Link>
+            <Logo />
             {/* <Menu /> */}
         </div>
 

@@ -1,10 +1,13 @@
 import React from 'react';
+import WatermarkLogo from '../WatermarkLogo/WatermarkLogo';
 
 import './Footer.scss';
 
 const Footer = () => {
 
-    return <div className="footer">
+    return <div style={{ position: 'relative', marginTop: '23.1rem' }}>
+        <WatermarkLogo className="footer__watermark"/>
+    <div className="footer">
         <div className="footer__main-column">
             <div className="footer__main-column__title">
                 Glavni naslov
@@ -50,6 +53,7 @@ const Footer = () => {
                 </div>
             </div>
         </div>
+    </div>
     </div>
 };
 

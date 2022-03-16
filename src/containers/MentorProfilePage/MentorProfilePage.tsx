@@ -18,6 +18,7 @@ import IconStar from "../../components/IconStar/IconStar";
 import PackageCard from "../../components/PackageCard/PackageCard";
 import SkillList from "../../components/SkillList/SkillList";
 import Image from "../../components/Image/Image";
+import Logo from "../../components/Logo/Logo";
 
 type MentorProfileProps = {
   match: {
@@ -98,6 +99,7 @@ const MentorProfilePage: React.FC<MentorProfileProps> = (props) => {
       <ClientContactButton />
 
       <Footer />
+      <Logo />
       {/* {fetchMentorInProgress ? (
         <Loader active inline />
       ) : fetchMentorError ? (
