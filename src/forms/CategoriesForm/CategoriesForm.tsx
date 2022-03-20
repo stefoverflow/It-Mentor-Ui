@@ -65,7 +65,7 @@ const CategoriesForm: React.FC<CategoriesForm> = (props) => {
       }
 
       setIsOpenNewCategory(false);
-    } catch (e) {
+    } catch (e:any) {
       setAddCategoryError(e.toString());
     } finally {
       setAddCategoryInProgress(false);
@@ -117,7 +117,7 @@ const CategoriesForm: React.FC<CategoriesForm> = (props) => {
                     validate={required("Category name is required.")}
                   />
                   <Button
-                    type="secondary"
+                    type="submit"
                     loading={addCategoryInProgress}
                     positive
                     content="Add category"

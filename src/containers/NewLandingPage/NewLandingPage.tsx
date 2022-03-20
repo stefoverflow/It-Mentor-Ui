@@ -32,7 +32,7 @@ const NewLandingPage: React.FC<NewLandingPageType> = () => {
                 Do prvog posla sa ličnim IT mentorom.
             </div>
             <div className="landing__content__description">
-                Pomažemo početnicima, ljudima koji žele da promene karijeru, onima koji su već zavrsili neki kurs ili fakultet a nemaju rezultate da dođu do prvog visoko plaćenog posla u IT sektoru za manje od 6 meseci.
+                Pomažemo početnicima, ljudima koji žele da promene karijeru, onima koji su već završili neki kurs ili fakultet a nemaju rezultate da dođu do prvog visoko plaćenog posla u IT sektoru za manje od 6 meseci.
             </div>
             <div className="landing__content__client-container">
                 <div>Do prvog posla</div>

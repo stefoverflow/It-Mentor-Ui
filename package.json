@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@microsoft/signalr": "^5.0.6",
+    "@semantic-ui-react/css-patch": "^1.0.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -22,6 +23,7 @@
     "mobx": "^6.3.0",
     "mobx-react-lite": "^3.2.0",
     "mobx-utils": "^6.0.4",
+    "node": "^17.7.1",
     "react": "^16.14.0",
     "react-bootstrap": "^1.4.3",
     "react-cropper": "^2.1.8",
@@ -30,7 +32,7 @@
     "react-final-form": "^6.5.3",
     "react-responsive-carousel": "^3.2.18",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
+    "react-scripts": "^5.0.0",
     "react-toastify": "^7.0.4",
     "sass": "^1.35.1",
     "semantic-ui-css": "^2.4.1",
@@ -42,7 +44,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postinstall": "semantic-ui-css-patch"
   },
   "eslintConfig": {
     "extends": "react-app"
