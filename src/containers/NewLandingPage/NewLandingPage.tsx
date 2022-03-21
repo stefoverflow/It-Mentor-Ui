@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import GraphicWorkImage from '../../assets/graphic-work.png';
-import LandingVideoImage from '../../assets/landing-video.png';
+import GraphicWorkImage from '../../assets/graphic-work.svg';
+import LandingImage from '../../assets/home-page-cover.svg';
 import LandingVideoMobileImage from '../../assets/landing-video-mobile.png';
 // import Menu from "../../components/Menu/Menu";
 import { MAX_MOBILE_SCREEN_WIDTH } from "../../constants";
@@ -19,13 +19,11 @@ const NewLandingPage: React.FC<NewLandingPageType> = () => {
 
     return <div className="landing">
         <div className="landing__video">
-            <img src={isMobile ? LandingVideoMobileImage : LandingVideoImage} className="landing__video" />
+            <img src={isMobile ? LandingVideoMobileImage : LandingImage} className="landing__video" />
         </div>
         {/* <video autoPlay muted loop className="landing__video">
             <source src={LandingVideo} type="video/mp4"/>
         </video> */}
-
-        <div className="landing__gradient" />
 
         <div className="landing__content">
             <div className="landing__content__title">
@@ -36,23 +34,25 @@ const NewLandingPage: React.FC<NewLandingPageType> = () => {
             </div>
             <div className="landing__content__client-container">
                 <div>Do prvog posla</div>
-                <Link to="/client-landing" className="landing__content__client-container__start-button">
+                <Link to="/client-landing" className="landing__content__client-container__image-container__start-button">
                     Start
                 </Link>
                 <div className="landing__content__client-container__image-container">
                     <img className="landing__content__client-container__image-container__image" src={GraphicWorkImage} />
                 </div>
                 <div className="landing__content__client-container__got-account">
-                    <div className="landing__content__client-container__got-account__text">Već imate nalog?</div>
-                    <Link to='/login' className="landing__content__client-container__got-account__login-link">
+                    <div className="landing__content__client-container__image-container__got-account__text">Već imate nalog?</div>
+                    <Link to='/login' className="landing__content__client-container__image-container__got-account__login-link">
                         Ulogujte se
                     </Link>
                 </div>
             </div>
+            <div className="landing__header">
             <Link to='/register' className="landing__become-mentor">
                 Postani mentor
             </Link>
             <Logo />
+            </div>
             {/* <Menu /> */}
         </div>
 
