@@ -127,7 +127,8 @@
 
             @include mobile() {
                 margin: 0 60px;
-                width: auto;
+                width: 30.5rem;
+                height: 37.4rem;
                 font-size: 18px;
                 line-height: 22px;
                 gap: 18px;
@@ -141,6 +142,7 @@
                 @include mobile() {
                     width: 117px;
                     height: 117px;
+                    gap: 2.5rem;
                 }
 
                 &__start-button {
@@ -154,6 +156,11 @@
                     background-color: $color-main-red;
                     color: $color-white;
                     border-radius: 0.5rem;
+
+                    @include mobile(){
+                        width: 19.3rem;
+                        height: 5.9rem;
+                    }
     
                     &:hover {
                         color: $color-primary;
@@ -182,7 +189,12 @@
                     }
 
                     &__login-link {
+                        display: block;
                         color: $color-main-red;
+
+                        @include mobile(){
+                            padding-top: 0.9rem;
+                        }
                     }
                 }
             }
