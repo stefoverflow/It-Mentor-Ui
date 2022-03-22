@@ -1,0 +1,191 @@
+@import "../../scss/color";
+@import "../../scss/breakpoints";
+
+
+.landing{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gilroy';
+    
+    &__img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        max-height: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__header{
+        width: 100vw;
+        height: 13.4rem;
+        position: absolute;
+        top:0;
+        left:0;
+        display: flex;
+        justify-content: space-between;
+
+        &__become-mentor {
+            position: fixed;
+            top: 4.0rem;
+            right: 14.0rem;
+            padding: 1.8rem 2.6rem;
+            background-color: $color-main-purple;
+            color: $color-white;
+            box-shadow: 0px 18px 60px -12px rgba(141, 92, 246, 0.3);
+            border-radius: 5px;
+            font-size: 2.4rem;
+            line-height: 2.8rem;
+            font-weight: 300;
+            font-family: 'GilroyLight';
+    
+            @include mobile() {
+                position: initial;
+                margin-top: 47px;
+                margin-bottom: 72px;
+            }
+    
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+    
+    &__content {
+        position: absolute;
+        top:13.4rem;
+        display: flex;
+        flex-direction: column;
+        color: $color-white;
+        width: 100%;
+        font-weight: 800;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+
+        @include mobile() {
+            position: absolute;
+        }
+        
+        &__title {
+            font-size: 8rem;
+            line-height: 9.8rem;
+            letter-spacing: 0.04em;
+
+            @include mobile() {
+                width: 34.2rem;
+                font-size: 3rem;
+                line-height: 3.7rem;
+                letter-spacing: 0.04em;
+                text-align: center;
+                justify-content: center;
+            }
+        }
+
+        &__description {
+            font-size: 2.4rem;
+            line-height: 2.9rem;
+            max-width: 108.7rem;
+            margin: 4.0rem auto 5.6rem;
+
+            @include mobile() {
+                font-size: 1.8rem;
+                line-height: 2.2rem;
+                letter-spacing: 0.04em;
+                margin-top: 32px;
+                text-align: center;
+            }
+        }
+
+        &__client-container {
+            width: 39.8rem;
+            height: 44.6rem;
+            left: 76.1rem;
+            top:40.9rem;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.9rem;
+            font-size: 2.4rem;
+            line-height: 2.8rem;
+    
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(5px);
+            border-radius: 0.5rem;
+
+            @include mobile() {
+                margin: 0 60px;
+                width: auto;
+                font-size: 18px;
+                line-height: 22px;
+                gap: 18px;
+            }
+
+            &__image-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @include mobile() {
+                    width: 117px;
+                    height: 117px;
+                }
+
+                &__start-button {
+                    width: 25.0rem;
+                    height: 7rem;
+                    left: 83.4rem;
+                    top: 49rem;
+                    text-align: center;
+                    padding: 2.0rem;
+                    margin-bottom: 0.3rem;
+                    background-color: $color-main-red;
+                    color: $color-white;
+                    border-radius: 0.5rem;
+    
+                    &:hover {
+                        color: $color-primary;
+                    }
+                }
+
+                &__image {
+                    width: 13.8rem;
+                    height: 13.8rem;
+
+                    @include mobile() {
+                        width: 117px;
+                        height: 117px;
+                    }
+                }
+
+                &__got-account {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10rem;
+
+                    &__text{
+                        width: 22rem;
+                    }
+
+                    &__login-link {
+                        color: $color-main-red;
+                    }
+                }
+            }
+        }
+    }
+}

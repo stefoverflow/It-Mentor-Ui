@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import MentorsPage from "./containers/MentorsPage/MentorsPage";
 import { observer } from "mobx-react-lite";
 import { Route, Switch } from "react-router-dom";
-import NewLandingPage from './containers/NewLandingPage/NewLandingPage';
+import HomePage from './containers/HomePage/HomePage';
 import AdminPanel from "./containers/AdminPanelPage/AdminPanelPage";
 import LoginForm from "./forms/LoginForm/LoginForm";
 import MentorProfilePage from "./containers/MentorProfilePage/MentorProfilePage";
@@ -27,7 +27,7 @@ const App = () => {
       {/* <Navbar /> */}
       <div>
         <Switch>
-          <Route exact path="/" component={NewLandingPage} />
+          <Route exact path="/" component={HomePage} />
           <Route path="/client-landing" component={ClientLandingPage} />
           <Route path="/client-contact" component={ClientContactPage} />
           <Route path="/clients" component={ClientsPage} />
