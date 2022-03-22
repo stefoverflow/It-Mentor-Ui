@@ -8,43 +8,15 @@ html {
   font-size: 62.5%; // 10px
   font-family: GilroyLight;
 
-  @media(max-width: 1800px) {
-    font-size: 61.197%;
-   }
-  @media(max-width: 1680px) {
-    font-size: 59.895%;
-   }
-  @media(max-width: 1560px) {
-    font-size: 58.593%;
-   }
-  @media(max-width: 1440px) {
-    font-size: 57.291%;
-   }
-  @media(max-width: 1320px) {
-    font-size: 55.989%;
-   }
-  @media(max-width: 1200px) {
-    font-size: 54.687%;
-   }
-  @media(max-width: 1080px) {
-    font-size: 53.385%;
-   }
-  @media(max-width: 960px) {
-    font-size: 52.083%;
-   }
-  @media(max-width: 840px) {
-    font-size: 50.781%;
-   }
-  @media(max-width: 720px) {
-    font-size: 49.479%;
-   }
-  @media(max-width: 600px) {
-    font-size: 48.177%;
-   } 
-
- @media(max-width: 480px) {
-  font-size: 62.5%;
- }
+  @media(max-width: 428px) {
+    font-size: 62.5%;
+  }
+  @media(max-width: 373px){
+    font-size: 54.48%;
+  }
+  @media(max-width: 342px){
+    font-size: 49.95%;
+  }
 }
 // na po 120 dodajem 
 body {
