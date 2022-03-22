@@ -22,7 +22,9 @@ const NewLandingPage: React.FC<NewLandingPageType> = () => {
             <Link to='/register' className="landing__header__become-mentor">
                 Postani mentor
             </Link>
-            <Logo />
+            <div className="landing__header__logo">
+                <Logo />
+            </div>
         </div>
         <div className="landing__img">
             <img src={isMobile ? LandingMobileImage : LandingImage}/>
@@ -53,6 +55,9 @@ const NewLandingPage: React.FC<NewLandingPageType> = () => {
                     </Link>
                 </div>
             </div>
+            <Link to='/register' className="landing__content__become-mentor">
+                Postani mentor
+            </Link>
             {/* <Menu /> */}
         </div>
 

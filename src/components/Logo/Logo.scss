@@ -1,5 +1,12 @@
+@import "../../scss/breakpoints";
 
 .logo {
+    @include mobile(){
+        width: 13.8rem;
+        height: 3.516rem;
+        top: 4.426rem;
+        left: 2.4rem;
+    }
     position: fixed;
     top: 4rem;
     left: 7.3rem;
