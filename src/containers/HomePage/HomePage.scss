@@ -38,8 +38,8 @@
         @include mobile(){
             position:absolute;
             top: 4.426rem;
-            left: 2.4rem;
-            width: 50vw;
+            justify-content: center;
+            width: 100vw;
         }
 
         &__become-mentor {
