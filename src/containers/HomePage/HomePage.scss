@@ -35,6 +35,13 @@
         display: flex;
         justify-content: space-between;
 
+        @include mobile(){
+            position:absolute;
+            top: 4.426rem;
+            left: 2.4rem;
+            width: 50vw;
+        }
+
         &__become-mentor {
             position: fixed;
             top: 4.0rem;

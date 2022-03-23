@@ -2,10 +2,8 @@
 
 .logo {
     @include mobile(){
-        width: 13.8rem;
-        height: 3.516rem;
-        top: 4.426rem;
-        left: 2.4rem;
+        position:absolute;
+        width: 10rem;
     }
     position: fixed;
     top: 4rem;

@@ -8,7 +8,8 @@ import { MAX_MOBILE_SCREEN_WIDTH } from "../../constants";
 
 import './NewLandingPage.scss';
 import useMobile from "../../hooks/useMobile";
-import Logo from "../../components/Logo/Logo";
+
+import Logo from '../../components/Logo/logo.svg';
 
 interface NewLandingPageType {
 };
@@ -19,7 +20,7 @@ const NewLandingPage: React.FC<NewLandingPageType> = () => {
 
     return <div className="landing">
         <div className="landing__video">
-            <img src={isMobile ? LandingVideoMobileImage : LandingImage} className="landing__video" />
+            {isMobile ? LandingVideoMobileImage : LandingImage}
         </div>
         {/* <video autoPlay muted loop className="landing__video">
             <source src={LandingVideo} type="video/mp4"/>
@@ -51,7 +52,7 @@ const NewLandingPage: React.FC<NewLandingPageType> = () => {
             <Link to='/register' className="landing__become-mentor">
                 Postani mentor
             </Link>
-            <Logo />
+            {Logo}
             </div>
             {/* <Menu /> */}
         </div>
