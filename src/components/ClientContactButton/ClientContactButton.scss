@@ -22,7 +22,8 @@
 
     @include mobile() {
         position: fixed;
-        max-width: max-content;
+        width: 25rem;
+        height: 7rem;
         margin: 0 auto;
         bottom: 40px;
         left: 0;
