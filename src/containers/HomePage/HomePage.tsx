@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import GraphicWorkImage from '../../assets/graphic-work.svg';
-import LandingImage from '../../assets/home-page-cover.svg';
-import LandingMobileImage from '../../assets/home-page-cover-mobile.svg';
+import LandingImage from '../../assets/home-page-cover.png';
+import LandingMobileImage from '../../assets/home-page-cover-mobile.png';
 // import Menu from "../../components/Menu/Menu";
 import { MAX_MOBILE_SCREEN_WIDTH } from "../../constants";
 
@@ -14,7 +14,6 @@ interface NewLandingPageType {
 };
 
 const NewLandingPage: React.FC<NewLandingPageType> = () => {
-    const LandingVideo = require('../../assets/video.mp4');
     const { isMobile } = useMobile();
 
     return <div className="landing">

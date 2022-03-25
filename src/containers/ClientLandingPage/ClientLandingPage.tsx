@@ -16,6 +16,7 @@ import ClientMainContentVideoPlaceholderImage from '../../assets/main-content-vi
 import ClientMainContentVideoPlaceholderMobileImage from '../../assets/main-content-video-placeholder-mobile.png';
 import ClientMainContentElonMuskImage from '../../assets/elon-musk-dont-give-a.png';
 import OfficeImage from '../../assets/office.png';
+import OfficeImageMobile from '../../assets/office-mobile.png';
 import ArrowRightImage from '../../assets/arrow-right.png';
 
 import './ClientLandingPage.scss';
@@ -185,7 +186,7 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
         </div>
         <div className="landing-client__main-section__mentors">
             <div className="landing-client__main-section__mentors__image-container">
-                <Image className="landing-client__main-section__mentors__image-container__image" src={OfficeImage}/>
+                <Image className="landing-client__main-section__mentors__image-container__image" src={isMobile? OfficeImageMobile : OfficeImage}/>
             </div>
             <Link to="/mentors" className="landing-client__main-section__mentors__card">
                 <div className="landing-client__main-section__mentors__card__mentor">

@@ -1,644 +1,668 @@
-@import '../../scss/color';
+@import "../../scss/color";
 @import "../../scss/breakpoints";
 
 .landing-client {
-    font-family: Gilroy;
+  font-family: Gilroy;
 
-    &__image-container {
-        position: relative;
-        right: 0;
-        bottom: 0;
-        min-width: 100vw;
-        min-height: 100vh;
-        width: 100vw;
-        height: 100vh;
+  &__image-container {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+
+    @include mobile() {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &__gradient {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      background: linear-gradient(
+        109.31deg,
+        rgba(91, 183, 248, 0.9) 7.33%,
+        rgba(93, 242, 236, 0.6) 99.41%
+      );
+    }
+
+    &__content {
+      position: absolute;
+      top: 22.5rem;
+      max-width: 137.7rem;
+      text-align: left;
+      color: $color-white;
+      margin-left: auto;
+      margin-right: auto;
+
+      @include mobile() {
+        display: flex;
+        top: 16rem;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        max-width: 37.9rem;
+      }
+      &__title {
+        font-size: 9.6rem;
+        font-weight: 800;
+        line-height: 11.7rem;
+
+        @include mobile() {
+          display: inline-block;
+          font-size: 4.8rem;
+          line-height: 5.88rem;
+          text-align: left;
+        }
+      }
+
+      &__description {
+        margin-top: 10.3rem;
+        max-width: 103.1rem;
+        font-size: 4.8rem;
+        font-weight: 800;
+        line-height: 5.9rem;
+
+        @include mobile() {
+          margin-top: 18.7rem;
+          display: inline-block;
+          font-size: 2.4rem;
+          text-align: left;
+          line-height: 2.9rem;
+        }
+      }
+    }
+  }
+
+  &__main-section {
+    padding: 16.5rem 27.8rem;
+
+    @include mobile() {
+      padding: 42px 24px;
+    }
+
+    &__happy-section {
+      display: flex;
+      flex-direction: row;
+      gap: 15.4rem;
+
+      @include mobile() {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      &__image {
+        max-width: 53.6rem;
+        max-height: 50.7rem;
         object-fit: contain;
 
-        @include mobile(){
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        @include mobile() {
+          max-width: 100%;
+          height: 360px;
+          max-height: 360px;
+        }
+      }
+
+      &__description {
+        font-weight: 300;
+        font-size: 2.4rem;
+        line-height: 3rem;
+        letter-spacing: 0.04em;
+        max-width: 30.4rem;
+        color: $color-dark-gray;
+        font-family: GiloryLight;
+
+        @include mobile() {
+          font-size: 18px;
+          line-height: 30px;
+          max-width: 100%;
+        }
+      }
+    }
+
+    &__video-container {
+      position: relative;
+      margin-top: 19.1rem;
+      margin-bottom: 14.7rem;
+
+      @include mobile() {
+        margin-top: 48px;
+        margin-bottom: 28px;
+      }
+
+      &__video {
+        width: 100%;
+        height: 64.8rem;
+        object-fit: cover;
+
+        @include mobile() {
+          width: 100%;
+          height: 408px;
+        }
+      }
+    }
+
+    &__dissatisfied-title {
+      font-family: Gilroy;
+      font-weight: 800;
+      font-size: 6.4rem;
+      line-height: 7.8rem;
+      color: $color-primary;
+      max-width: 78rem;
+
+      @include mobile() {
+        font-size: 30px;
+        line-height: 36px;
+        max-width: 100%;
+      }
+    }
+
+    &__dissatisfied-description {
+      font-weight: 300;
+      font-size: 2.4rem;
+      line-height: 3rem;
+      letter-spacing: 0.04em;
+      margin-top: 10rem;
+      max-width: 58rem;
+      color: $color-dark-gray;
+      font-family: GilroyLight;
+
+      @include mobile() {
+        font-size: 18px;
+        line-height: 30px;
+        margin-top: 20px;
+        max-width: 100%;
+      }
+    }
+
+    &__elon-musk-image-container {
+      margin-top: 7.9rem;
+      margin-bottom: 22.4rem;
+
+      @include mobile() {
+        margin-top: 44px;
+        margin-bottom: 100px;
+      }
+
+      &__image {
+        max-width: 65.2rem;
+        max-height: 18.5rem;
+        object-fit: contain;
+
+        @include mobile() {
+          max-height: 108px;
+          max-width: 100%;
+        }
+      }
+    }
+
+    &__invest-section {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 20.5rem;
+      margin-bottom: 19.1rem;
+
+      @include mobile() {
+        flex-direction: column-reverse;
+        gap: 20px;
+        margin-bottom: 124px;
+      }
+
+      &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 4.1rem;
+        text-align: left;
+
+        @include mobile() {
+          gap: 24px;
+        }
+
+        &__title {
+          font-family: Gilroy;
+          font-size: 6.4rem;
+          line-height: 7.8rem;
+          font-weight: 800;
+
+          @include mobile() {
+            font-size: 30px;
+            line-height: 36px;
+          }
+        }
+        &__description {
+          font-weight: 300;
+          font-size: 2.4rem;
+          line-height: 3rem;
+          letter-spacing: 0.04em;
+          margin-top: 10rem;
+          max-width: 58rem;
+          color: $color-dark-gray;
+          font-family: GilroyLight;
+
+          @include mobile() {
+            font-size: 18px;
+            line-height: 30px;
+            max-width: 100%;
+            margin-top: 0;
+          }
+        }
+      }
+
+      &__image-container {
+        position: relative;
+        width: 53.6rem;
+        height: 67.3rem;
+
+        @include mobile() {
+          width: 100%;
+          height: 258px;
         }
 
         &__image {
+          width: 53.6rem;
+          height: 67.3rem;
+          object-fit: contain;
+
+          @include mobile() {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: 258px;
+          }
         }
 
         &__gradient {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            background: linear-gradient(109.31deg, rgba(91, 183, 248, 0.9) 7.33%, rgba(93, 242, 236, 0.6) 99.41%);
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          min-width: 100%;
+          min-height: 100%;
+          background: linear-gradient(
+            105.72deg,
+            rgba(91, 183, 248, 0) 0%,
+            rgba(93, 242, 236, 0.57) 99.42%
+          );
+
+          @include mobile() {
+            width: 100%;
+            height: 258px;
+          }
         }
-
-        &__content {
-            position: absolute;
-            top: 22.5rem;
-            max-width: 137.7rem;
-            text-align: left;
-            color: $color-white;
-            margin-left: auto;
-            margin-right: auto;
-
-            @include mobile(){
-                display: flex;
-                top: 16rem;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                text-align: center;
-                max-width: 37.9rem;
-            }
-            &__title {
-                font-size: 9.6rem;
-                font-weight: 800;
-                line-height: 11.7rem;
-
-                @include mobile() {
-                    display: inline-block;
-                    font-size: 4.8rem;
-                    line-height: 5.88rem;
-                    text-align: left;
-                }
-            }
-    
-            &__description {
-                margin-top: 10.3rem;
-                max-width: 103.1rem;
-                font-size: 4.8rem;
-                font-weight: 800;
-                line-height: 5.9rem;
-
-                @include mobile() {
-                    margin-top: 18.7rem;
-                    display: inline-block;
-                    font-size: 2.4rem;
-                    text-align: left;
-                    line-height: 2.9rem;
-                }
-            }
-        }
+      }
     }
 
-    &__main-section {
-        padding: 16.5rem 27.8rem;
+    &__part-text {
+      font-family: Gilroy;
+      font-size: 6.4rem;
+      line-height: 7.8rem;
+      font-weight: 800;
+      max-width: 88.9rem;
+      text-align: left;
+      margin-bottom: 12.7rem;
+
+      @include mobile() {
+        font-size: 30px;
+        line-height: 36px;
+        max-width: 100%;
+        margin-bottom: 44px;
+      }
+    }
+
+    &__qa-section {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 15.5rem;
+      margin-bottom: 17.4rem;
+
+      @include mobile() {
+        flex-direction: column-reverse;
+        gap: 42px;
+        margin-bottom: 100px;
+      }
+
+      &__qa {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 4.9rem;
+        font-family: Gilroy;
+        font-weight: 800;
+        font-size: 2.4rem;
+        line-height: 4rem;
+        letter-spacing: 0.04em;
+        color: #000000;
+        max-width: 63.6rem;
 
         @include mobile() {
-            padding: 42px 24px;
+          font-size: 18px;
+          line-height: 24px;
+          gap: 32px;
+        }
+      }
+
+      &__image-container {
+        position: relative;
+        width: 53.5rem;
+        height: 29.3rem;
+
+        @include mobile() {
+          width: 267px;
+          height: 146px;
+          margin: 0 auto;
         }
 
-        &__happy-section {
-            display: flex;
-            flex-direction: row;
-            gap: 15.4rem;
+        &__image {
+          width: 53.5rem;
+          height: 29.3rem;
 
-            @include mobile() {
-                flex-direction: column;
-                gap: 30px;
-            }
+          object-fit: contain;
 
-            &__image {
-                max-width: 53.6rem;
-                max-height: 50.7rem;
-                object-fit: contain;
-
-                @include mobile() {
-                    max-width: 100%;
-                    height: 360px;
-                    max-height: 360px;
-                }
-            }
-
-            &__description {
-                font-weight: 300;
-                font-size: 2.4rem;
-                line-height: 3rem;
-                letter-spacing: 0.04em;
-                max-width: 30.4rem;
-                color: $color-dark-gray;
-                font-family: GiloryLight;
-
-                @include mobile() {
-                    font-size: 18px;
-                    line-height: 30px;
-                    max-width: 100%;
-                }
-            }
+          @include mobile() {
+            width: 267px;
+            height: 146px;
+            margin: 0 auto;
+          }
         }
-
-        &__video-container {
-            position: relative;
-            margin-top: 19.1rem;
-            margin-bottom: 14.7rem;
-
-            @include mobile() {
-                margin-top: 48px;
-                margin-bottom: 28px;
-            }
-
-            &__video {
-                width: 100%;
-                height: 64.8rem;
-                object-fit: cover;
-
-                @include mobile() {
-                    width: 100%;
-                    height: 408px;
-                }
-            }
-        }
-
-        &__dissatisfied-title {
-            font-family: Gilroy;
-            font-weight: 800;
-            font-size: 6.4rem;
-            line-height: 7.8rem;
-            color: $color-primary;
-            max-width: 78rem;
-
-            @include mobile() {
-                font-size: 30px;
-                line-height: 36px;
-                max-width: 100%;
-            }
-        }
-
-        &__dissatisfied-description {
-            font-weight: 300;
-            font-size: 2.4rem;
-            line-height: 3rem;
-            letter-spacing: 0.04em;
-            margin-top: 10rem;
-            max-width: 58rem;
-            color: $color-dark-gray;
-            font-family: GilroyLight;
-
-            @include mobile() {
-                font-size: 18px;
-                line-height: 30px;
-                margin-top: 20px;
-                max-width: 100%;
-            }
-        }
-
-        &__elon-musk-image-container {
-            margin-top: 7.9rem;
-            margin-bottom: 22.4rem;
-
-            @include mobile() {
-                margin-top: 44px;
-                margin-bottom: 100px;
-            }
-            
-            &__image {
-                max-width: 65.2rem;
-                max-height: 18.5rem;
-                object-fit: contain;
-
-                @include mobile() {
-                    max-height: 108px;
-                    max-width: 100%;
-                }
-            }
-        }
-
-        &__invest-section {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 20.5rem;
-            margin-bottom: 19.1rem;
-
-            @include mobile() {
-                flex-direction: column-reverse;
-                gap: 20px;
-                margin-bottom: 124px;
-            }
-
-            &__text {
-                display: flex;
-                flex-direction: column;
-                gap: 4.1rem;
-                text-align: left;
-
-                @include mobile() {
-                    gap: 24px;
-                }
-
-                &__title {
-                    font-family: Gilroy;
-                    font-size: 6.4rem;
-                    line-height: 7.8rem;
-                    font-weight: 800;
-
-                    @include mobile() {
-                        font-size: 30px;
-                        line-height: 36px;
-                    }
-                }
-                &__description {
-                    font-weight: 300;
-                    font-size: 2.4rem;
-                    line-height: 3rem;
-                    letter-spacing: 0.04em;
-                    margin-top: 10rem;
-                    max-width: 58rem;
-                    color: $color-dark-gray;
-                    font-family: GilroyLight;
-
-                    @include mobile() {
-                        font-size: 18px;
-                        line-height: 30px;
-                        max-width: 100%;
-                        margin-top: 0;
-                    }
-                }
-            }
-
-            &__image-container {
-                position: relative;
-                width: 53.6rem;
-                height: 67.3rem;
-
-                @include mobile() {
-                    width: 100%;
-                    height: 258px;
-                }
-
-                &__image {
-                    width: 53.6rem;
-                    height: 67.3rem;
-                    object-fit: contain;
-
-                    @include mobile() {
-                        width: 100%;
-                        height: 258px;
-                    }
-                }
-
-                &__gradient {
-                    position: absolute;
-                    right: 0;
-                    bottom: 0;
-                    min-width: 100%;
-                    min-height: 100%;
-                    background: linear-gradient(105.72deg, rgba(91, 183, 248, 0) 0%, rgba(93, 242, 236, 0.57) 99.42%);
-
-                    @include mobile() {
-                        width: 100%;
-                        height: 258px;
-                    }
-                }
-            }
-        }
-
-        &__part-text {
-            font-family: Gilroy;
-            font-size: 6.4rem;
-            line-height: 7.8rem;
-            font-weight: 800;
-            max-width: 88.9rem;
-            text-align: left;
-            margin-bottom: 12.7rem;
-
-            @include mobile() {
-                font-size: 30px;
-                line-height: 36px;
-                max-width: 100%;
-                margin-bottom: 44px;
-            }
-        }
-
-        &__qa-section {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            gap: 15.5rem;
-            margin-bottom: 17.4rem;
-
-            @include mobile() {
-                flex-direction: column-reverse;
-                gap: 42px;
-                margin-bottom: 100px;
-            }
-
-            &__qa {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                text-align: left;
-                gap: 4.9rem;
-                font-family: Gilroy;
-                font-weight: 800;
-                font-size: 2.4rem;
-                line-height: 4.0rem;
-                letter-spacing: 0.04em;
-                color: #000000;
-                max-width: 63.6rem;
-
-                @include mobile() {
-                    font-size: 18px;
-                    line-height: 24px;
-                    gap: 32px;
-                }
-            }
-
-            &__image-container {
-                position: relative;
-                width: 53.5rem;
-                height: 29.3rem;
-
-                @include mobile() {
-                    width: 267px;
-                    height: 146px;
-                    margin: 0 auto;
-                }
-
-                &__image {
-                    width: 53.5rem;
-                    height: 29.3rem;
-
-                    object-fit: contain;
-
-                    @include mobile() {
-                        width: 267px;
-                        height: 146px;
-                        margin: 0 auto;
-                    }
-                }
-            }
-        }
-
-        &__begining {
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
-            margin-bottom: 8rem;
-
-            @include mobile() {
-                justify-content: center;
-                margin-bottom: 20px;
-            }
-
-            &__text {
-                max-width: 53.5rem;
-                display: flex;
-                flex-direction: column;
-                text-align: left;
-                gap: 2.2rem;
-
-                @include mobile() {
-                    max-width: 100%;
-                    gap: 24px;
-                }
-
-                &__title {
-                    font-family: Gilroy;
-                    font-weight: 800;
-                    font-style: normal;
-                    font-size: 4.8rem;
-                    line-height: 5.88rem;
-                    letter-spacing: 0.04em;
-                    color: #15172C;
-
-                    @include mobile() {
-                        font-size: 30px;
-                        line-height: 36px;
-                    }
-                }
-
-                &__description {
-                    font-family: GilroyLight;
-                    font-weight: 300;
-                    font-style: normal;
-                    font-size: 2.4rem;
-                    line-height: 3rem;
-                    letter-spacing: 0.04em;
-                    color: #58595F;
-
-                    @include mobile() {
-                        font-size: 18px;
-                        line-height: 30px;
-                    }
-                }
-            }
-        }
-
-        &__proof {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            gap: 29.2rem;
-
-            @include mobile() {
-                flex-direction: column-reverse;
-            }
-
-            &__text {
-                display: flex;
-                flex-direction: column;
-                gap: 5.2rem;
-
-                @include mobile() {
-                    gap: 28px;
-                }
-
-                &__title {
-                    font-family: Gilroy;
-                    font-size: 4.8rem;
-                    line-height: 5.8rem;
-                    font-weight: 800;
-                    letter-spacing: 0.04em;
-                    color: #15172C;
-
-                    @include mobile() {
-                        font-size: 30px;
-                        line-height: 36px;
-                    }
-                }
-
-                &__description {
-                    font-family: GilroyLight;
-                    font-weight: 300;
-                    font-style: normal;
-                    font-size: 2.4rem;
-                    line-height: 3rem;
-                    letter-spacing: 0.04em;
-                    color: #58595F;
-
-                    @include mobile() {
-                        font-size: 18px;
-                        line-height: 30px;
-                    }
-                }
-
-                &__image-container {
-                    position: relative;
-                    width: 41.4rem;
-                    height: 80rem;
-                    box-shadow: 0px 21.1579px 70.5263px -14.1053px rgba(0, 0, 0, 0.25);
-                    border-radius: 34px;
-
-                    @include mobile() {
-                        height: 732px;
-                        width: 100%;
-                    }
-
-                    &__image {
-                        width: 41.4rem;
-                        height: 80rem;
-                        object-fit: contain;
-
-                        @include mobile() {
-                            height: 732px;
-                            width: 100%;
-                        }
-                    }
-                }
-            }
-
-            &__image-container {
-                position: relative;
-                width: 53.6rem;
-                height: 67.3rem;
-
-                @include mobile() {
-                    height: 258px;
-                    width: 100%;
-                }
-
-                &__image {
-                    width: 53.6rem;
-                    height: 67.3rem;
-                    object-fit: contain;
-
-                    @include mobile() {
-                        width: 100%;
-                        height: 258px;
-                    }
-                }
-
-                &__gradient {
-                    position: absolute;
-                    right: 0;
-                    bottom: 0;
-                    min-width: 100%;
-                    min-height: 100%;
-                    background: linear-gradient(105.72deg, rgba(91, 183, 248, 0) 0%, rgba(93, 242, 236, 0.57) 99.42%);
-
-                    @include mobile() {
-                        min-width: 100%;
-                        min-height: 258px;
-                    }
-                }
-            }
-        }
-
-        &__mentors {
-            position: relative;
-            min-height: 122.1rem;
-            min-width: 100%;
-
-            @include mobile() {
-                min-height: 600px;
-                margin-top: 100px;
-                margin-bottom: 300px;
-            }
-    
-            &__card {
-                position: absolute;
-                bottom: 29.5rem;
-                left: 0;
-                padding: 19rem 19.3rem 19rem 26.2rem;
-                background-color: #15172C;
-                height: 51.5rem;
-                width: 88.3rem;
-                z-index: 10;
-                
-                display: flex;
-                flex-direction: column;
-                gap: 2rem;
-
-                @include mobile() {
-                    width: calc(100% - 48px);
-                    margin: 0 24px;
-                    padding: 28px 52px;
-                    top: 500px;
-                }
-
-                &:hover {
-                    text-decoration: underline;
-                    text-decoration-color: #FFFFFF;
-                }
-
-                &__mentor {
-                    font-family: Gilroy;
-                    font-weight: 800;
-                    font-size: 1.2rem;
-                    line-height: 2rem;
-                    letter-spacing: 0.04em;
-                    color: #FFFFFF;
-                    
-                    @include mobile() {
-                        font-size: 12px;
-                        line-height: 40px;
-                    }
-                }
-
-                &__title {
-                    font-family: Gilroy;
-                    font-weight: 800;
-                    font-size: 2.4rem;
-                    line-height: 4rem;
-                    letter-spacing: 0.04em;
-                    color: #FFFFFF;
-
-                    @include mobile() {
-                        font-size: 18px;
-                        line-height: 40px;
-                    }
-                }
-
-                &__icon {
-                    width: 5.8rem;
-
-                    @include mobile() {
-                        width: 58px;
-                    }
-                }
-            }
-    
-            &__image-container {
-                position:absolute;
-                bottom: 0;
-                right: 0;
-                width: 124.4rem;
-                height: 108rem;
-                z-index: 1;
-
-                @include mobile() {
-                    min-width: 100vw;
-                    height: unset;
-                    min-height: 435px;
-                    width: unset;
-                }
-    
-                &__image {
-                    width: 124.4rem;
-                    height: 108rem;
-                    object-fit: contain;
-
-                    @include mobile() {
-                        min-width: 100vw;
-                        width: unset;
-                    }
-                }
-            }
-        }
+      }
     }
+
+    &__begining {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      margin-bottom: 8rem;
+
+      @include mobile() {
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      &__text {
+        max-width: 53.5rem;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        gap: 2.2rem;
+
+        @include mobile() {
+          max-width: 100%;
+          gap: 24px;
+        }
+
+        &__title {
+          font-family: Gilroy;
+          font-weight: 800;
+          font-style: normal;
+          font-size: 4.8rem;
+          line-height: 5.88rem;
+          letter-spacing: 0.04em;
+          color: #15172c;
+
+          @include mobile() {
+            font-size: 30px;
+            line-height: 36px;
+          }
+        }
+
+        &__description {
+          font-family: GilroyLight;
+          font-weight: 300;
+          font-style: normal;
+          font-size: 2.4rem;
+          line-height: 3rem;
+          letter-spacing: 0.04em;
+          color: #58595f;
+
+          @include mobile() {
+            font-size: 18px;
+            line-height: 30px;
+          }
+        }
+      }
+    }
+
+    &__proof {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 29.2rem;
+
+      @include mobile() {
+        flex-direction: column-reverse;
+      }
+
+      &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 5.2rem;
+
+        @include mobile() {
+          gap: 28px;
+        }
+
+        &__title {
+          font-family: Gilroy;
+          font-size: 4.8rem;
+          line-height: 5.8rem;
+          font-weight: 800;
+          letter-spacing: 0.04em;
+          color: #15172c;
+
+          @include mobile() {
+            font-size: 30px;
+            line-height: 36px;
+          }
+        }
+
+        &__description {
+          font-family: GilroyLight;
+          font-weight: 300;
+          font-style: normal;
+          font-size: 2.4rem;
+          line-height: 3rem;
+          letter-spacing: 0.04em;
+          color: #58595f;
+
+          @include mobile() {
+            font-size: 18px;
+            line-height: 30px;
+          }
+        }
+
+        &__image-container {
+          position: relative;
+          width: 41.4rem;
+          height: 80rem;
+          box-shadow: 0px 21.1579px 70.5263px -14.1053px rgba(0, 0, 0, 0.25);
+          border-radius: 34px;
+
+          @include mobile() {
+            height: 732px;
+            width: 100%;
+          }
+
+          &__image {
+            width: 41.4rem;
+            height: 80rem;
+            object-fit: contain;
+
+            @include mobile() {
+              height: 732px;
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      &__image-container {
+        position: relative;
+        width: 53.6rem;
+        height: 67.3rem;
+
+        @include mobile() {
+          height: 258px;
+          width: 100%;
+        }
+
+        &__image {
+          width: 53.6rem;
+          height: 67.3rem;
+          object-fit: contain;
+
+          @include mobile() {
+            width: 100%;
+            height: 258px;
+          }
+        }
+
+        &__gradient {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          min-width: 100%;
+          min-height: 100%;
+          background: linear-gradient(
+            105.72deg,
+            rgba(91, 183, 248, 0) 0%,
+            rgba(93, 242, 236, 0.57) 99.42%
+          );
+
+          @include mobile() {
+            min-width: 100%;
+            min-height: 258px;
+          }
+        }
+      }
+    }
+
+    &__mentors {
+      position: relative;
+      min-height: 122.1rem;
+      min-width: 100%;
+
+      @include mobile() {
+        min-height: 600px;
+        margin-top: 100px;
+        margin-bottom: 300px;
+      }
+
+      &__card {
+        position: absolute;
+        bottom: 29.5rem;
+        left: 0;
+        padding: 19rem 19.3rem 19rem 26.2rem;
+        background-color: #15172c;
+        height: 51.5rem;
+        width: 88.3rem;
+        z-index: 10;
+
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        @include mobile() {
+          width: calc(100% - 4.8rem);
+          height: 22.163rem;
+          margin: 0 2.4rem;
+          padding: 2.8rem 5.2rem;
+          top: 500px;
+        }
+
+        &:hover {
+          text-decoration: underline;
+          text-decoration-color: #ffffff;
+        }
+
+        &__mentor {
+          font-family: Gilroy;
+          font-weight: 800;
+          font-size: 1.2rem;
+          line-height: 2rem;
+          letter-spacing: 0.04em;
+          color: #ffffff;
+
+          @include mobile() {
+            font-size: 12px;
+            line-height: 40px;
+          }
+        }
+
+        &__title {
+          font-family: Gilroy;
+          font-weight: 800;
+          font-size: 2.4rem;
+          line-height: 4rem;
+          letter-spacing: 0.04em;
+          color: #ffffff;
+
+          @include mobile() {
+            font-size: 1.8rem;
+            line-height: 4rem;
+            width: 27.7rem;
+          }
+        }
+
+        &__icon {
+          width: 5.8rem;
+
+          @include mobile() {
+            width: 58px;
+          }
+        }
+      }
+
+      &__image-container {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 124.4rem;
+        height: 108rem;
+        z-index: 1;
+
+        @include mobile() {
+          min-width: 100vw;
+          height: unset;
+          min-height: 435px;
+          width: unset;
+        }
+
+        &__image {
+          width: 124.4rem;
+          height: 108rem;
+          object-fit: contain;
+
+          @include mobile() {
+            min-width: 100vw;
+            width: unset;
+          }
+          position: absolute;
+          left: 0;
+          z-index: -1;
+          width: 100%;
+          max-height: 100%;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
 }
