@@ -296,8 +296,7 @@ export default observer(function ConsultantList() {
   // }, [loadConsultants, pageNumber, pageSize, setTotalPages]);
 
   return (
-    <Container fluid textAlign="center">
-
+    <div>
       <div className="mentor-list__container">
         {/* {fetchMentorsInProgress ? (
           <Loader active inline />  
@@ -326,6 +325,6 @@ export default observer(function ConsultantList() {
           totalPages={totalPages}
         />
       )} */}
-    </Container>
+    </div>
   );
 });
