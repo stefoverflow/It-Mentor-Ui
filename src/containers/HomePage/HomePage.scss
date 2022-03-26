@@ -4,7 +4,7 @@
 
 .landing{
     width: 100vw;
-    min-height: 100vh;
+    height: 66.7rem;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -36,6 +36,7 @@
         justify-content: space-between;
 
         @include mobile(){
+            display: none;
             position:absolute;
             top: 4.426rem;
             justify-content: center;
@@ -67,7 +68,7 @@
     }
     
     &__content {
-        position: absolute;
+        position: relative;
         top:13.4rem;
         display: flex;
         flex-direction: column;
@@ -79,7 +80,7 @@
         align-items: center;
 
         @include mobile() {
-            position: absolute;
+            position: relative;
             top: 10.4rem;
 
             &__become-mentor {
@@ -109,6 +110,7 @@
             letter-spacing: 0.04em;
 
             @include mobile() {
+                margin-top: 1rem;
                 width: 34.2rem;
                 font-size: 3rem;
                 line-height: 3.7rem;
