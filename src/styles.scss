@@ -6,7 +6,7 @@
 
 html {
   font-size: 62.5%; // 10px
-  font-family: GilroyLight;
+  font-family: 'GilroyLight';
 
   @media(max-width: 428px) {
     font-size: 62.5%;
@@ -29,7 +29,7 @@ body {
 @font-face {
   font-family: 'Gilroy';
   src: local('Gilroy'), url(./fonts/Gilroy.ttf) format('truetype');
-  src: local('GiloryLight'), url('./fonts/Gilroy-Thin.ttf') format('truetype');
+  src: local('GilroyLight'), url('./fonts/Gilroy-Thin.ttf') format('truetype');
   src: local('GiloryBold'), url('./fonts/Gilroy-Bold.ttf') format('truetype');
   src: local('GilroyExtraBold'), url('./fonts/Gilroy-ExtraBold.ttf') format('truetype');
 }

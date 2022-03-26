@@ -126,11 +126,11 @@
         letter-spacing: 0.04em;
         max-width: 30.4rem;
         color: $color-dark-gray;
-        font-family: GiloryLight;
+        font-family: 'GilroyLight';
 
         @include mobile() {
-          font-size: 18px;
-          line-height: 30px;
+          font-size: 1.8rem;
+          line-height: 3rem;
           max-width: 100%;
         }
       }
@@ -446,6 +446,7 @@
 
       @include mobile() {
         flex-direction: column-reverse;
+        gap: 10.7rem;
       }
 
       &__text {
@@ -454,7 +455,7 @@
         gap: 5.2rem;
 
         @include mobile() {
-          gap: 28px;
+          gap: 2.8rem;
         }
 
         &__title {
@@ -466,8 +467,8 @@
           color: #15172c;
 
           @include mobile() {
-            font-size: 30px;
-            line-height: 36px;
+            font-size: 3rem;
+            line-height: 3.6rem;
           }
         }
 
@@ -481,8 +482,8 @@
           color: #58595f;
 
           @include mobile() {
-            font-size: 18px;
-            line-height: 30px;
+            font-size: 1.8rem;
+            line-height: 3rem;
           }
         }
 
@@ -582,7 +583,7 @@
           height: 22.163rem;
           margin: 0 2.4rem;
           padding: 2.8rem 5.2rem;
-          top: 500px;
+          top: 52rem;
         }
 
         &:hover {
@@ -639,8 +640,9 @@
         @include mobile() {
           min-width: 100vw;
           height: unset;
-          min-height: 435px;
+          min-height: 43.5rem;
           width: unset;
+          top: 0;
         }
 
         &__image {
