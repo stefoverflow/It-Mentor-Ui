@@ -200,7 +200,9 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
         </div>
         <Footer />
         <Menu />
-        <Logo />
+        <div className='landing-client__logo'>
+            <Logo />
+        </div>
     </div>
 };
 
