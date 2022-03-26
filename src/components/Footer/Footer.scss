@@ -10,6 +10,7 @@
     flex-direction: row;
     gap: 25rem;
     font-family: Gilroy;
+    flex-wrap: wrap;
 
     &__watermark {
         margin-bottom: -23.1rem;
@@ -22,9 +23,9 @@
     }
 
     @include mobile() {
-        flex-direction: column;
+        padding: 12.5rem 2.4rem 15.8rem 2.4rem;
         justify-content: space-between;
-        padding: 0;
+        gap:4.5rem;
     }
 
     &__main-column {
@@ -34,9 +35,14 @@
         color: #FFFFFF;
         font-size: 2.4rem;
         line-height: 3rem;
+        
         &__title {
             font-family: Gilroy;
             font-weight: 800;
+        }
+
+        @include mobile() {
+            min-width: 35vw;
         }
 
         &__sub-column {
