@@ -11,6 +11,10 @@
     justify-content: center;
     align-items: center;
     font-family: 'Gilroy';
+
+    @include above-mobile(){
+        height: 80rem;
+    }
     
     &__img{
         position: absolute;
@@ -24,23 +28,21 @@
             height: 100%;
             object-fit: cover;
         }
+
+        @include above-mobile(){
+            height: 100%;
+        }
     }
 
     &__header{
-        width: 100vw;
-        height: 13.4rem;
-        position: absolute;
-        top:0;
-        left:0;
-        display: flex;
-        justify-content: space-between;
+        &__logo{
+            position: fixed;
+            top: 4rem;
+            left: 7.3rem;
+        }
 
         @include mobile(){
             display: none;
-            position:absolute;
-            top: 4.426rem;
-            justify-content: center;
-            width: 100vw;
         }
 
         &__become-mentor {
@@ -50,12 +52,16 @@
             padding: 1.8rem 2.6rem;
             background-color: $color-main-purple;
             color: $color-white;
-            box-shadow: 0px 18px 60px -12px rgba(141, 92, 246, 0.3);
-            border-radius: 5px;
+            box-shadow: 0rem 1.8rem 6rem -1.2rem rgba(141, 92, 246, 0.3);
+            border-radius: 0.5rem;
             font-size: 2.4rem;
             line-height: 2.8rem;
             font-weight: 300;
             font-family: 'GilroyLight';
+
+            @include above-mobile(){
+                right: 2rem;
+            }
     
             @include mobile() {
                 display: none;
@@ -69,7 +75,7 @@
     
     &__content {
         position: relative;
-        top:13.4rem;
+        top:16.4rem;
         display: flex;
         flex-direction: column;
         color: $color-white;
@@ -86,8 +92,8 @@
             &__become-mentor {
                 background-color: $color-main-purple;
                 color: $color-white;
-                box-shadow: 0px 18px 60px -12px rgba(141, 92, 246, 0.3);
-                border-radius: 5px;
+                box-shadow: 0rem 1.8rem 6rem -1.2rem rgba(141, 92, 246, 0.3);
+                border-radius: 0.5rem;
                 font-size: 1.8rem;
                 line-height: 2.075rem;
                 width: 19.3rem;
@@ -108,6 +114,11 @@
             font-size: 8rem;
             line-height: 9.8rem;
             letter-spacing: 0.04em;
+
+            @include above-mobile(){
+                font-size: 6rem;
+                line-height: 6rem;
+            }
 
             @include mobile() {
                 margin-top: 1rem;
@@ -151,16 +162,16 @@
             line-height: 2.8rem;
     
             background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(0.5rem);
             border-radius: 0.5rem;
 
             @include mobile() {
-                margin: 0 60px;
+                margin: 0 6rem;
                 width: 30.5rem;
                 height: 37.4rem;
-                font-size: 18px;
-                line-height: 22px;
-                gap: 18px;
+                font-size: 1.8rem;
+                line-height: 2.2rem;
+                gap: 1.8rem;
             }
 
             &__image-container {
@@ -169,8 +180,8 @@
                 justify-content: center;
 
                 @include mobile() {
-                    width: 117px;
-                    height: 117px;
+                    width: 11.7rem;
+                    height: 11.7rem;
                     gap: 2.5rem;
                 }
 
@@ -201,8 +212,8 @@
                     height: 13.8rem;
 
                     @include mobile() {
-                        width: 117px;
-                        height: 117px;
+                        width: 11.7rem;
+                        height: 11.7rem;
                     }
                 }
 

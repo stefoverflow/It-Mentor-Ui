@@ -18,6 +18,10 @@ const NewLandingPage: React.FC<NewLandingPageType> = () => {
   return (
     <div className="landing">
       <div className="landing__header">
+      {!isMobile? 
+      <div className="landing__header__logo">
+          <Logo />
+      </div> : null}
         <Link to="/register" className="landing__header__become-mentor">
           Postani mentor
         </Link>
@@ -31,7 +35,7 @@ const NewLandingPage: React.FC<NewLandingPageType> = () => {
         </video> */}
 
       <div className="landing__content">
-        <Logo />
+        {isMobile? <Logo />:null}
         <div className="landing__content__title">
           Do prvog posla {isMobile ? <br /> : null}sa ličnim IT mentorom.
         </div>
@@ -68,9 +72,9 @@ const NewLandingPage: React.FC<NewLandingPageType> = () => {
             </Link>
           </div>
         </div>
-        <Link to="/register" className="landing__content__become-mentor">
+        {isMobile? <Link to="/register" className="landing__content__become-mentor">
           Postani mentor
-        </Link>
+        </Link>: null}
         {/* <Menu /> */}
       </div>
     </div>

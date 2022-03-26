@@ -8,6 +8,14 @@ html {
   font-size: 62.5%; // 10px
   font-family: 'GilroyLight';
 
+  @media(max-width:1579px){
+    font-size: 51.4%;
+  }
+
+  @media(max-width:568px){
+    font-size: 82.94%;
+  }
+
   @media(max-width: 428px) {
     font-size: 62.5%;
   }
