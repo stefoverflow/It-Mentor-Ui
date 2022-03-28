@@ -5,7 +5,7 @@
     background-color: $color-blue;
     border-radius: 6.6rem 6.6rem 0rem 0rem;
     padding: 30.6rem 17.8rem 27.8rem;
-    // margin-top: 23.1rem;
+    margin-top: 17.35rem;
     display: flex;
     flex-direction: row;
     gap: 25rem;
@@ -13,9 +13,8 @@
     flex-wrap: wrap;
 
     &__watermark {
-        margin-bottom: -23.1rem;
-        max-width: 1364px;
-        max-height: 347px;
+        position: absolute;
+        top: -17.35rem;
 
         @include mobile() {
             margin-bottom: -10rem;

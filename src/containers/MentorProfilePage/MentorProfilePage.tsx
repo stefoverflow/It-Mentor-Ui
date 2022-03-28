@@ -38,7 +38,7 @@ const MentorProfilePage: React.FC<MentorProfileProps> = (props) => {
   const [checkedCard, setCheckedCard] = useState<number>(2);
   const mentorId: string = props.match.params.id;
   const mentor = exampleMentors[Number.parseInt(mentorId)];
-  const { id, image, displayName, categories, bio, skills, radiU } = mentor;
+  const { id, image, firstName, lastName, categories, bio, skills, radiU } = mentor;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -61,7 +61,7 @@ const MentorProfilePage: React.FC<MentorProfileProps> = (props) => {
         </div>
         <div className="mentor-profile__header__text">
           <div className="mentor-profile__header__text__title">
-            {displayName}
+            {firstName} {lastName}
           </div>
           <div className="mentor-profile__header__text__category">
             {categories}

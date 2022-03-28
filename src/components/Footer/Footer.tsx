@@ -6,8 +6,8 @@ import "./Footer.scss";
 const Footer = () => {
   return (
     <div style={{ position: "relative" }}>
-      <WatermarkLogo className="footer__watermark" />
       <div className="footer">
+      {/* <WatermarkLogo className="footer__watermark" /> */}
         <div className="footer__main-column">
           <div className="footer__main-column__title">Glavni naslov</div>
           <div className="footer__main-column__sub-column">

@@ -24,7 +24,8 @@ import Image from "../Image/Image";
 interface ExampleMentorsType {
   id: string;
   image: string;
-  displayName: string;
+  firstName: string;
+  lastName: string;
   categories: string[];
   skills: string[];
   bio: string;
@@ -36,7 +37,7 @@ interface Props {
 }
 
 export default observer(function ConsultantListItem({ mentor }: Props) {
-  const { id, image, displayName, categories, bio, skills, radiU } = mentor;
+  const { id, image, firstName, lastName, categories, bio, skills, radiU } = mentor;
   // const calculateLevel = (totalStarRating: number) => {
   //   if (totalStarRating < 5)
   //     return [Math.floor((totalStarRating / 5) * 100), 1];
@@ -67,7 +68,9 @@ export default observer(function ConsultantListItem({ mentor }: Props) {
           <Image className="mentor__image-container__image" src={image} />
         </div>
         <div className="mentor__title">
-          {displayName}
+          {firstName}
+          <br/>
+          {lastName}
         </div>
         <div className="mentor__category">
           {categories[0]}
@@ -78,6 +81,10 @@ export default observer(function ConsultantListItem({ mentor }: Props) {
         <SkillList skills={skills} isLimited />
         <div className="mentor__bio">
           {bio.length > 120 ? bio.slice(0, 120) : bio}
+        </div>
+        <div className="mentor__details">
+          DETALJNIJE
+          <div className="mentor__details__line"/>
         </div>
       </div>
     </Link>

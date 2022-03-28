@@ -27,7 +27,6 @@ const FieldSelectInput: React.FC<FieldSelectInputProps> = (props) => {
                 className="select-input__input"
                 validate={validate}
             >
-                <option className="select-input__input__option" disabled value=''/>
                 {options.map(o => (
                     <option key={o.key} value={o.key} className="select-input__input__option">
                         {o.text}

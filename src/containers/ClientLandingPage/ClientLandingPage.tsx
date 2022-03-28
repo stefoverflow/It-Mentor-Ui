@@ -44,7 +44,7 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
                     Korak do četvorocifrene plate, spreman ?
                 </div>
                 <div className="landing-client__image-container__content__description">
-                    Umesto da potrošiš najmanje 4000e samo na školarinu, minimum 4 godina svog života 
+                    Umesto da potrošiš najmanje 4000e samo na{!isMobile? <br />:null} školarinu, minimum 4 godina svog života {!isMobile? <br />:null} 
                     i bezbroj živaca, može i ovako : 
                 </div>
                 <ClientContactButton />

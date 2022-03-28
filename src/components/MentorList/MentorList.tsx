@@ -31,7 +31,8 @@ import "./MentorList.scss";
 export const exampleMentors = [
   {
     id: '0',
-    displayName:"Aleksandar Anđelković",
+    firstName:"Aleksandar",
+    lastName:"Anđelković",
     bio: `Želiš senior softverskog inženjera kao svog ličnog mentora za C#, najtraženiji programski jezik na tržištu u Srbiji?
     
     Uz moju pomoć ćeš kroz praktične projekte stići do zavidnog nivoa bilo da si apsolutni početnik ili već imaš nekog predznanja.
@@ -58,7 +59,8 @@ export const exampleMentors = [
   },
   {
     id: '1',
-    displayName:"Milan Vasić",
+    firstName:"Milan",
+    lastName:"Vasić",
     bio: `Mikroservisna arhitektura, Docker, RabbitMQ, šta je sve to?
 
     Samo neki od naprednijih koncepata I tehnologija kojima ćeš vladati nakon praktičnog rada sa mnom.
@@ -89,7 +91,8 @@ export const exampleMentors = [
   },
   {
     id: '2',
-    displayName:"Igor Đurović",
+    firstName:"Igor",
+    lastName:"Đurović",
     bio: `Želiš da postaneš fullstack Web developer?
 
     Na pravom si mestu! 
@@ -119,7 +122,8 @@ export const exampleMentors = [
   },
   {
     id: '3',
-    displayName:"Aleksandar Stavrić",
+    firstName:"Aleksandar",
+    lastName:"Stavrić",
     bio: `Više si naklonjen dizajnu, da sve izgleda lepo i skladno, nasuprot kodiranju?
 
     Look no further, na pravom si mestu! Obučiću te da prepoznaš najsitnije detalje i dizajniraš profesionalne web i mobilne sadržaje.
@@ -145,7 +149,8 @@ export const exampleMentors = [
   },
   {
     id: '4',
-    displayName:"Nemanja Kuzmić",
+    firstName:"Nemanja",  
+    lastName: "Kuzmić",
     bio: `Da li si se ikada pitao kako su napravili GTA 5?
 
     U mentorstvu sa mnom ćeš postati majstor pravljenja video igara.
@@ -170,7 +175,8 @@ export const exampleMentors = [
   },
   {
     id: '5',
-    displayName:"Nataša Bogdanović",
+    firstName:"Nataša",
+    lastName:"Bogdanović",
     bio: `Da li si apsolutni početnik i ne znaš odakle da kreneš? Ja ću ti pomoći. :)
 
     Moja stručnost je Java programski jezik i imam četiri godine iskustva u radu sa njim.
@@ -199,7 +205,8 @@ export const exampleMentors = [
   },
   {
     id: '6',
-    displayName:"Slobodan Živković",
+    firstName:"Slobodan",
+    lastName:"Bogdanović",
     bio: `Da li želiš da jednog dana postaneš fullstack tech lead?
 
     Uz moju pomoć i stručnost potkrepljenu sa 7+ godina iskustva ćeš biti korak bliže ka cilju.
@@ -225,7 +232,8 @@ export const exampleMentors = [
   },
   {
     id: '7',
-    displayName:"Stefan Tošić",
+    firstName:"Stefan",
+    lastName:"Tošić",
     bio: `Da li želiš da jednog dana postaneš fullstack tech lead?
 
     Uz moju pomoć i stručnost potkrepljenu sa 7+ godina iskustva ćeš biti korak bliže ka cilju.
