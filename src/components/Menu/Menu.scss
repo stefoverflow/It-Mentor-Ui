@@ -54,11 +54,6 @@
     @include mobile(){
       font-size: 3.6rem;
     }
-    &:hover {
-      text-decoration: underline;
-      text-decoration-color: #ffffff;
-      color: #ffffff;
-    }
       &__background {
         position: relative;
         z-index: -1;

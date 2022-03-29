@@ -1,3 +1,9 @@
 .profile-page {
   padding: 20px;
+
+  &__logo{
+    position: fixed;
+    top: 4rem;
+    left: 7.3rem;
+  }
 }

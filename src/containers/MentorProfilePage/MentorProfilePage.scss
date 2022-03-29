@@ -10,6 +10,12 @@
 
   background: linear-gradient(180deg, rgba(242, 241, 241, 0) 11.39%, #F2F1F1 76.14%);
 
+  &__logo{
+    position: fixed;
+    top: 4rem;
+    left: 7.3rem;
+  }
+
   &__header {
     margin: 16.5rem 27.8rem;
     display: flex;

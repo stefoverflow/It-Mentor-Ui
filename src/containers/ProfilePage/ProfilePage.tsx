@@ -7,6 +7,7 @@ import "./ProfilePage.scss";
 import ProfilePhoto from "../../components/ProfilePhoto/ProfilePhoto";
 import ProfileContent from "../../components/ProfileContent/ProfileContent";
 import { useStore } from "../../stores/store";
+import Logo from "../../components/Logo/Logo";
 
 type ProfilePageProps = {};
 
@@ -22,9 +23,9 @@ const ProfilePage: React.FC<ProfilePageProps> = () => {
   }, [currentUser, loadProfile]);
 
   return (
-    <Container className="profile-page">
+    <div className="profile-page">
       <ProfileContent currentUser={currentUser} photo={image} />
-    </Container>
+    </div>
   );
 };
 

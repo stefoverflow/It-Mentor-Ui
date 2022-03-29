@@ -68,9 +68,7 @@ export default observer(function ConsultantListItem({ mentor }: Props) {
           <Image className="mentor__image-container__image" src={image} />
         </div>
         <div className="mentor__title">
-          {firstName}
-          <br/>
-          {lastName}
+          {firstName} {lastName}
         </div>
         <div className="mentor__category">
           {categories[0]}
@@ -80,7 +78,7 @@ export default observer(function ConsultantListItem({ mentor }: Props) {
         </div>
         <SkillList skills={skills} isLimited />
         <div className="mentor__bio">
-          {bio.length > 120 ? bio.slice(0, 120) : bio}
+          {bio.length > 120 ? bio.slice(0, 117) : bio}...
         </div>
         <div className="mentor__details">
           DETALJNIJE

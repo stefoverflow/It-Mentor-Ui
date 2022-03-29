@@ -36,7 +36,7 @@
 
     &__header{
         &__logo{
-            position: fixed;
+            position: absolute;
             top: 4rem;
             left: 7.3rem;
         }
@@ -46,7 +46,7 @@
         }
 
         &__become-mentor {
-            position: fixed;
+            position: absolute;
             top: 4.0rem;
             right: 14.0rem;
             padding: 1.8rem 2.6rem;
@@ -60,7 +60,8 @@
             font-family: 'GilroyLight';
 
             @include above-mobile(){
-                right: 2rem;
+                font-size: 1.8rem;
+                padding: 1.4rem 2.6rem;
             }
     
             @include mobile() {
@@ -84,6 +85,10 @@
         text-align: center;
         justify-content: center;
         align-items: center;
+
+        @include above-mobile(){
+            top: 0;
+        }
 
         @include mobile() {
             position: relative;
@@ -137,6 +142,10 @@
             max-width: 108.7rem;
             margin: 4.0rem auto 5.6rem;
 
+            @include above-mobile(){
+                font-size: 1.8rem;
+            }
+
             @include mobile() {
                 font-size: 1.8rem;
                 line-height: 2.2rem;
@@ -165,6 +174,12 @@
             backdrop-filter: blur(0.5rem);
             border-radius: 0.5rem;
 
+            @include above-mobile(){
+                font-size: 1.8rem;
+                width: 30rem;
+                height: 33rem;
+            }
+
             @include mobile() {
                 margin: 0 6rem;
                 width: 30.5rem;
@@ -179,6 +194,11 @@
                 align-items: center;
                 justify-content: center;
 
+                @include above-mobile(){
+                    width: 11.7rem;
+                    height: 11.7rem;
+                }
+
                 @include mobile() {
                     width: 11.7rem;
                     height: 11.7rem;
@@ -190,12 +210,19 @@
                     height: 7rem;
                     left: 83.4rem;
                     top: 49rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     text-align: center;
-                    padding: 2.0rem;
                     margin-bottom: 0.3rem;
                     background-color: $color-main-red;
                     color: $color-white;
                     border-radius: 0.5rem;
+
+                    @include above-mobile(){
+                        width: 18rem;
+                        height: 5.04rem;
+                    }
 
                     @include mobile(){
                         width: 19.3rem;
@@ -210,6 +237,11 @@
                 &__image {
                     width: 13.8rem;
                     height: 13.8rem;
+
+                    @include above-mobile(){
+                        width: 11.7rem;
+                        height: 11.7rem;
+                    }
 
                     @include mobile() {
                         width: 11.7rem;

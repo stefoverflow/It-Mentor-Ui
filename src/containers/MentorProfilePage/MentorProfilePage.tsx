@@ -13,7 +13,7 @@ import Menu from "../../components/Menu/Menu";
 import Footer from "../../components/Footer/Footer";
 import ClientContactButton from "../../components/ClientContactButton/ClientContactButton";
 
-import './MentorProfilePage.scss'
+import "./MentorProfilePage.scss";
 import IconStar from "../../components/IconStar/IconStar";
 import PackageCard from "../../components/PackageCard/PackageCard";
 import SkillList from "../../components/SkillList/SkillList";
@@ -38,7 +38,8 @@ const MentorProfilePage: React.FC<MentorProfileProps> = (props) => {
   const [checkedCard, setCheckedCard] = useState<number>(2);
   const mentorId: string = props.match.params.id;
   const mentor = exampleMentors[Number.parseInt(mentorId)];
-  const { id, image, firstName, lastName, categories, bio, skills, radiU } = mentor;
+  const { id, image, firstName, lastName, categories, bio, skills, radiU } =
+    mentor;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -55,9 +56,12 @@ const MentorProfilePage: React.FC<MentorProfileProps> = (props) => {
 
   return (
     <div className="mentor-profile">
+      <div className="mentor-profile__logo">
+        <Logo />
+      </div>
       <div className="mentor-profile__header">
         <div className="mentor-profile__header__image">
-          <Image src={image} className="mentor-profile__header__image"/>
+          <Image src={image} className="mentor-profile__header__image" />
         </div>
         <div className="mentor-profile__header__text">
           <div className="mentor-profile__header__text__title">
@@ -67,7 +71,7 @@ const MentorProfilePage: React.FC<MentorProfileProps> = (props) => {
             {categories}
           </div>
           <div className="mentor-profile__header__text__category">
-            {`radi u: ${radiU}`}  
+            {`radi u: ${radiU}`}
           </div>
           {/* <div className="mentor-profile__header__text__review">
             <IconStar />
@@ -76,10 +80,8 @@ const MentorProfilePage: React.FC<MentorProfileProps> = (props) => {
             <IconStar />
             <IconStar />
           </div> */}
-          <SkillList skills={skills}/>
-          <div className="mentor-profile__header__text__bio">
-            {bio}
-          </div>
+          <SkillList skills={skills} />
+          <div className="mentor-profile__header__text__bio">{bio}</div>
         </div>
       </div>
       <div className="mentor-profile__package-container">
@@ -90,16 +92,30 @@ const MentorProfilePage: React.FC<MentorProfileProps> = (props) => {
           Ukoliko ti ne odgovara nijedan od paketa, kontaktiraj nas
         </div>
         <div className="mentor-profile__package-container__cards">
-          <PackageCard title="Naslov paketa" checked={checkedCard === 0} list={['Mentorstvo do 6 meseci', '40 sesija', '1 sat po sesiji']} onClick={() => setCheckedCard(0)}/>
-          <PackageCard title="Naslov paketa" checked={checkedCard === 1} list={['Mentorstvo do 6 meseci', '40 sesija', '1 sat po sesiji']} onClick={() => setCheckedCard(1)}/>
-          <PackageCard title="Naslov paketa" checked={checkedCard === 2} list={['Mentorstvo do 6 meseci', '40 sesija', '1 sat po sesiji']} onClick={() => setCheckedCard(2)}/>
+          <PackageCard
+            title="Naslov paketa"
+            checked={checkedCard === 0}
+            list={["Mentorstvo do 6 meseci", "40 sesija", "1 sat po sesiji"]}
+            onClick={() => setCheckedCard(0)}
+          />
+          <PackageCard
+            title="Naslov paketa"
+            checked={checkedCard === 1}
+            list={["Mentorstvo do 6 meseci", "40 sesija", "1 sat po sesiji"]}
+            onClick={() => setCheckedCard(1)}
+          />
+          <PackageCard
+            title="Naslov paketa"
+            checked={checkedCard === 2}
+            list={["Mentorstvo do 6 meseci", "40 sesija", "1 sat po sesiji"]}
+            onClick={() => setCheckedCard(2)}
+          />
         </div>
       </div>
       <Menu />
       <ClientContactButton />
 
       <Footer />
-      <Logo />
       {/* {fetchMentorInProgress ? (
         <Loader active inline />
       ) : fetchMentorError ? (

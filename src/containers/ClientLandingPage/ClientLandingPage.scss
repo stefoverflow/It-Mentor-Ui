@@ -5,6 +5,10 @@
   font-family: Gilroy;
 
   &__logo{
+    position: fixed;
+    top: 4rem;
+    left: 7.3rem;
+
     @include mobile(){
       position: absolute;
       top:4rem;

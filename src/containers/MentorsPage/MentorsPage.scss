@@ -11,6 +11,12 @@
         justify-content: center;
     }
 
+    &__logo{
+        position: fixed;
+        top: 4rem;
+        left: 7.3rem;
+    }
+
     &__title {
         font-size: 9.6rem;
         line-height: 11.7rem;
