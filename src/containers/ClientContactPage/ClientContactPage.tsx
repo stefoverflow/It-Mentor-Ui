@@ -49,14 +49,14 @@ const ClientContactPage: React.FC<ClientContactPageType> = () => {
             <form onSubmit={handleSubmit} className="client-contact__row">
                 <div className="client-contact__row__column">
                     <FieldTextInput
-                        label="Unesi svoju e-mail adresu."
-                        placeholder="Ime"
-                        name="FirstName"
+                        label="Unesi svoje podatke."
+                        placeholder="Ime i prezime"
+                        name="FirstAndLastName"
                         validate={required('treba stil i tekst')}
                     />
                     <FieldTextInput
-                        placeholder="Prezime"
-                        name="LastName"
+                        placeholder="Broj telefona"
+                        name="PhoneNumber"
                         validate={required('treba stil i tekst')}
                     />
                     <FieldTextInput
