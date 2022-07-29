@@ -9,11 +9,13 @@ import { MAX_MOBILE_SCREEN_WIDTH } from "../../constants";
 import "./HomePage.scss";
 import useMobile from "../../hooks/useMobile";
 import Logo from "../../components/Logo/Logo";
+import { useStore } from "../../stores/store";
 
 interface NewLandingPageType {}
 
 const NewLandingPage: React.FC<NewLandingPageType> = () => {
   const { isMobile } = useMobile();
+  const {mentorStore} = useStore();
 
   return (
     <div className="landing">

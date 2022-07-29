@@ -1,0 +1,14 @@
+@import "../../scss/color";
+
+.burger-menu{
+    position: fixed;
+    top: 4rem;
+    right: 7rem;
+    width: 7rem;
+    height: 7rem;
+    color: $color-brand-dark-purple;
+
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}

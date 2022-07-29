@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import { history } from "..";
 import { Skill } from "../models/skill";
 
-axios.defaults.baseURL = "https://itmentor.herokuapp.com";
+axios.defaults.baseURL = "http://localhost:5000";
 
 axios.interceptors.response.use(
   async (response) => {
@@ -55,13 +55,11 @@ axios.interceptors.request.use(async (request) => {
   return request;
 });
 
-const responseBody = (response: AxiosResponse) => response.data;
-const responseBodyForPost = (response: AxiosResponse) => response.data;
+const responseBody = (response: AxiosResponse) => response.data.value;
 
 const requests = {
   get: (url: string, body: {}) => axios.get(url, body).then(responseBody),
-  post: (url: string, body: {}) =>
-    axios.post(url, body).then(responseBodyForPost),
+  post: (url: string, body: {}) => axios.post(url, body).then(responseBody),
   put: (url: string, body: {}) => axios.put(url, body).then(responseBody),
   del: (url: string, body: {}) => axios.delete(url, body).then(responseBody),
   patch: (url: string, body: {}) => axios.patch(url, body).then(responseBody),
@@ -75,7 +73,7 @@ const Mentors = {
     requests.post("/mentors", { name: skillName }),
   chooseMentor: (mentorId: string, numberOfSessions: string) => requests.post('/mentorship', {mentorId, numberOfSessions}),
   getClients: () => requests.get('/mentorship', {}),
-  getMentor: (id: string) => requests.get(`/mentors/${id}`, {}),
+  getMentor: (id: string) : Promise<Mentor> => requests.get(`/mentors/${id}`, {}),
   editMentor: (id: string, displayName: string, bio: string, skills: Skill[]) =>
     requests.patch(`/mentors`, { id, displayName, bio, skills }),
   uploadPhoto: (file: Blob) => {

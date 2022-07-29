@@ -1,11 +1,5 @@
-import React, { useEffect, useMemo, useState } from "react";
-import { useStore } from "../../stores/store";
-import ProfileFeed from "./ProfileFeed";
-import ProfileHeader from "./ProfileHeader";
-import { Loader } from "semantic-ui-react";
+import React, { useEffect, useState } from "react";
 import { observer } from "mobx-react-lite";
-import { User } from "../../models/user";
-import { ROLES } from "../../constants";
 
 import "./MentorProfilePage.scss";
 import { exampleMentors } from "../../components/MentorList/MentorList";
@@ -14,11 +8,12 @@ import Footer from "../../components/Footer/Footer";
 import ClientContactButton from "../../components/ClientContactButton/ClientContactButton";
 
 import "./MentorProfilePage.scss";
-import IconStar from "../../components/IconStar/IconStar";
 import PackageCard from "../../components/PackageCard/PackageCard";
 import SkillList from "../../components/SkillList/SkillList";
 import Image from "../../components/Image/Image";
 import Logo from "../../components/Logo/Logo";
+import { useStore } from "../../stores/store";
+import { Mentor } from "../../models/mentor";
 
 type MentorProfileProps = {
   match: {
@@ -29,30 +24,18 @@ type MentorProfileProps = {
 };
 
 const MentorProfilePage: React.FC<MentorProfileProps> = (props) => {
-  // const { mentorStore } = useStore();
-  // const currentUser: User = JSON.parse(localStorage.getItem("user") || "{}");
-  // const { role } = currentUser;
-  // const isClient = useMemo(() => role === ROLES.CLIENT, [role]);
-  // const { loadConsultant, fetchMentorInProgress, fetchMentorError, mentor, chooseMentor, chooseMentorInProgress, chooseMentorError, chooseMentorSent } =
-  //   mentorStore;
   const [checkedCard, setCheckedCard] = useState<number>(2);
   const mentorId: string = props.match.params.id;
   const mentor = exampleMentors[Number.parseInt(mentorId)];
   const { id, image, firstName, lastName, categories, bio, skills, radiU } =
     mentor;
+  const {profileStore : {loadProfile, profile}} = useStore();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
-
-  // const fetchMentor = () => {
-  //   loadConsultant(mentorId);
-  // };
-
-  useEffect(() => {
-    // fetchMentor();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    loadProfile('1c5c68ca-a024-4f6a-b527-3f5a4f910855');
+    console.log(profile);
+  }, [profile]);
 
   return (
     <div className="mentor-profile">

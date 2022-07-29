@@ -28,7 +28,7 @@ const EditProfileForm: React.FC<EditProfileFormProps> = ({ user }) => {
   const { id = "", displayName, username, role } = user;
   const { mentorStore } = useStore();
   const {
-    loadConsultant,
+    loadMentor,
     mentor,
     fetchMentorInProgress,
     fetchMentorError,
@@ -60,9 +60,9 @@ const EditProfileForm: React.FC<EditProfileFormProps> = ({ user }) => {
 
   useEffect(() => {
     if (isMentor) {
-      loadConsultant(id);
+      loadMentor(id);
     }
-  }, [id, isMentor, loadConsultant]);
+  }, [id, isMentor, loadMentor]);
 
   useEffect(() => {
     fetchCategories();

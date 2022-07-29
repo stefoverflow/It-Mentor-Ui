@@ -104,20 +104,17 @@ export default class MentorStore {
     }
   };
 
-  loadConsultant = async (id: string) => {
+  loadMentor = async (id: string) => {
     runInAction(() => {
       this.fetchMentorInProgress = true;
       this.fetchMentorError = "";
     });
     try {
-      const response = await agent.Mentors.getMentor(id);
-      const { value } = response;
-
-      runInAction(() => (this.mentor = value));
+      runInAction(async () => this.mentor = await agent.Mentors.getMentor(id));
     } catch (error) {
       runInAction(
         () =>
-          (this.fetchMentorError = "An error occurred while fetching mentor.")
+          this.fetchMentorError = "An error occurred while fetching mentor."
       );
     } finally {
       runInAction(() => (this.fetchMentorInProgress = false));

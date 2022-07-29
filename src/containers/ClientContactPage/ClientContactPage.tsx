@@ -27,7 +27,7 @@ const ClientContactPage: React.FC<ClientContactPageType> = () => {
                     submitting ?
                     <Loader active inverted size="big"/>
                     :
-                    'Stefke Hotline'
+                    'Zakaži konsultaciju'
                 }
             </button>
         </div>

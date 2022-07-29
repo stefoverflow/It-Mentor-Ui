@@ -28,7 +28,7 @@ export default class ProfileStore {
     try {
       const profile = await agent.Mentors.getMentor(id);
       runInAction(() => {
-        this.profile = profile.value;
+        this.profile = profile;
         this.loadingProfile = false;
       });
     } catch (error) {
