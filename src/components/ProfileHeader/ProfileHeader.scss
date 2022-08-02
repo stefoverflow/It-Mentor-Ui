@@ -1,0 +1,31 @@
+.profile-header {
+  position: relative;
+  height: 15.4rem;
+  width: 100vw;
+  padding: 2.3rem 7rem 2.3rem 7rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__client {
+    position: absolute;
+    left: 50%;
+    top: 50%; 
+    transform: translate(-50%, -50%);
+    width: 28.3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    letter-spacing: 0.04em;
+
+    color: #ffffff;
+    font-size: 2.4rem;
+  }
+
+  &__zoom{
+    padding-right: 20rem;
+  }
+}

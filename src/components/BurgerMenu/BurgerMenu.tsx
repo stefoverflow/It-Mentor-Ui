@@ -1,4 +1,3 @@
-import BurgerMenuLines from "./BurgerMenuLines/BurgerMenuLines";
 import "./BurgerMenu.scss";
 
 const BurgerMenu = () => {

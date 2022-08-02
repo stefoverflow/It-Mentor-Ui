@@ -47,7 +47,7 @@ const Menu = () => {
           <Link to="/mentors" className="menu__item">
             Mentori.
           </Link>
-          <Link to="/mentors" className="menu__item">
+          <Link to="/clients" className="menu__item">
             Moj profil.
           </Link>
           <Link to="/mentors" className="menu__item">
