@@ -13,7 +13,7 @@ import { useStore } from "../../stores/store";
 
 interface NewLandingPageType {}
 
-const NewLandingPage: React.FC<NewLandingPageType> = () => {
+const HomePage: React.FC<NewLandingPageType> = () => {
   const { isMobile } = useMobile();
   const {mentorStore} = useStore();
 
@@ -24,7 +24,7 @@ const NewLandingPage: React.FC<NewLandingPageType> = () => {
       <div className="landing__header__logo">
           <Logo />
       </div> : null}
-        <Link to="/register" className="landing__header__become-mentor">
+        <Link to="/mentors-contact" className="landing__header__become-mentor">
           Postani mentor
         </Link>
         <div className="landing__header__logo"></div>
@@ -74,7 +74,7 @@ const NewLandingPage: React.FC<NewLandingPageType> = () => {
             </Link>
           </div>
         </div>
-        {isMobile? <Link to="/register" className="landing__content__become-mentor">
+        {isMobile? <Link to="/mentors-contact" className="landing__content__become-mentor">
           Postani mentor
         </Link>: null}
         {/* <Menu /> */}
@@ -83,4 +83,4 @@ const NewLandingPage: React.FC<NewLandingPageType> = () => {
   );
 };
 
-export default NewLandingPage;
+export default HomePage;

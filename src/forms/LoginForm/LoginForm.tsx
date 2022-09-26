@@ -19,7 +19,7 @@ type SubmitProps = {
   password: string;
 };
 
-export default observer(function LoginForm() {
+const LoginForm = () => {
   const { userStore } = useStore();
   return (
     <Container textAlign="center" className="login-form">
@@ -69,4 +69,6 @@ export default observer(function LoginForm() {
       </div>
     </Container>
   );
-});
+};
+
+export default observer(LoginForm);

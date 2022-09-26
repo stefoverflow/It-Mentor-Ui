@@ -78,3 +78,9 @@ export const parseNum = (str: string) => {
 
 export const composeValidators = (...validators: any) => (value: any) =>
   validators.reduce((error: any, validator: any) => error || validator(value), VALID);
+
+export const updateErrorStatus = (error: any, setError:(error:string)=>void) => {
+  if(error instanceof Error){
+    setError(`Error: ${error.name}, message: ${error.message}`);
+  }
+}
