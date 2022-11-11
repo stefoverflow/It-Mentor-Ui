@@ -18,7 +18,6 @@ const FieldTextInput: React.FC<FieldTextInputProps> = (props) => {
     <Field
       name={name}
       render={({ input, meta }) => (
-          // <Form.Field error={meta.error && meta.touched}>
         <div className="text-input">
           <label className="text-input__label">{label}</label>
           <input {...input} type={type} className="text-input__input" placeholder={placeholder} />
@@ -26,7 +25,6 @@ const FieldTextInput: React.FC<FieldTextInputProps> = (props) => {
             <span className="text-input__error">{meta.error}</span>
           )}
         </div>
-        // </Form.Field>
       )}
       validate={validate}
     />

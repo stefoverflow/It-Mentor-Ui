@@ -1,0 +1,35 @@
+@import "../../scss/common_styles";
+@import "../../scss/color";
+@import "../../scss/fonts";
+
+.mentors-contact{
+    &__content{
+        position: relative;
+        top:16.6rem;
+        display: flex;
+        flex-direction: column;
+        color: $color-white;
+        font-size: $regular-text-desktop;
+        width: 100%;
+        font-weight: 800;
+        text-align: center;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__email{
+        color: $color-mentors-cta;
+        padding-top: 5.5rem;
+    }
+
+    &__image-container{
+        padding: 5.5rem 0;
+    }
+
+    &__back{
+        color: $color-white;
+    }
+}
+.mentors-contact-cover{
+    @include backgroundImage();
+}

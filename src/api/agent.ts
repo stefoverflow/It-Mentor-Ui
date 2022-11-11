@@ -7,6 +7,7 @@ import { UserFormValues } from "../models/user";
 import { toast } from "react-toastify";
 import { history } from "..";
 import { Skill } from "../models/skill";
+import { ClientRegisterDto } from "../models/clientRegisterDto";
 
 axios.defaults.baseURL = "http://localhost:5000";
 
@@ -39,7 +40,7 @@ axios.interceptors.response.use(
         history.push("/not-found");
         break;
       case 500:
-        toast.error("server error");
+        toast.error(`server error: ${data.message}`);
         console.log(data);
         break;
     }
@@ -66,7 +67,7 @@ const requests = {
 };
 
 const Mentors = {
-  registerClient: (values: any) => requests.post(`/account/register/client`, values),
+  registerClient: (values: ClientRegisterDto) => requests.post(`/account/register/client`, values),
   getMentorsPaginated: (PageNumber: number, PageSize: number) =>
     requests.get(`/mentors?PageNumber=${PageNumber}&PageSize=${PageSize}`, {}),
   searchMentorsBySkill: (skillName: string) =>
