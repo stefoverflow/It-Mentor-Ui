@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form as FinalForm } from "react-final-form";
-import { Loader } from "semantic-ui-react";
+import { Icon, Loader } from "semantic-ui-react";
 import FieldSelectInput from "../../components/FieldSelectInput/FieldSelectInput";
 import FieldTextInput from "../../components/FieldTextInput/FieldTextInput";
 
@@ -18,17 +18,19 @@ interface ClientContactPageType {}
 
 const ClientContactPage: React.FC<ClientContactPageType> = () => {
   const history = useHistory();
+  const[submitText, setSubmitText] = useState('Pošalji svoje podatke, kontaktiraćemo te ubrzo.');
 
-  const renderSubmitButton = (valid: boolean, submitting: boolean) => (
+  const renderSubmitButton = (valid: boolean, submitting: boolean, submitSucceeded:boolean) => (
     <div className="client-contact__row__column__description">
       <div className="client-contact__row__column__description__text">
-        Pošalji svoje podatke, kontaktiraćemo te ubrzo.
+        {submitText}
       </div>
       <button
         className="client-contact__row__column__description__button"
         type="submit"
       >
-        {submitting ? <Loader active inverted size="big" /> : "Pošalji"}
+        {submitting ? <Loader active inverted size="big" /> : null}
+        {submitSucceeded? <Icon className="check icon" /> : "Pošalji"}
       </button>
     </div>
   );
@@ -36,32 +38,16 @@ const ClientContactPage: React.FC<ClientContactPageType> = () => {
   const registerClient = async (values: any) => {
     try {
       await agent.Mentors.registerClient(values); 
-      history.push("/mentors");
+      // history.push("/mentors");
     } catch (e: any) {
       console.log(e);
     }
   };
   return (
     <div className="client-contact">
-      {/* <FinalForm
-        onSubmit={(values) => {
-          console.log(values);
-        }}
-        render={({ handleSubmit }) => (
-          <form onSubmit={handleSubmit}>
-            <Field 
-                name="name"
-                render={({input})=>(
-                    <input {...input} type="text" />
-                )}>
-            </Field>
-            <button type="submit">Pošalji</button>
-          </form>
-        )}
-      ></FinalForm> */}
       <FinalForm
         onSubmit={(values) => registerClient(values)}
-        render={({ handleSubmit, valid, submitting }) => (
+        render={({ handleSubmit, valid, submitting, submitSucceeded }) => (
           <form onSubmit={handleSubmit} className="client-contact__row">
             <div className="client-contact__row__column">
               <FieldTextInput
@@ -84,7 +70,7 @@ const ClientContactPage: React.FC<ClientContactPageType> = () => {
                 )}
               />
               <div className="client-contact__row__column__submit-desktop">
-                {renderSubmitButton(valid, submitting)}
+                {renderSubmitButton(valid, submitting, submitSucceeded)}
               </div>
             </div>
             <div className="client-contact__row__column">

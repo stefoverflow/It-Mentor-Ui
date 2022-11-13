@@ -38,8 +38,8 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
 
   useEffect(() => {
     delay(() => {
-    debugger
-      let logo = document.querySelector('landing-client__logo');
+      debugger;
+      let logo = document.querySelector("landing-client__logo");
 
       const toggleLogoColor = function (entries: any) {
         const [entry] = entries;
@@ -73,12 +73,11 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
         <div className="landing-client__image-container__gradient" />
         <div className="landing-client__image-container__content">
           <div className="landing-client__image-container__content__title">
-            Korak do četvorocifrene plate, spreman ?
+            Korak do četvorocifrene plate, spreman?
           </div>
           <div className="landing-client__image-container__content__description">
-            Umesto da potrošiš najmanje 4000e samo na{!isMobile ? <br /> : null}{" "}
-            školarinu, minimum 4 godina svog života {!isMobile ? <br /> : null}i
-            bezbroj živaca, može i ovako :
+            Umesto da potrošiš minimum 4 godine svog života, <br />
+            gomile novca i živaca, možeš i ovako:
           </div>
           <ClientContactButton />
         </div>
@@ -109,39 +108,33 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
           <PlayButton />
         </div>
         <div className="landing-client__main-section__dissatisfied-title">
-          Nezadovoljan si trenutnim novčanim stanjem a znaš da vrediš više?
+          Da, i ti to možeš!
         </div>
         <div className="landing-client__main-section__dissatisfied-description">
-          Preuzmi inicijativu i ukloni brigu o parama, proputuj svet, poveži se
-          sa ljudima i pokreni sopstveni biznis uz pomoć novca koji ćeš zaraditi
-          u IT sektoru.
+          Nije ti neophodno prethodno iskustvo, zajedno ćemo ići tempom koji
+          tebi odgovara.
         </div>
-        <div className="landing-client__main-section__elon-musk-image-container">
-          <img
-            className="landing-client__main-section__elon-musk-image-container__image"
-            src={ClientMainContentElonMuskImage}
-          />
-        </div>
+
         <div className="landing-client__main-section__invest-section">
           <div className="landing-client__main-section__invest-section__text">
             <div className="landing-client__main-section__invest-section__text__title">
-              Investiraj u znanje a ne u parče papira !
+              Investiraj u znanje, <br />
+              ne u parče papira!
+            </div>
+            <div className="landing-client__main-section__elon-musk-image-container">
+              <img
+                className="landing-client__main-section__elon-musk-image-container__image"
+                src={ClientMainContentElonMuskImage}
+              />
             </div>
             <div className="landing-client__main-section__invest-section__text__description">
-              Super je fakultet, lepo je imati diplomu ali diploma ti ne
-              garantuje zaradu. Praktičnije i odmah primenjlive veštine možeš
+              Super je fakultet, lepo je imati diplomu ali ti ona ne
+              garantuje zaradu. Praktične i odmah primenjlive veštine možeš
               steći i za 6 meseci, onako kako se danas radi, sa najmodernijim
-              tehnologijama. Učenje zastarelih tehnologija od ljudi koji su
-              teoretičari je kao da danas narezuješ sve na disk. Nemoj da budeš
+              tehnologijama. Učenje zastarelih metoda od ljudi koji su
+              teoretičari je kao da i dalje narezuješ sve na disk. Nemoj da budeš
               CD.
             </div>
-          </div>
-          <div className="landing-client__main-section__invest-section__image-container">
-            <Image
-              className="landing-client__main-section__invest-section__image-container__image"
-              src={isMobile ? ClientSmartMobileImage : ClientSmartImage}
-            />
-            {/* <div className="landing-client__main-section__invest-section__image-container__gradient" /> */}
           </div>
         </div>
         <div className="landing-client__main-section__invest-section">
@@ -164,29 +157,19 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
           </div>
         </div>
         <div className="landing-client__main-section__part-text">
-          Samo deo onoga što mentorstvo podrazumeva:
+          Sarađuj sa ekspertom iz IT industrije bez ikakvog teoretisanja
         </div>
         <div className="landing-client__main-section__qa-section">
           <div className="landing-client__main-section__qa-section__qa">
+            <div>- Umesto bubanja steći ćeš praksu.</div>
+            <div>- Nasuprot papira dobićeš znanje.</div>
             <div>
-              <div>Odgovori na pitanja</div>
-              <div>- Sve što ti ne bude jasno možeš da pitaš mentora.</div>
+              - Zastarele modele učenja zameni personalizovanim razvojnim putem,
+              a lutanje stalnom podrškom na svakom koraku tvog usavršavanja.
             </div>
             <div>
-              <div>
-                Dobićeš sve informacije koje su ti potrebne za rad kod kuće.
-              </div>
-            </div>
-            <div>
-              <div>Praktičan rad kroz projekat</div>
-              <div>– iskoristićeš ga kasnije u svom cv-ju kao referencu.</div>
-            </div>
-            <div>
-              <div>Praćenje domaćih zadataka</div>
-              <div>
-                – Ako se zbuniš, pogrešiš, naiđeš na prepreku, mentor će biti tu
-                da pomogne.
-              </div>
+              – Aktivno razvijaj projekat sa mentorom umesto da slušaš dosadna
+              predavanja.
             </div>
           </div>
           <div className="landing-client__main-section__qa-section__image-container">
@@ -249,7 +232,7 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
             MENTORI
           </div>
           <div className="landing-client__main-section__mentors__card__title">
-            Pogledajte detaljnije naš mentorski tim. Vama na usluzi.
+            Pogledaj detaljnije naš tim i odaberi svog ličnog trenera.
           </div>
           <img
             src={ArrowRightImage}

@@ -15,7 +15,6 @@ interface NewLandingPageType {}
 
 const HomePage: React.FC<NewLandingPageType> = () => {
   const { isMobile } = useMobile();
-  const {mentorStore} = useStore();
 
   return (
     <div className="landing">
@@ -39,17 +38,14 @@ const HomePage: React.FC<NewLandingPageType> = () => {
       <div className="landing__content">
         {isMobile? <Logo />:null}
         <div className="landing__content__title">
-          Do prvog posla {isMobile ? <br /> : null}sa ličnim IT mentorom.
+          Do zaposlenja {isMobile ? <br /> : null}sa ličnim IT mentorom
         </div>
         <div className="landing__content__description">
-          Pomažemo početnicima, ljudima koji žele {isMobile ? <br /> : null}da
-          promene karijeru, onima koji su već {isMobile ? <br /> : null}završili
-          neki kurs ili fakultet a nemaju {isMobile ? <br /> : null}rezultate da
-          dođu do prvog visoko {isMobile ? <br /> : null}plaćenog posla u IT
-          sektoru {isMobile ? <br /> : null}za manje od 6 meseci.
+        Pomažemo ti da dođeš do prvog visoko plaćenog posla u sektoru {<br />}
+        informacionih tehnologija za manje od 6 meseci
         </div>
         <div className="landing__content__client-container">
-          <div>Do prvog posla</div>
+          <div>Kreni ka cilju</div>
           <Link
             to="/client-landing"
             className="landing__content__client-container__image-container__start-button"
@@ -64,13 +60,13 @@ const HomePage: React.FC<NewLandingPageType> = () => {
           </div>
           <div className="landing__content__client-container__got-account">
             <div className="landing__content__client-container__image-container__got-account__text">
-              Već imate nalog?
+              Već imaš nalog?
             </div>
             <Link
               to="/login"
               className="landing__content__client-container__image-container__got-account__login-link"
             >
-              Ulogujte se
+              Uloguj se
             </Link>
           </div>
         </div>
