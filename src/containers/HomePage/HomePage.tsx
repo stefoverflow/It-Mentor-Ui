@@ -19,10 +19,11 @@ const HomePage: React.FC<NewLandingPageType> = () => {
   return (
     <div className="landing">
       <div className="landing__header">
-      {!isMobile? 
-      <div className="landing__header__logo">
-          <Logo />
-      </div> : null}
+        {!isMobile ? (
+          <div className="landing__header__logo">
+            <Logo />
+          </div>
+        ) : null}
         <Link to="/mentors-contact" className="landing__header__become-mentor">
           Postani mentor
         </Link>
@@ -36,13 +37,13 @@ const HomePage: React.FC<NewLandingPageType> = () => {
         </video> */}
 
       <div className="landing__content">
-        {isMobile? <Logo />:null}
+        {isMobile ? <Logo /> : null}
         <div className="landing__content__title">
           Do zaposlenja {isMobile ? <br /> : null}sa ličnim IT mentorom
         </div>
         <div className="landing__content__description">
-        Pomažemo ti da dođeš do prvog visoko plaćenog posla u sektoru {<br />}
-        informacionih tehnologija za manje od 6 meseci
+          Pomažemo ti da dođeš do prvog visoko plaćenog posla u sektoru {<br />}
+          informacionih tehnologija za manje od 6 meseci
         </div>
         <div className="landing__content__client-container">
           <div>Kreni ka cilju</div>
@@ -62,18 +63,22 @@ const HomePage: React.FC<NewLandingPageType> = () => {
             <div className="landing__content__client-container__image-container__got-account__text">
               Već imaš nalog?
             </div>
-            <Link
-              to="/login"
-              className="landing__content__client-container__image-container__got-account__login-link"
-            >
-              Uloguj se
-            </Link>
+              <Link
+                to="/login"
+                className="landing__content__client-container__image-container__got-account__login-link"
+              >
+                Uloguj se
+              </Link>
           </div>
         </div>
-        {isMobile? <Link to="/mentors-contact" className="landing__content__become-mentor">
-          Postani mentor
-        </Link>: null}
-        {/* <Menu /> */}
+        {isMobile ? (
+          <Link
+            to="/mentors-contact"
+            className="landing__content__become-mentor"
+          >
+            Postani mentor
+          </Link>
+        ) : null}
       </div>
     </div>
   );

@@ -13,6 +13,7 @@ import {
 import agent from "../../api/agent";
 import { useHistory } from "react-router-dom";
 import Menu from "../../components/Menu/Menu";
+import Loading from "../../components/Loading/Loading";
 
 interface ClientContactPageType {}
 
@@ -29,14 +30,18 @@ const ClientContactPage: React.FC<ClientContactPageType> = () => {
         className="client-contact__row__column__description__button"
         type="submit"
       >
-        {submitting ? <Loader active inverted size="big" /> : null}
-        {submitSucceeded? <Icon className="check icon" /> : "Pošalji"}
+        <Loading 
+        submitting={submitting} 
+        submitSucceeded={submitSucceeded} 
+        buttonText={"Pošalji"}          
+        />
       </button>
     </div>
   );
 
   const registerClient = async (values: any) => {
     try {
+      debugger
       await agent.Mentors.registerClient(values); 
       // history.push("/mentors");
     } catch (e: any) {
@@ -77,26 +82,24 @@ const ClientContactPage: React.FC<ClientContactPageType> = () => {
               <FieldSelectInput
                 label="Ukupni budžet koji bih izdvojio zamentorstvo:"
                 name="TotalBudget"
-                validate={required("Obavezno polje")}
                 options={[
                   {
-                    key: "Manje od 1000e",
-                    text: "Manje od 1000e",
+                    key: "Manje od 750e",
+                    text: "Manje od 750e",
                   },
                   {
-                    key: "Između 1000e i 2000e",
-                    text: "Između 1000e i 2000e",
+                    key: "Između 750e i 1500e",
+                    text: "Između 750e i 1500e",
                   },
                   {
-                    key: "Više od 2000e",
-                    text: "Više od 2000e",
+                    key: "Više od 1500e",
+                    text: "Više od 1500e",
                   },
                 ]}
               />
               <FieldSelectInput
                 label="Hteo bih da se obučim za:"
                 name="FieldOfInterest"
-                validate={required("Obavezno polje")}
                 options={[
                   {
                     key: "Web programiranje",
@@ -127,7 +130,6 @@ const ClientContactPage: React.FC<ClientContactPageType> = () => {
               <FieldSelectInput
                 label="Poznavanje Engleskog jezika:"
                 name="EnglishLevel"
-                validate={required("Obavezno polje")}
                 options={[
                   {
                     key: "Početni nivo",
@@ -146,7 +148,6 @@ const ClientContactPage: React.FC<ClientContactPageType> = () => {
               <FieldSelectInput
                 label="Mesečna plata koju očekuješ u narednih godinu dana?"
                 name="ExpectedSalary"
-                validate={required("Obavezno polje")}
                 options={[
                   {
                     key: "Manje od 750e",

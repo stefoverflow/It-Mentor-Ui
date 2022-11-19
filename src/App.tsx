@@ -17,6 +17,7 @@ import ClientContactPage from "./containers/ClientContactPage/ClientContactPage"
 import LoginPage from "./containers/LoginPage/LoginPage";
 import AdminPage from "./containers/AdminPage/AdminPage";
 import MentorsContactPage from './containers/MentorsContactPage/MentorsContactPage';
+import RegisterPage from './containers/RegisterPage/RegisterPage';
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
           <Route path="/clients" component={ClientsPage} />
           <Route path="/manage" component={AdminPage} />
           <Route path="/login" component={LoginPage} />
+          <Route path="/register" component={RegisterPage} />
           <Route path="/mentors-contact" component={MentorsContactPage} />
           <Route path="/choose" component={CategoriesSkillsForm} />
           <Route path="/categories" component={CategoriesForm} />

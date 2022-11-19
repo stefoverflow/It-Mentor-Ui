@@ -4,8 +4,6 @@
 
 
 .landing{
-    width: 100vw;
-    height: 66.7rem;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -63,7 +61,7 @@
     
     &__content {
         position: relative;
-        top:16.4rem;
+        top:13.4rem;
         display: flex;
         flex-direction: column;
         color: $color-white;
@@ -201,7 +199,7 @@
                     justify-content: center;
                     align-items: center;
                     text-align: center;
-                    margin-bottom: 0.3rem;
+                    margin-bottom: 0.5rem;
                     background-color: $color-main-red;
                     color: $color-white;
                     border-radius: 0.5rem;
@@ -250,6 +248,7 @@
                     &__login-link {
                         display: block;
                         color: $color-main-red;
+                        margin-top: 0.85rem;
 
                         @include mobile(){
                             padding-top: 0.9rem;
