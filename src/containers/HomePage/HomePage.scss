@@ -77,7 +77,7 @@
 
         @include mobile() {
             position: relative;
-            top: 10.4rem;
+            top: 6.7rem;
 
             &__become-mentor {
                 background-color: $color-mentors-cta;
@@ -249,10 +249,6 @@
                         display: block;
                         color: $color-main-red;
                         margin-top: 0.85rem;
-
-                        @include mobile(){
-                            padding-top: 0.9rem;
-                        }
                     }
                 }
             }

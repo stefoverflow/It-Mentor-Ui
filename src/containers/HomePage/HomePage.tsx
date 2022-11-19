@@ -42,8 +42,8 @@ const HomePage: React.FC<NewLandingPageType> = () => {
           Do zaposlenja {isMobile ? <br /> : null}sa ličnim IT mentorom
         </div>
         <div className="landing__content__description">
-          Pomažemo ti da dođeš do prvog visoko plaćenog posla u sektoru {<br />}
-          informacionih tehnologija za manje od 6 meseci
+          Pomažemo ti da dođeš do prvog visoko plaćenog posla u sektoru {!isMobile && <br />}
+          informacionih {isMobile && <br />}tehnologija za manje od 6 meseci
         </div>
         <div className="landing__content__client-container">
           <div>Kreni ka cilju</div>
