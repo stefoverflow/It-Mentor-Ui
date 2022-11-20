@@ -18,6 +18,7 @@ import LoginPage from "./containers/LoginPage/LoginPage";
 import AdminPage from "./containers/AdminPage/AdminPage";
 import MentorsContactPage from './containers/MentorsContactPage/MentorsContactPage';
 import RegisterPage from './containers/RegisterPage/RegisterPage';
+import { TestPage } from './containers/TestPage/TestPage';
 
 const App = () => {
   return (

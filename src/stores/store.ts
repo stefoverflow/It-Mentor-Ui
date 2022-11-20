@@ -3,7 +3,6 @@ import CategoryStore from "./categoryStore";
 import CommentStore from "./commentStore";
 import CommonStore from "./commonStore";
 import MentorStore from "./mentorStore";
-import MessageStore from "./messageStore";
 import ProfileStore from "./profileStore";
 import PostStore from "./postStore";
 import ReviewStore from "./reviewStore";
@@ -15,7 +14,6 @@ interface Store {
   userStore: UserStore;
   reviewStore: ReviewStore;
   commonStore: CommonStore;
-  messageStore: MessageStore;
   postStore: PostStore;
   profileStore: ProfileStore;
   categoryStore: CategoryStore;
@@ -28,7 +26,6 @@ export const store: Store = {
   userStore: new UserStore(),
   reviewStore: new ReviewStore(),
   commonStore: new CommonStore(),
-  messageStore: new MessageStore(),
   postStore: new PostStore(),
   profileStore: new ProfileStore(),
   categoryStore: new CategoryStore(),

@@ -138,28 +138,6 @@ export default class MentorStore {
     }
   };
 
-  fetchCategories = async () => {
-    runInAction(() => {
-      this.fetchCategoriesInProgress = true;
-      this.fetchCategoriesError = "";
-    });
-    try {
-      const response = await agent.Categories.list();
-      const { value } = response;
-      runInAction(() => {
-        this.categories = value;
-      });
-    } catch (error) {
-      runInAction(() => {
-        this.fetchCategoriesError = "Nismo uspeli da pronađemo kategorije.";
-      });
-    } finally {
-      runInAction(() => {
-        this.fetchCategoriesInProgress = false;
-      });
-    }
-  };
-
   chooseCategory = async (consultantId: string, categoryId: string) => {
     runInAction(() => {
       this.chooseCategoryInProgress = true;
@@ -186,10 +164,10 @@ export default class MentorStore {
       this.fetchSkillsError = "";
     });
     try {
+      debugger
       const response = await agent.Skills.list(categoryId);
-      const { value } = response;
       runInAction(() => {
-        this.skills = value;
+        this.skills = response;
       });
     } catch (error) {
       runInAction(() => {

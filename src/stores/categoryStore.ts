@@ -2,10 +2,14 @@ import { makeAutoObservable, runInAction } from "mobx";
 import { MenuItemProps } from "semantic-ui-react";
 import { history } from "..";
 import agent from "../api/agent";
+import { Category } from "../models/category";
 
 export default class CategoryStore {
   activeCategoryName: string | undefined = "";
   selectedCategoryId: string | undefined = "";
+  fetchCategoriesInProgress: boolean = false;
+  fetchCategoriesError: string = "";
+  categories: Category[] = [];
 
   constructor() {
     makeAutoObservable(this);
@@ -16,6 +20,28 @@ export default class CategoryStore {
     data: MenuItemProps
   ) => {
     this.activeCategoryName = data.name;
+  };
+
+  fetchCategories = async () => {
+    debugger
+    runInAction(() => {
+      this.fetchCategoriesInProgress = true;
+      this.fetchCategoriesError = "";
+    });
+    try {
+      const response = await agent.Categories.list();
+      runInAction(() => {
+        this.categories = response;
+      });
+    } catch (error) {
+      runInAction(() => {
+        this.fetchCategoriesError = "Nismo uspeli da pronađemo kategorije.";
+      });
+    } finally {
+      runInAction(() => {
+        this.fetchCategoriesInProgress = false;
+      });
+    }
   };
 
   setSelectedCategory = (categoryId: string | undefined) => {

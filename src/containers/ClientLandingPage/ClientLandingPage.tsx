@@ -84,7 +84,7 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
         {/* <PlayButton /> */}
       </div>
       <div className="landing-client__main-section">
-        <div className="landing-client__main-section__happy-section">
+        {/* <div className="landing-client__main-section__happy-section">
           <Image
             className="landing-client__main-section__happy-section__image"
             src={ClientHappyImage}
@@ -106,79 +106,7 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
             }
           />
           <PlayButton />
-        </div>
-        <div className="landing-client__main-section__dissatisfied-title">
-          Da, i ti to možeš!
-        </div>
-        <div className="landing-client__main-section__dissatisfied-description">
-          Nije ti neophodno prethodno iskustvo, zajedno ćemo ići tempom koji
-          tebi odgovara.
-        </div>
-
-        <div className="landing-client__main-section__invest-section">
-          <div className="landing-client__main-section__invest-section__text">
-            <div className="landing-client__main-section__invest-section__text__title">
-              Investiraj u znanje, <br />
-              ne u parče papira!
-            </div>
-            <div className="landing-client__main-section__elon-musk-image-container">
-              <img
-                className="landing-client__main-section__elon-musk-image-container__image"
-                src={ClientMainContentElonMuskImage}
-              />
-            </div>
-            <div className="landing-client__main-section__invest-section__text__description">
-              Super je fakultet, lepo je imati diplomu ali ti ona ne
-              garantuje zaradu. Praktične i odmah primenjlive veštine možeš
-              steći i za 6 meseci, onako kako se danas radi, sa najmodernijim
-              tehnologijama. Učenje zastarelih metoda od ljudi koji su
-              teoretičari je kao da i dalje narezuješ sve na disk. Nemoj da budeš
-              CD.
-            </div>
-          </div>
-        </div>
-        <div className="landing-client__main-section__invest-section">
-          <div className="landing-client__main-section__invest-section__image-container">
-            <Image
-              className="landing-client__main-section__invest-section__image-container__image"
-              src={isMobile ? ClientStudyMobileImage : ClientStydyImage}
-            />
-            {/* <div className="landing-client__main-section__invest-section__image-container__gradient" /> */}
-          </div>
-          <div className="landing-client__main-section__invest-section__text">
-            <div className="landing-client__main-section__invest-section__text__title">
-              Možeš sam do prvog posla neformalnim učenjem
-            </div>
-            <div className="landing-client__main-section__invest-section__text__description">
-              Sada verovatno razmišljaš o samostalnom učenju? I taj proces
-              podrazumeva puno vremena, ali taj pristup možemo da ubrzamo, evo
-              kako:
-            </div>
-          </div>
-        </div>
-        <div className="landing-client__main-section__part-text">
-          Sarađuj sa ekspertom iz IT industrije bez ikakvog teoretisanja
-        </div>
-        <div className="landing-client__main-section__qa-section">
-          <div className="landing-client__main-section__qa-section__qa">
-            <div>- Umesto bubanja steći ćeš praksu.</div>
-            <div>- Nasuprot papira dobićeš znanje.</div>
-            <div>
-              - Zastarele modele učenja zameni personalizovanim razvojnim putem,
-              a lutanje stalnom podrškom na svakom koraku tvog usavršavanja.
-            </div>
-            <div>
-              – Aktivno razvijaj projekat sa mentorom umesto da slušaš dosadna
-              predavanja.
-            </div>
-          </div>
-          <div className="landing-client__main-section__qa-section__image-container">
-            <img
-              className="landing-client__main-section__qa-section__image-container__image"
-              src={ClientCodingImage}
-            />
-          </div>
-        </div>
+        </div> */}
         <div className="landing-client__main-section__begining">
           <div className="landing-client__main-section__begining__text">
             <div className="landing-client__main-section__begining__text__title">
@@ -198,8 +126,8 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
             <div className="landing-client__main-section__proof__text__description">
               Tek kada sam prebacio fokus sa diplome na sticanje praktičnih
               veština, tada sam dobio rezultate. Možeš ići mojim putem ili
-              izbeći moje greške i krenuti ka susret uspehu. Ovo je ponuda koju
-              sam skoro dobio nakon 4 meseci radnog iskustva:
+              izbeći greške koje sam načinio i krenuti ka susret uspehu. Ovo je
+              ponuda koju sam dobio nakon 4 meseci radnog iskustva:
             </div>
             <div className="landing-client__main-section__proof__text__image-container">
               <img
@@ -213,6 +141,86 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
             <Image
               src={isMobile ? ClientCryMobileImage : ClientCryImage}
               className="landing-client__main-section__proof__image-container__image"
+            />
+          </div>
+        </div>
+        <div className="landing-client__main-section__invest-section">
+          <div className="landing-client__main-section__invest-section__image-container">
+            <Image
+              className="landing-client__main-section__invest-section__image-container__image"
+              src={isMobile ? ClientSmartMobileImage : ClientSmartImage}
+            />
+          </div>
+          <div className="landing-client__main-section__invest-section__text">
+            <div className="landing-client__main-section__invest-section__text__title">
+              Da, i ti to možeš!
+            </div>
+            <div className="landing-client__main-section__invest-section__text__description">
+              Nije ti neophodno prethodno poznavanje, zajedno ćemo ići tempom koji
+              tebi odgovara.
+            </div>
+          </div>
+        </div>
+        <div className="landing-client__main-section__invest-section">
+          <div className="landing-client__main-section__invest-section__text">
+            <div className="landing-client__main-section__invest-section__text__title">
+              Investiraj u znanje, <br />
+              ne u parče papira!
+            </div>
+            <div className="landing-client__main-section__elon-musk-image-container">
+              <img
+                className="landing-client__main-section__elon-musk-image-container__image"
+                src={ClientMainContentElonMuskImage}
+              />
+            </div>
+            <div className="landing-client__main-section__invest-section__text__description">
+              Super je fakultet, lepo je imati diplomu ali ti ona ne garantuje
+              zaradu. Praktične i odmah primenjlive veštine možeš steći i za 6
+              meseci, onako kako se danas radi, sa najmodernijim tehnologijama.
+              Učenje zastarelih metoda od ljudi koji su teoretičari je kao da i
+              dalje narezuješ sve na disk. Nemoj da budeš CD.
+            </div>
+          </div>
+        </div>
+        <div className="landing-client__main-section__invest-section">
+          <div className="landing-client__main-section__invest-section__image-container">
+            <Image
+              className="landing-client__main-section__invest-section__image-container__image"
+              src={isMobile ? ClientStudyMobileImage : ClientStydyImage}
+            />
+          </div>
+          <div className="landing-client__main-section__invest-section__text">
+            <div className="landing-client__main-section__invest-section__text__title">
+              Možeš sam do prvog posla neformalnim učenjem
+            </div>
+            <div className="landing-client__main-section__invest-section__text__description">
+              Verovatno si razmišljao o samostalnoj edukaciji? I taj proces
+              podrazumeva puno vremena, isti pristup nastojimo da ubrzamo. Evo
+              kako:
+            </div>
+          </div>
+        </div>
+        <div className="landing-client__main-section__part-text">
+          Sarađuj sa ekspertom iz IT industrije bez ikakvog teoretisanja
+        </div>
+        <div className="landing-client__main-section__qa-section">
+          <div className="landing-client__main-section__qa-section__qa">
+            <div>- Umesto bubanja steći ćeš praksu.</div>
+            <div>- Nasuprot papira dobićeš znanje.</div>
+            <div>
+              - Zastarele modele učenja zameni personalizovanim razvojnim putem,
+              {!isMobile && <br />}a lutanje stalnom podrškom na svakom
+              {!isMobile && <br />} koraku tvog usavršavanja.
+            </div>
+            <div>
+              – Aktivno razvijaj projekat sa mentorom{!isMobile && <br />}{" "}
+              umesto da slušaš dosadna predavanja.
+            </div>
+          </div>
+          <div className="landing-client__main-section__qa-section__image-container">
+            <img
+              className="landing-client__main-section__qa-section__image-container__image"
+              src={ClientCodingImage}
             />
           </div>
         </div>

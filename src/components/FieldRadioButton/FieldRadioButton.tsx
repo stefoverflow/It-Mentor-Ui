@@ -1,5 +1,5 @@
 import React from "react";
-import { Field } from "react-final-form";
+import { Field, Form } from "react-final-form";
 
 import "./FieldRadioButton.scss";
 
@@ -16,18 +16,20 @@ const FieldRadioButton: React.FC<FieldRadioButtonProps> = (props) => {
   const { name, label, value, validate, onChange, disabled = false } = props;
   const onChangeMaybe = onChange ? { onChange } : {};
   return (
-    <label>
-      <Field
-        {...onChangeMaybe}
-        name={name}
-        component="input"
-        type="radio"
-        value={value}
-        validate={validate}
-        disabled={disabled}
-      />
-      {label}
-    </label>
+    <div>
+      <label>
+        <Field
+          {...onChangeMaybe}
+          name={name}
+          component="input"
+          type="radio"
+          value={value}F
+          validate={validate}
+          disabled={disabled}
+        />
+        {label}
+      </label>
+    </div>
   );
 };
 

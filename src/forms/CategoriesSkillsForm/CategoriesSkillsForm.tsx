@@ -19,7 +19,6 @@ const CategoriesSkillsForm: React.FC<CategoriesSkillsFormProps> = () => {
   const { id } = currentUser;
   const { mentorStore } = useStore();
   const {
-    fetchCategories,
     fetchCategoriesInProgress,
     fetchCategoriesError,
     categories,
@@ -36,16 +35,12 @@ const CategoriesSkillsForm: React.FC<CategoriesSkillsFormProps> = () => {
     chooseSkillsError,
     chooseSkillsSent,
   } = mentorStore;
+  const {categoryStore: {fetchCategories}} = useStore();
   // const { categories: initialCategory } = values;
-  const [selectedCategory, setSelectedCategory] = useState<string>("");
+  const [selectedCategory, setSelectedCategory] = useState<string>("Web Development");
 
   useEffect(() => {
-    fetchCategories();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    fetchSkills(selectedCategory);
+    fetchSkills("73ab1482-8aeb-4d97-ae7e-faf8784edb72");
   }, [fetchSkills, selectedCategory]);
 
   const handleCategoryChange = (id: string) => {

@@ -1,0 +1,49 @@
+@import "../../scss/color";
+@import "../../scss/fonts";
+@import "../../scss/common_styles";
+
+.login {
+  &__content {
+    position: relative;
+    top: 16.6rem;
+    display: flex;
+    flex-direction: column;
+    color: $color-white;
+    font-size: $regular-text-desktop;
+    width: 100%;
+    gap: 1.7rem;
+    font-weight: 800;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+
+    &__label {
+      color: $color-mentors-cta;
+    }
+
+    &__fields {
+      display: flex;
+      gap: 1.7rem;
+      flex-direction: column;
+    }
+
+    &__button {
+      background-color: $color-mentors-cta;
+      color: $color-white;
+      box-shadow: 0rem 1.8rem 6rem -1.2rem rgba(141, 92, 246, 0.3);
+      border-radius: 0.5rem;
+      font-size: 2.4rem;
+      line-height: 2.8rem;
+      font-weight: 300;
+      font-family: "GilroyLight";
+      padding: 2rem 4.7rem;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+}
+.login-cover {
+  @include backgroundImage();
+}

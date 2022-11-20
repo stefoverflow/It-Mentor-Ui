@@ -2,7 +2,6 @@
 @import "../../scss/breakpoints";
 @import "../../scss/common_styles";
 
-
 .landing{
     display: flex;
     flex-direction: column;
@@ -31,18 +30,10 @@
         }
 
         &__become-mentor {
-            position: absolute;
+            @include cta-button($color-mentors-cta);
             top: 4.0rem;
             right: 14.0rem;
             padding: 1.8rem 2.6rem;
-            background-color: $color-mentors-cta;
-            color: $color-white;
-            box-shadow: 0rem 1.8rem 6rem -1.2rem rgba(141, 92, 246, 0.3);
-            border-radius: 0.5rem;
-            font-size: 2.4rem;
-            line-height: 2.8rem;
-            font-weight: 300;
-            font-family: 'GilroyLight';
 
             @include above-mobile(){
                 font-size: 1.8rem;
@@ -51,10 +42,6 @@
     
             @include mobile() {
                 display: none;
-            }
-    
-            &:hover {
-                color: $color-primary;
             }
         }
     }

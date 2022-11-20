@@ -32,7 +32,6 @@ const EditProfileForm: React.FC<EditProfileFormProps> = ({ user }) => {
     mentor,
     fetchMentorInProgress,
     fetchMentorError,
-    fetchCategories,
     fetchCategoriesInProgress,
     fetchCategoriesError,
     categories,
@@ -41,6 +40,7 @@ const EditProfileForm: React.FC<EditProfileFormProps> = ({ user }) => {
     fetchSkillsError,
     skills: fechedSkills,
   } = mentorStore;
+  const {categoryStore: {fetchCategories}}=useStore();
   const { categories: mentorCategories, skills: mentorSkills } = mentor;
   const selectedCategoryId = mentorCategories
     ? mentorCategories.length > 0
