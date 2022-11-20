@@ -14,6 +14,7 @@ import Image from "../../components/Image/Image";
 import Logo from "../../components/Logo/Logo";
 import { useStore } from "../../stores/store";
 import { Mentor } from "../../models/mentor";
+import useMobile from "../../hooks/useMobile";
 
 type MentorProfileProps = {
   match: {
@@ -30,6 +31,7 @@ const MentorProfilePage: React.FC<MentorProfileProps> = (props) => {
   const { id, image, firstName, lastName, categories, bio, skills, radiU } =
     mentor;
   const {profileStore : {loadProfile, profile}} = useStore();
+  const {isMobile} = useMobile();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -40,7 +42,7 @@ const MentorProfilePage: React.FC<MentorProfileProps> = (props) => {
   return (
     <div className="mentor-profile">
       <div className="mentor-profile__logo">
-        <Logo />
+      {!isMobile && <Logo />}
       </div>
       <div className="mentor-profile__header">
         <div className="mentor-profile__header__image">
