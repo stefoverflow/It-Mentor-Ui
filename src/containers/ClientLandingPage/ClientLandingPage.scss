@@ -78,6 +78,7 @@
       &__title {
         font-size: 9.6rem;
         font-weight: 800;
+        letter-spacing: 0.1rem;
         line-height: 11.7rem;
 
         @include mobile() {
@@ -95,6 +96,7 @@
         font-size: 4.8rem;
         font-weight: 800;
         line-height: 5.9rem;
+        letter-spacing: 0.1rem;
 
         @include mobile() {
           margin-top: 18.7rem;
