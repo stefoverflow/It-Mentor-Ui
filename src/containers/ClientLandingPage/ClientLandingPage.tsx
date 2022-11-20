@@ -126,7 +126,7 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
             <div className="landing-client__main-section__proof__text__description">
               Tek kada sam prebacio fokus sa formalnog obrazovanja na sticanje praktičnih
               veština, tada sam dobio rezultate. Možeš ići mojim putem ili
-              izbeći greške koje sam načinio i krenuti ka susret uspehu. Ovo je
+              izbeći greške koje sam načinio i krenuti ka uspehu. Ovo je
               ponuda koju sam dobio nakon 4 meseci radnog iskustva:
             </div>
             <div className="landing-client__main-section__proof__text__image-container">
