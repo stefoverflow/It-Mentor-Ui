@@ -36,28 +36,28 @@ interface ClientLandingPageType {}
 const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
   const { isMobile } = useMobile();
 
-  useEffect(() => {
-    delay(() => {
-      debugger;
-      let logo = document.querySelector("landing-client__logo");
+  // useEffect(() => {
+  //   delay(() => {
+  //     debugger;
+  //     let logo = document.querySelector("landing-client__logo");
 
-      const toggleLogoColor = function (entries: any) {
-        const [entry] = entries;
+  //     const toggleLogoColor = function (entries: any) {
+  //       const [entry] = entries;
 
-        if (!entry.isIntersecting) {
-          logo?.classList.add("__color");
-        } else {
-          logo?.classList.remove("__color");
-        }
-      };
-      const logoObserver = new IntersectionObserver(toggleLogoColor, {
-        root: null,
-        threshold: 0,
-      });
+  //       if (!entry.isIntersecting) {
+  //         logo?.classList.add("__color");
+  //       } else {
+  //         logo?.classList.remove("__color");
+  //       }
+  //     };
+  //     const logoObserver = new IntersectionObserver(toggleLogoColor, {
+  //       root: null,
+  //       threshold: 0,
+  //     });
 
-      logoObserver.observe(logo!);
-    }, 1000);
-  }, []);
+  //     logoObserver.observe(logo!);
+  //   }, 1000);
+  // }, []);
 
   return (
     <div className="landing-client">
@@ -77,7 +77,7 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
           </div>
           <div className="landing-client__image-container__content__description">
             Umesto da potrošiš minimum 4 godine svog života, <br />
-            gomile novca i živaca, možeš i ovako:
+            gomile novca i živaca, bolje je ovako:
           </div>
           <ClientContactButton />
         </div>
@@ -113,8 +113,8 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
               Počeo sam sa istim problemom kao ti
             </div>
             <div className="landing-client__main-section__begining__text__description">
-              Uzeo sam diplomu FON-a, mislio sam da sam uzeo i znanje, ali ovo
-              je bio moj rezultat na četvrtoj godini fakulteta…
+              Uzeo sam diplomu FON-a, mislio sam da uz to ide i znanje, ali ovo
+              je bio moj ishod na četvrtoj godini fakulteta…
             </div>
           </div>
         </div>
@@ -124,7 +124,7 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
               100 konkursa, 100 odbijenih poziva
             </div>
             <div className="landing-client__main-section__proof__text__description">
-              Tek kada sam prebacio fokus sa diplome na sticanje praktičnih
+              Tek kada sam prebacio fokus sa formalnog obrazovanja na sticanje praktičnih
               veština, tada sam dobio rezultate. Možeš ići mojim putem ili
               izbeći greške koje sam načinio i krenuti ka susret uspehu. Ovo je
               ponuda koju sam dobio nakon 4 meseci radnog iskustva:
@@ -176,7 +176,7 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
             <div className="landing-client__main-section__invest-section__text__description">
               Super je fakultet, lepo je imati diplomu ali ti ona ne garantuje
               zaradu. Praktične i odmah primenjlive veštine možeš steći i za 6
-              meseci, onako kako se danas radi, sa najmodernijim tehnologijama.
+              meseci koristeći najmodernije tehnologije.
               Učenje zastarelih metoda od ljudi koji su teoretičari je kao da i
               dalje narezuješ sve na disk. Nemoj da budeš CD.
             </div>
@@ -240,7 +240,7 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
             MENTORI
           </div>
           <div className="landing-client__main-section__mentors__card__title">
-            Pogledaj detaljnije naš tim i odaberi svog ličnog trenera.
+            Pogledaj detaljnije naš tim i odaberi svog 'ličnog trenera'
           </div>
           <img
             src={ArrowRightImage}
