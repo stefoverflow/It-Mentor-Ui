@@ -1,34 +1,42 @@
 import React, { useEffect } from "react";
 import { observer } from "mobx-react-lite";
 import { Form as FinalForm } from "react-final-form";
-import { Header, Form, Container, Button } from "semantic-ui-react";
+import { Header, Form, Container, Button, Dimmer, Loader } from "semantic-ui-react";
 import { useStore } from "../../stores/store";
 import "./SkillsForm.scss";
 
 export default observer(function SkillsForm() {
-  const { skillStore, categoryStore } = useStore();
+  const {
+    skillStore: {
+      getSkillsForSelectedCategory,
+      skillsForSelectedCategory,
+      getSkillsLoading,
+    },
+  } = useStore();
 
   useEffect(() => {
-    skillStore.getSkillsForSelectedCategory(
-      categoryStore.getSelectedCategoryId()
-    );
-  }, [categoryStore, skillStore]);
+    debugger;
+    getSkillsForSelectedCategory("73ab1482-8aeb-4d97-ae7e-faf8784edb72");
+  }, [skillsForSelectedCategory]);
 
-  return (
+  return getSkillsLoading ? (
+    <Dimmer active inverted>
+      <Loader inverted>Učitavanje veština...</Loader>
+    </Dimmer>
+  ) : (
     <Container textAlign="center" className="skills-form">
       <div className="skills-form__form">
         <FinalForm
-          onSubmit={() => console.log("sdsdsd")}
+          onSubmit={() => console.log("")}
           render={({ handleSubmit, valid, values, submitting }) => (
-            <Form onSubmit={() => console.log("ssd")}>
+            <form onSubmit={() => console.log("ssd")}>
               <Header as="h1">
-                Select skills you possess for "Category Name"
+                Odaberi veštine koje poseduješ
               </Header>
-              {skillStore.skillsForSelectedCategory &&
-                skillStore.skillsForSelectedCategory?.map((skill) => (
-                  <Button toggle>{skill.name}</Button>
-                ))}
-            </Form>
+              {skillsForSelectedCategory?.map((skill) => (
+                <Button toggle>{skill.name}</Button>
+              ))}
+            </form>
           )}
         />
       </div>

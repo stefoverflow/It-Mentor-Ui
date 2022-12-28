@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useStore } from "../../stores/store";
 import { Form as FinalForm } from "react-final-form";
 import FieldTextInput from "../../components/FieldTextInput/FieldTextInput";
@@ -13,6 +13,16 @@ const RegisterPage = () => {
     userStore: { registerMentor },
   } = useStore();
 
+  const [validationError, setValidationError] = useState("");
+
+  const inputRef = React.createRef<HTMLInputElement>();
+  const handleClick = () => {
+    if(inputRef.current?.value === ""){
+      setValidationError("Prazno");
+    }
+  }
+
+
   return (
     <div className="register-content">
       <FinalForm
@@ -20,17 +30,28 @@ const RegisterPage = () => {
         render={({ handleSubmit, values, submitting, submitSucceeded }) => (
           <form onSubmit={handleSubmit}>
             <div>
-              <FieldTextInput placeholder={"Email"} name={"Email"} />
-              <FieldTextInput placeholder={"Username"} name={"Username"} />
-              <FieldTextInput placeholder={"Password"} name={"Password"} />
-              <FieldTextInput placeholder={"Category"} name={"CategoryName"} />
+              {/* <FieldTextInput
+               placeholder={"Email"}
+               name={"Email"} />
+              <FieldTextInput 
+               placeholder={"Username"} 
+               name={"Username"} />
+              <FieldTextInput 
+               placeholder={"Password"} 
+               name={"Password"} />
+              <FieldTextInput 
+               placeholder={"Category"} 
+               name={"CategoryName"} />
               <Button type="submit">
                 <Loading
                   submitting={submitting}
                   submitSucceeded={submitSucceeded}
                   buttonText={"Registruj se"}
                 />
-              </Button>
+              </Button> */}
+              <input ref={inputRef} type="text" />
+              <p>{validationError}</p>
+              <button onClick={() => handleClick()}>Validate if empty</button>
             </div>
           </form>
         )}

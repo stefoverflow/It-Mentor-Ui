@@ -27,6 +27,8 @@ import StefanTosic from '../../assets/stefan-tosic.png';
 // import MentorExampleImage6 from '../../assets/mentor-example-6.png';
 
 import "./MentorList.scss";
+import { useStore } from "../../stores/store";
+import useQueryParams from "../../hooks/useQueryParams";
 
 export const exampleMentors = [
   {
@@ -261,15 +263,16 @@ export const exampleMentors = [
 
 
 export default observer(function ConsultantList() {
-  // const { mentorStore } = useStore();
-  // const {
-  //   mentors,
-  //   fetchMentorsInProgress,
-  //   fetchMentorsError,
-  //   loadConsultants,
-  // } = mentorStore;
-  // const { params, setQueryParam } =
-  //   useQueryParams<{ pageNumber: string; pageSize: string }>();
+  const {
+     mentorStore: {
+      mentors, 
+      fetchMentorsInProgress,
+      fetchMentorError,
+      loadConsultants 
+    }  
+  } = useStore();
+  const { params, setQueryParam } =
+  useQueryParams<{ pageNumber: string; pageSize: string }>();
   // const { pageNumber, pageSize } = params;
   // const { currentPage, totalPages, setTotalPages, setCurrentPage } =
   //   usePagination({

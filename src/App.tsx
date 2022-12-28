@@ -1,8 +1,7 @@
-import ClientLandingPage from './containers/ClientLandingPage/ClientLandingPage';
+import React, {Suspense} from 'react';
 import MentorsPage from "./containers/MentorsPage/MentorsPage";
 import { observer } from "mobx-react-lite";
 import { Route, Switch } from "react-router-dom";
-import HomePage from './containers/HomePage/HomePage';
 import MentorProfilePage from "./containers/MentorProfilePage/MentorProfilePage";
 import Calendly from "./components/Calendy/Calendly";
 import TestErrors from "./components/TestError/TestError";
@@ -12,13 +11,34 @@ import CategoriesForm from "./forms/CategoriesForm/CategoriesForm";
 import SkillsForm from "./forms/SkillsForm/SkillsForm";
 import ProfilePage from "./containers/ProfilePage/ProfilePage";
 import CategoriesSkillsForm from "./forms/CategoriesSkillsForm/CategoriesSkillsForm";
-import ClientsPage from './containers/ClientsPage/ClientsPage';
-import ClientContactPage from "./containers/ClientContactPage/ClientContactPage";
-import LoginPage from "./containers/LoginPage/LoginPage";
-import AdminPage from "./containers/AdminPage/AdminPage";
 import MentorsContactPage from './containers/MentorsContactPage/MentorsContactPage';
-import RegisterPage from './containers/RegisterPage/RegisterPage';
 import { TestPage } from './containers/TestPage/TestPage';
+import HomePage from './containers/HomePage/HomePage';
+import ClientLandingPage from './containers/ClientLandingPage/ClientLandingPage';
+import ClientContactPage from './containers/ClientContactPage/ClientContactPage';
+import ClientsPage from './containers/ClientsPage/ClientsPage';
+import AdminPage from './containers/AdminPage/AdminPage';
+import LoginPage from './containers/LoginPage/LoginPage';
+import RegisterPage from './containers/RegisterPage/RegisterPage';
+
+// const HomePage = React.lazy(() => import('./containers/HomePage/HomePage'));
+// const ClientLandingPage = React.lazy(() => import('./containers/HomePage/HomePage'));
+// const ClientContactPage = React.lazy(() => import('./containers/HomePage/HomePage'));
+// const ClientsPage = React.lazy(() => import('./containers/HomePage/HomePage'));
+// const AdminPage = React.lazy(() => import('./containers/HomePage/HomePage'));
+// const LoginPage = React.lazy(() => import('./containers/HomePage/HomePage'));
+// const RegisterPage = React.lazy(() => import('./containers/HomePage/HomePage'));
+// const MentorsContactPage = React.lazy(() => import('./containers/HomePage/HomePage'));
+// const CategoriesSkillsForm = React.lazy(() => import('./containers/HomePage/HomePage'));
+// const CategoriesForm = React.lazy(() => import('./containers/HomePage/HomePage'));
+// const SkillsForm = React.lazy(() => import('./containers/HomePage/HomePage'));
+// const MentorsPage = React.lazy(() => import('./containers/HomePage/HomePage'));
+// const MentorsPage = React.lazy(() => import('./containers/HomePage/HomePage'));
+// const MentorsPage = React.lazy(() => import('./containers/HomePage/HomePage'));
+// const MentorsPage = React.lazy(() => import('./containers/HomePage/HomePage'));
+// const MentorsPage = React.lazy(() => import('./containers/HomePage/HomePage'));
+// const MentorsPage = React.lazy(() => import('./containers/HomePage/HomePage'));
+// const MentorsPage = React.lazy(() => import('./containers/HomePage/HomePage'));
 
 const App = () => {
   return (
@@ -43,6 +63,7 @@ const App = () => {
           <Route path="/consultants/hire" component={Calendly} />
           <Route path="/mentors/:id" component={MentorProfilePage} />
           <Route path="/errors" component={TestErrors} />
+          <Route path="/test" component={TestPage} />
           <Route component={NotFound} />
         </Switch>
       </div>

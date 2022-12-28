@@ -36,6 +36,10 @@ interface ClientLandingPageType {}
 const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
   const { isMobile } = useMobile();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // useEffect(() => {
   //   delay(() => {
   //     debugger;
