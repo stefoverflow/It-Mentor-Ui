@@ -25,12 +25,9 @@ export default observer(function ConsultantDashboard() {
         <Menu />
         <ClientContactButton />
         <div>
-          {/* <SearchTextInput placeholder="Filtriraj mentore po skilovima (unesi ključnu reč)"/> */}
         </div>
         <div className="mentors-page__list">
-          {/* {mentorStore.mentors ?  */}
           <MentorList />
-          {/* : null} */}
         </div>
         <div className="mentors-page__logo">
           {!isMobile && <Logo />}

@@ -78,21 +78,21 @@ const MentorProfilePage: React.FC<MentorProfileProps> = (props) => {
         </div>
         <div className="mentor-profile__package-container__cards">
           <PackageCard
-            title="Naslov paketa"
+            title="Silver"
             checked={checkedCard === 0}
-            list={["Mentorstvo do 6 meseci", "40 sesija", "1 sat po sesiji"]}
+            list={["Mentorstvo do 6 meseci", "20 sesija", "1 sat po sesiji"]}
             onClick={() => setCheckedCard(0)}
           />
           <PackageCard
-            title="Naslov paketa"
+            title="Gold"
             checked={checkedCard === 1}
             list={["Mentorstvo do 6 meseci", "40 sesija", "1 sat po sesiji"]}
             onClick={() => setCheckedCard(1)}
           />
           <PackageCard
-            title="Naslov paketa"
+            title="Platinum"
             checked={checkedCard === 2}
-            list={["Mentorstvo do 6 meseci", "40 sesija", "1 sat po sesiji"]}
+            list={["Mentorstvo do 6 meseci", "80 sesija", "1 sat po sesiji"]}
             onClick={() => setCheckedCard(2)}
           />
         </div>

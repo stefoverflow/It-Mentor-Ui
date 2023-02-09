@@ -9,8 +9,8 @@ import { history } from "..";
 import { Skill } from "../models/skill";
 import { ClientRegisterDto } from "../models/clientRegisterDto";
 
-axios.defaults.baseURL = "http://localhost:5000/";
-// process.env.REACT_APP_API_END_POINT
+axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+
 axios.interceptors.response.use(
   async (response) => {
     return response;

@@ -226,8 +226,7 @@ export const exampleMentors = [
     'PostgreSQL', 
     'Docker', 
     'Microservices', 
-    'Node.js', 
-    'React', 
+    'Node.js',  
     'express', 
     'GraphQL'
     ],
@@ -236,27 +235,23 @@ export const exampleMentors = [
     id: '7',
     firstName:"Stefan",
     lastName:"Tošić",
-    bio: `Da li želiš da jednog dana postaneš fullstack tech lead?
+    bio: `Da li želiš da dođeš do prvog posla kao fullstack web developer?
 
-    Uz moju pomoć i stručnost potkrepljenu sa 7+ godina iskustva ćeš biti korak bliže ka cilju.
-
-    Promenio sam par firmi poput Atomie, Troxo-a i Dooer-a što mi je dalo mogućnost da na raznim projektima usavršim svoje veštine. 
+    Bio sam u istoj situaciji u kojoj se sada nalaziš i znam sve prečice. 
     
-    Sada je vreme da ih prenesem tebi.
+    Sada je vreme na tebe. Zakaži konstultaciju.
     `,
     image: StefanTosic,
-    radiU: 'IT Mrav',
-    categories: ['Tech Lead'],
-    skills: ['Python', 
+    radiU: 'Faye',
+    categories: ['Fullstack Software Engineer'],
+    skills: ['C#', 
     '.NET Core', 
     'React', 
-    'PostgreSQL', 
+    'EF Core', 
     'Docker', 
-    'Microservices', 
-    'Node.js', 
-    'React', 
-    'express', 
-    'GraphQL'
+    'xUnit', 
+    'Sql Server', 
+    'SignalR'
     ],
   }
 ]

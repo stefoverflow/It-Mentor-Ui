@@ -7,51 +7,54 @@ import { composeValidators } from "../../util/validators";
 import "./RegisterPage.scss";
 import Loading from "../../components/Loading/Loading";
 import ConfirmModal from "../../components/ConfirmModal/ConfirmModal";
+import useApiError from "../../hooks/useApiError";
+import { AxiosError } from "axios";
 
 const RegisterPage = () => {
   const {
     userStore: { registerMentor },
   } = useStore();
 
-  const [validationError, setValidationError] = useState("");
+  const[error, handleError, clearError] = useApiError();
 
-  const inputRef = React.createRef<HTMLInputElement>();
-  const handleClick = () => {
-    if(inputRef.current?.value === ""){
-      setValidationError("Prazno");
+  const tryRegisterMentor = async (values: Record<string, any>) => {
+    try {
+      await registerMentor(values)
+    } catch (error: any) {
+      console.log(error);
     }
   }
-
-
+const required = (value:string) => (value? undefined : 'Required');
   return (
     <div className="register-content">
       <FinalForm
-        onSubmit={(values) => registerMentor(values)}
+        onSubmit={(values) => tryRegisterMentor(values)}
         render={({ handleSubmit, values, submitting, submitSucceeded }) => (
           <form onSubmit={handleSubmit}>
             <div>
-              {/* <FieldTextInput
+              <FieldTextInput
                placeholder={"Email"}
-               name={"Email"} />
+               name={"Email"}
+               validate={required} />
               <FieldTextInput 
                placeholder={"Username"} 
-               name={"Username"} />
+               name={"Username"} 
+               validate={required}/>
               <FieldTextInput 
                placeholder={"Password"} 
-               name={"Password"} />
+               name={"Password"} 
+               validate={required}/>
               <FieldTextInput 
                placeholder={"Category"} 
-               name={"CategoryName"} />
+               name={"CategoryName"} 
+               validate={required}/>
               <Button type="submit">
                 <Loading
                   submitting={submitting}
                   submitSucceeded={submitSucceeded}
                   buttonText={"Registruj se"}
                 />
-              </Button> */}
-              <input ref={inputRef} type="text" />
-              <p>{validationError}</p>
-              <button onClick={() => handleClick()}>Validate if empty</button>
+              </Button>
             </div>
           </form>
         )}

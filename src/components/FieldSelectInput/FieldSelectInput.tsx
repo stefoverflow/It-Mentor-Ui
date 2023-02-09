@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Field } from 'react-final-form';
 
 import './FieldSelectInput.scss';
@@ -18,6 +18,7 @@ type FieldSelectInputProps = {
 
 const FieldSelectInput: React.FC<FieldSelectInputProps> = (props) => {
     const { /*placeholder,*/ name, options, label, validate } = props;
+
     return (
         <div className='select-input'>
             <label className="select-input__label">{label}</label>
@@ -26,9 +27,10 @@ const FieldSelectInput: React.FC<FieldSelectInputProps> = (props) => {
                 component="select"
                 className="select-input__input"
                 validate={validate}
+                defaultValue={options[0].key}
             >
                 {options.map(o => (
-                    <option key={o.key} value={o.key} defaultValue={o.key} className="select-input__input__option">
+                    <option key={o.key} value={o.key} className="select-input__input__option">
                         {o.text}
                     </option>
                 ))}

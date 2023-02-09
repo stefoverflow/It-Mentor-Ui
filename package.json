@@ -33,7 +33,7 @@
     "react-responsive-carousel": "^3.2.18",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^5.0.0",
-    "react-toastify": "^7.0.4",
+    "react-toastify": "^9.1.1",
     "sass": "^1.35.1",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.3",
@@ -42,13 +42,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "SET BUILD_PATH=../../source/repos/It-Mentor-Api/API/wwwroot && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "postinstall": "semantic-ui-css-patch",
     "start:dev": "env-cmd -f ./environments/.dev.env react-scripts start",
     "build:dev": "env-cmd -f ./environments/.dev.env npm run-script build",
-    "start:prod": "env-cmd -f ./environments/.prod.env react-scripts start",  
+    "start:prod": "env-cmd -f ./environments/.prod.env react-scripts start",
     "build:prod": "env-cmd -f ./environments/.prod.env npm run-script build"
   },
   "eslintConfig": {
