@@ -42,7 +42,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "SET BUILD_PATH=../../source/repos/It-Mentor-Api/API/wwwroot && react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "postinstall": "semantic-ui-css-patch",
