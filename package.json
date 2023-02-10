@@ -68,7 +68,9 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.178",
+    "@types/react-gtm-module": "^2.0.1",
     "@types/react-router-dom": "^5.1.7",
-    "env-cmd": "^10.1.0"
+    "env-cmd": "^10.1.0",
+    "react-gtm-module": "^2.0.11"
   }
 }

@@ -8,6 +8,14 @@ import * as serviceWorker from "./serviceWorker";
 import { store, StoreContext } from "./stores/store";
 import { Router } from "react-router-dom";
 import { createBrowserHistory } from "history";
+import TagManager from 'react-gtm-module';
+
+const TagManagerArgs = {
+  // Add GTM container ID
+  gtmId: 'GTM-TZ8G3Q5'
+}
+
+TagManager.initialize(TagManagerArgs);
 
 export const history = createBrowserHistory();
 
