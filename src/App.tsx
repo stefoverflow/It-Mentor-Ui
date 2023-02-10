@@ -40,6 +40,11 @@ import RegisterPage from './containers/RegisterPage/RegisterPage';
 // const MentorsPage = React.lazy(() => import('./containers/HomePage/HomePage'));
 // const MentorsPage = React.lazy(() => import('./containers/HomePage/HomePage'));
 
+import ReactGA from 'react-ga';
+
+const TRACKING_ID = "G-DRC5HW3TEK"; // YOUR_OWN_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
+
 const App = () => {
   return (
     <div>
