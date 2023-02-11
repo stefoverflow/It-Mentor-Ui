@@ -1,7 +1,7 @@
-import React, {Suspense} from 'react';
+import React, {Suspense, useEffect} from 'react';
 import MentorsPage from "./containers/MentorsPage/MentorsPage";
 import { observer } from "mobx-react-lite";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useLocation } from "react-router-dom";
 import MentorProfilePage from "./containers/MentorProfilePage/MentorProfilePage";
 import Calendly from "./components/Calendy/Calendly";
 import TestErrors from "./components/TestError/TestError";
@@ -40,12 +40,19 @@ import RegisterPage from './containers/RegisterPage/RegisterPage';
 // const MentorsPage = React.lazy(() => import('./containers/HomePage/HomePage'));
 // const MentorsPage = React.lazy(() => import('./containers/HomePage/HomePage'));
 
-import ReactGA from 'react-ga';
+import ReactGA, { ga } from 'react-ga';
 
-const TRACKING_ID = "G-DRC5HW3TEK"; // YOUR_OWN_TRACKING_ID
+const TRACKING_ID = "UA-256769966-1"; // YOUR_OWN_TRACKING_ID
 ReactGA.initialize(TRACKING_ID);
 
 const App = () => {
+  let location = useLocation();
+
+  useEffect(() => {
+    // Google Analytics
+    ga('send', 'pageview');
+  }, [location]);
+
   return (
     <div>
       <ToastContainer position="bottom-right" hideProgressBar />
