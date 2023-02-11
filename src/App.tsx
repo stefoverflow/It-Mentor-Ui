@@ -40,18 +40,20 @@ import RegisterPage from './containers/RegisterPage/RegisterPage';
 // const MentorsPage = React.lazy(() => import('./containers/HomePage/HomePage'));
 // const MentorsPage = React.lazy(() => import('./containers/HomePage/HomePage'));
 
-import ReactGA, { ga } from 'react-ga';
+import ReactGA from 'react-ga';
 
-const TRACKING_ID = "UA-256769966-1"; // YOUR_OWN_TRACKING_ID
-ReactGA.initialize(TRACKING_ID);
-
-const App = () => {
+function usePageViews() {
   let location = useLocation();
 
   useEffect(() => {
-    // Google Analytics
-    ga('send', 'pageview');
+    const TRACKING_ID = 'UA-256769966-1';
+    ReactGA.initialize(TRACKING_ID);
+    ReactGA.pageview(location.pathname + location.search);
   }, [location]);
+}
+
+const App = () => {
+  usePageViews();
 
   return (
     <div>
