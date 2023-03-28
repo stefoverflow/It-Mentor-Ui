@@ -85,7 +85,6 @@ const ClientLandingPage: React.FC<ClientLandingPageType> = () => {
           </div>
           <ClientContactButton />
         </div>
-        {/* <PlayButton /> */}
       </div>
       <div className="landing-client__main-section">
         {/* <div className="landing-client__main-section__happy-section">
