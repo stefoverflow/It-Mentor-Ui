@@ -19,7 +19,7 @@ const RegisterPage = () => {
 
   const tryRegisterMentor = async (values: Record<string, any>) => {
     try {
-      await registerMentor(values)
+      //await registerMentor(values)
     } catch (error: any) {
       console.log(error);
     }

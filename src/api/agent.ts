@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import { history } from "..";
 import { Skill } from "../models/skill";
 import { ClientRegisterDto } from "../models/clientRegisterDto";
+import { MentorRegisterDto } from "../models/mentor-register-dto";
 
 axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
@@ -154,7 +155,7 @@ const Messages = {
 const Account = {
   current: () => requests.get("/account", {}),
   login: (user: UserFormValues) => requests.post("/account/login", user),
-  registerMentor: (user: UserFormValues) => requests.post("/account/register/mentor", user),
+  registerMentor: (user: MentorRegisterDto) => requests.post("/account/register/mentor", user),
 };
 
 const Admin = {

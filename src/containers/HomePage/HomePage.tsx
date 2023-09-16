@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import GraphicWorkImage from "../../assets/graphic-work.svg";
 import LandingImage from "../../assets/home-page-cover.png";
-import LandingMobileImage from "../../assets/home-page-cover-mobile.png";
+import LandingMobileImage from "../../assets/home-page-cover-mobile.png";0
 // import Menu from "../../components/Menu/Menu";
 import { MAX_MOBILE_SCREEN_WIDTH } from "../../constants";
 
