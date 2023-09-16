@@ -3,6 +3,7 @@ import { history } from "..";
 import agent from "../api/agent";
 import { User, UserFormValues } from "../models/user";
 import { store } from "./store";
+import { MentorRegisterDto } from "../models/mentor-register-dto";
 
 export default class UserStore {
   currentUser: User | null = JSON.parse(localStorage.getItem("user") || "{}");
@@ -43,7 +44,7 @@ export default class UserStore {
     history.push("/");
   };
 
-  registerMentor = async (creds: any) => {
+  registerMentor = async (creds: MentorRegisterDto) => {
     try {
       debugger
       const user = await agent.Account.registerMentor(creds);

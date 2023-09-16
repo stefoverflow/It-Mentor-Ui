@@ -1,112 +1,112 @@
-@import "../../scss/breakpoints";
+// @import "../../scss/breakpoints";
 
-.clients-contact__info{
-    color: black;   
-}
+// .clients-contact__info{
+//     color: black;   
+// }
 
-.client-contact {
-    background-color: #15172C;
-    width: 100vw;
-    height: 100vh;
-    padding: 15.2rem 14rem;
+// .client-contact {
+//     background-color: #15172C;
+//     width: 100vw;
+//     height: 100vh;
+//     padding: 15.2rem 14rem;
 
-    @include mobile() {
-        padding: 122px 24px;
-        height: 100%;
-    }
+//     @include mobile() {
+//         padding: 122px 24px;
+//         height: 100%;
+//     }
 
-    &__row {
-        display: flex;
-        flex-direction: row;
-        gap: 15.5rem;
+//     &__row {
+//         display: flex;
+//         flex-direction: row;
+//         gap: 15.5rem;
 
-        @include mobile() {
-            flex-direction: column;
-            gap: 80px;
-        }
+//         @include mobile() {
+//             flex-direction: column;
+//             gap: 80px;
+//         }
         
-        &__column {
-            width: 53.6rem;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
+//         &__column {
+//             width: 53.6rem;
+//             display: flex;
+//             flex-direction: column;
+//             gap: 2rem;
 
-            @include mobile() {
-                width: 100%;
-                gap: 40px;
-            }
+//             @include mobile() {
+//                 width: 100%;
+//                 gap: 40px;
+//             }
 
-            &__submit-desktop {
-                display: block;
+//             &__submit-desktop {
+//                 display: block;
 
-                @include mobile() {
-                    display: none;
-                }
-            }
+//                 @include mobile() {
+//                     display: none;
+//                 }
+//             }
 
-            &__submit-mobile {
-                display: none;
+//             &__submit-mobile {
+//                 display: none;
 
-                @include mobile() {
-                    display: block;
-                }
-            }
+//                 @include mobile() {
+//                     display: block;
+//                 }
+//             }
 
-            &__description {
+//             &__description {
 
-                @include mobile() {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                }
+//                 @include mobile() {
+//                     display: flex;
+//                     flex-direction: column;
+//                     align-items: center;
+//                 }
                 
-                &__text {
-                    margin-top: 5.1rem;
-                    margin-bottom: 2.6rem;
-                    max-width: 47.7rem;
-                    font-family: GilroyLight;
-                    font-weight: 300;
-                    font-size: 2.4rem;
-                    line-height: 2.7rem;
-                    color: #FFFFFF;
+//                 &__text {
+//                     margin-top: 5.1rem;
+//                     margin-bottom: 2.6rem;
+//                     max-width: 47.7rem;
+//                     font-family: GilroyLight;
+//                     font-weight: 300;
+//                     font-size: 2.4rem;
+//                     line-height: 2.7rem;
+//                     color: #FFFFFF;
 
-                    @include mobile() {
-                        font-size: 18px;
-                        line-height: 20px;
-                        text-align: center;
-                        max-width: 100%;
-                        margin-top: 0;
-                        margin-bottoM: 50px;
-                    }
-                }
+//                     @include mobile() {
+//                         font-size: 18px;
+//                         line-height: 20px;
+//                         text-align: center;
+//                         max-width: 100%;
+//                         margin-top: 0;
+//                         margin-bottoM: 50px;
+//                     }
+//                 }
 
-                &__button {
-                    position: relative;
-                    height: 7rem;
-                    padding: 2rem 4.7rem;
-                    box-shadow: 0px 18px 60px -12px rgba(141, 92, 246, 0.3);
-                    border-radius: 5px;
-                    border: none;
-                    background-color: #8D5CF6;
-                    font-family: Gilroy;
-                    font-weight: 800;
-                    font-size: 2.4rem;
-                    line-height: 2.9rem;
-                    width: 25rem;
-                    color: #FFFFFF;
-                    cursor: pointer;
-                    &:hover {
-                        opacity: 0.9;
-                    }
-                }
-                &__button-disabled {
-                    opacity: 0.5;
-                    cursor: default;
-                    &:hover {
-                        opacity: 0.5;
-                    }
-                }
-            }
-        }
-    }
-}
+//                 &__button {
+//                     position: relative;
+//                     height: 7rem;
+//                     padding: 2rem 4.7rem;
+//                     box-shadow: 0px 18px 60px -12px rgba(141, 92, 246, 0.3);
+//                     border-radius: 5px;
+//                     border: none;
+//                     background-color: #8D5CF6;
+//                     font-family: Gilroy;
+//                     font-weight: 800;
+//                     font-size: 2.4rem;
+//                     line-height: 2.9rem;
+//                     width: 25rem;
+//                     color: #FFFFFF;
+//                     cursor: pointer;
+//                     &:hover {
+//                         opacity: 0.9;
+//                     }
+//                 }
+//                 &__button-disabled {
+//                     opacity: 0.5;
+//                     cursor: default;
+//                     &:hover {
+//                         opacity: 0.5;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }

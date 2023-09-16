@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Form as FinalForm } from "react-final-form";
+import React from "react";
 import { Icon, Loader } from "semantic-ui-react";
 import FieldSelectInput from "../../components/FieldSelectInput/FieldSelectInput";
 import FieldTextInput from "../../components/FieldTextInput/FieldTextInput";
@@ -15,27 +14,28 @@ import { Link, useHistory } from "react-router-dom";
 import Logo from "../../components/Logo/Logo";
 import useMobile from "../../hooks/useMobile";
 
-interface ClientContactPageType {}
+interface ClientContactPageType { }
 
 const ClientContactPage: React.FC<ClientContactPageType> = () => {
   const { isMobile } = useMobile();
 
   return (
-    <div className="mentors-contact">
-      {!isMobile ? (
-        <div className="landing__header__logo">
-          <Logo />
-        </div>
-      ) : null}
-      <div className="mentors-contact__content">
-        {isMobile ? <Logo /> : null}
-        <div className="clients-contact__info">Pozovi da zakažeš konsultaciju na +381-60-6250-232 ili pošalji mail na stefantosic.dev@gmail.com</div>
-        <br />
-        <div>
-          <Link to="/" className="mentors-contact__content_back">Natrag na početnu</Link>
-        </div>
-      </div>
-    </div>
+    <div></div>
+      // <div className="mentors-contact">
+      //   {!isMobile ? (
+      //     <div className="landing__header__logo">
+      //       <Logo />
+      //     </div>
+      //   ) : null}
+      //   <div className="mentors-contact__content">
+      //     {isMobile ? <Logo /> : null}
+      //     <div className="clients-contact__info">Pozovi da zakažeš konsultaciju na +381-60-6250-232 ili pošalji mail na stefantosic.dev@gmail.com</div>
+      //     <br />
+      //     <div>
+      //       <Link to="/" className="mentors-contact__content_back">Natrag na početnu</Link>
+      //     </div>
+      //   </div>
+      // </div>
   );
 
   // const history = useHistory();
